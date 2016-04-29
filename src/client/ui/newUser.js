@@ -1,13 +1,13 @@
 import React from 'react';
 import store from 'store';
-import {addNewUser} from 'api/data';
+import { addNewUser } from 'api/data';
 import { Link, browserHistory } from 'react-router';
 
 
 require('assets/styles/newUser.scss');
 
 export default React.createClass({
-  getInitialState: function (){
+  getInitialState: function() {
     return {
       username: "",
       password: "",
@@ -15,7 +15,7 @@ export default React.createClass({
       error: false
     }
   },
-  handleChange: function(e){
+  handleChange: function(e) {
     var val = e.target.value;
     switch (e.target.id) {
       case 'username':
@@ -43,14 +43,14 @@ export default React.createClass({
         break;
     }
   },
-  handleSubmit: function(e){
+  handleSubmit: function(e) {
     e.preventDefault();
-    if (this.state.password === this.state.confirm){
+    if (this.state.password === this.state.confirm) {
       addNewUser(this.state.username, this.state.password)
-        .then(function(resp){
+        .then(function(resp) {
           browserHistory.push('/truckProfile');
         }.bind(this));
-    }else{
+    } else {
       this.setState({
         error: true,
         username: "",
@@ -59,16 +59,19 @@ export default React.createClass({
       })
     }
   },
-  render: function () {
+  render: function() {
     return (
       <div className="registerBox">
-        <form action="" method="post" onSubmit={this.handleSubmit} id="loginForm">
+        <form action="" method="post" onSubmit={ this.handleSubmit } id="loginForm">
           <i className="fa fa-sign-in"></i>
-          <input id="username" className="login" onChange={this.handleChange} type="text" placeholder="User Name"></input><br />
+          <input id="username" className="login" onChange={ this.handleChange } type="text" placeholder="User Name"></input>
+          <br />
           <i className="fa fa-unlock"></i>
-          <input id="password" className="password" onChange={this.handleChange} type="password" placeholder="PassWord"></input><br />
+          <input id="password" className="password" onChange={ this.handleChange } type="password" placeholder="PassWord"></input>
+          <br />
           <i className="fa fa-unlock"></i>
-          <input id="confirm" className="confirmPassword" onChange={this.handleChange} type="password" placeholder="Confirm PassWord"></input><br />
+          <input id="confirm" className="confirmPassword" onChange={ this.handleChange } type="password" placeholder="Confirm PassWord"></input>
+          <br />
           <select className="foodTruckSelector">
             <option value="foodTruckCustomer">Food Truck Customer</option>
             <option value="foodTruckVendor">Food Truck Vendor</option>
@@ -76,5 +79,6 @@ export default React.createClass({
           <button className="loginButton">Register</button>
         </form>
       </div>
-    )}
+    )
+  }
 })

@@ -1,6 +1,6 @@
 import React from 'react';
-import {login} from 'api/data';
-import {addNewUser} from 'api/data';
+import { login } from 'api/data';
+import { addNewUser } from 'api/data';
 import { Link, browserHistory } from 'react-router';
 import store from 'store';
 import NewUser from 'ui/newUser';
@@ -12,7 +12,7 @@ require('font-awesome-webpack');
 
 
 export default React.createClass({
-  render: function () {
+  render: function() {
     return (
       <div>
         <div className="loginContainer">

@@ -15,7 +15,11 @@
   "license": "ISC",
   "dependencies": {
     "axios": "^0.9.1",
+    "esformatter": "^0.9.3",
+    "esformatter-jsx": "^5.0.2",
     "express": "^4.13.4",
+    "font-awesome": "^4.5.0",
+    "font-awesome-webpack": "0.0.4",
     "js-cookie": "^2.1.1",
     "normalize.scss": "^0.1.0",
     "pmx": "^0.6.1",
@@ -25,9 +29,7 @@
     "react-router": "^2.2.4",
     "redux": "^3.4.0",
     "redux-thunk": "^2.0.1",
-    "socket.io": "^1.4.5",
-    "font-awesome": "^4.5.0",
-    "font-awesome-webpack": "0.0.4"
+    "socket.io": "^1.4.5"
   },
   "devDependencies": {
     "app-config-chain": "^1.0.4",

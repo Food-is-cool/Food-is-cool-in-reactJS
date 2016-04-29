@@ -11,14 +11,29 @@ export function getUsers() {
   return api.get('users/users/');
 }
 
-export function addNewUser(username, password, cb){
-	return api.post('users/', {username:username, password:password}).then(function(){
-	  api.login(username, password).then(function(){
-	     cb();
-	  }).catch(function(err){
-	    console.log(err);
-	  });
-	}).catch(function(err){
-	  console.log(err);
-	});
+export function addNewUser(username, password, cb) {
+  return api.post('users/', {
+    username: username,
+    password: password
+  }).then(function() {
+    api.login(username, password).then(function() {
+      cb();
+    }).catch(function(err) {
+      console.log(err);
+    });
+  }).catch(function(err) {
+    console.log(err);
+  });
+}
+
+export function currentUserProfile() {
+  return api.get('customers/current/').then(function(profile) {
+    console.log(profile);
+  })
+}
+
+export function getTruck() {
+  return api.get('trucks/current/').then(function(profile) {
+    console.log(profile);
+  })
 }

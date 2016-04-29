@@ -3,17 +3,21 @@ import React from 'react';
 require('assets/styles/map.scss');
 
 export default React.createClass({
-  render: function () {
+  componentDidMount: function() {
+    const map = new google.maps.Map(document.getElementById('map'), {
+      center: {
+        lat: 36.198860168457,
+        lng: -115.11750030518
+      },
+      zoom: 12
+    });
+  },
+
+  render: function() {
     return (
-    	<div className="mapContainer">
-    		<iframe
-			  width="698"
-			  height="398"
-			  frameborder="0" 
-			  src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAEE6F3HwX-Seoso5S1KP9g3sA5Thd_qmo
-			    &q=The+IronYard,Las+Vegas+NV" allowfullscreen>
-			</iframe>
-    	</div>
+      <div className="mapContainer">
+        <div className="map" id="map"></div>
+      </div>
     )
   }
 })
