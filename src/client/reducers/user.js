@@ -1,29 +1,12 @@
-// const userInitialState = {
-//   username: ''
-// }
+const userInitialState = {
+  username: ''
+}
 
-// export default function (state = userInitialState, action) {
-//   let newState = {};
-//   switch (action.type) {
-//     case 'ADD_USERNAME':
-//       newState = Object.assign({}, state);
+export default function (state = userInitialState, action) {
+  const newState = Object.assign({}, state);
 
-//       newState.username = action.username;
+  switch (action.type) {
+  }
 
-//       return newState;
-
-//     case 'CHANGE_COLOR':
-//       newState = Object.assign({}, state);
-//       newState.color = action.color;
-
-//       return newState;
-
-//     case 'CHANGE_FONT':
-//       newState = Object.assign({}, state);
-//       newState.font = action.font;
-
-//       return newState;
-//     default:
-//       return state;
-//   }
-// }
+  return newState;
+}
