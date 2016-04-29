@@ -15,64 +15,50 @@ export default React.createClass({
       error: false
     }
   },
-  handleChange: function(e) {
-    var val = e.target.value;
-    switch (e.target.id) {
-      case 'username':
-        this.setState({
-          username: val,
-          password: this.state.password,
-          confirm: this.state.confirm
-        });
-        break;
 
-      case 'password':
-        this.setState({
-          username: this.state.username,
-          password: val,
-          confirm: this.state.confirm
-        });
-        break;
-
-      default:
-        this.setState({
-          username: this.state.username,
-          password: this.state.password,
-          confirm: val
-        });
-        break;
-    }
+  handleChange: function() {
+    this.setState({
+      username: this.refs.username.value,
+      password: this.refs.password.value,
+      confirm: this.refs.confirm.value,
+      type: this.refs.type.value
+    });
   },
+
   handleSubmit: function(e) {
     e.preventDefault();
-    if (this.state.password === this.state.confirm) {
-      addNewUser(this.state.username, this.state.password)
-        .then(function(resp) {
-          browserHistory.push('/truckProfile');
-        }.bind(this));
-    } else {
+
+    if (this.state.password !== this.state.confirm) {
       this.setState({
         error: true,
         username: "",
         password: "",
-        confirm: ""
-      })
+        confirm: "",
+        type: ""
+      });
+      return;
     }
+
+    addNewUser(this.state.username, this.state.password, this.state.type)
+      .then(function(resp) {
+        browserHistory.push('/map');
+      });
   },
+
   render: function() {
     return (
       <div className="registerBox">
         <form action="" method="post" onSubmit={ this.handleSubmit } id="loginForm">
           <i className="fa fa-sign-in"></i>
-          <input id="username" className="login" onChange={ this.handleChange } type="text" placeholder="User Name"></input>
+          <input ref="username" className="login" onChange={ this.handleChange } type="text" placeholder="User Name"></input>
           <br />
           <i className="fa fa-unlock"></i>
-          <input id="password" className="password" onChange={ this.handleChange } type="password" placeholder="PassWord"></input>
+          <input ref="password" className="password" onChange={ this.handleChange } type="password" placeholder="PassWord"></input>
           <br />
           <i className="fa fa-unlock"></i>
-          <input id="confirm" className="confirmPassword" onChange={ this.handleChange } type="password" placeholder="Confirm PassWord"></input>
+          <input ref="confirm" className="confirmPassword" onChange={ this.handleChange } type="password" placeholder="Confirm PassWord"></input>
           <br />
-          <select className="foodTruckSelector">
+          <select ref="type" className="foodTruckSelector" onChange={ this.handleChange }>
             <option value="foodTruckCustomer">Food Truck Customer</option>
             <option value="foodTruckVendor">Food Truck Vendor</option>
           </select>

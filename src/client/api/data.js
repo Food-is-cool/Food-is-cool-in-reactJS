@@ -11,19 +11,22 @@ export function getUsers() {
   return api.get('users/users/');
 }
 
-export function addNewUser(username, password, cb) {
-  return api.post('users/', {
+export function addNewUser(username, password, type) {
+  const payload = {
     username: username,
-    password: password
-  }).then(function() {
-    api.login(username, password).then(function() {
-      cb();
-    }).catch(function(err) {
+    password: password,
+    is_staff: type === "foodTruckVendor"
+  };
+
+  debugger;
+
+  return api.post('users/', payload)
+    .then(function() {
+      return api.login(username, password);
+    })
+    .catch(function(err) {
       console.log(err);
     });
-  }).catch(function(err) {
-    console.log(err);
-  });
 }
 
 export function currentUserProfile() {
