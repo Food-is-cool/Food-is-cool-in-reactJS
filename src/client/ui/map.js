@@ -80,7 +80,7 @@ export default React.createClass({
 
     const infowindow = new google.maps.InfoWindow({
       content: `
-        <H1>${truck.name}</H1>
+        <H2>${truck.name}</H2>
         <H3><i>Cuisine</i></H3>
         <a href='/truckInfo'>Get Details...</a>
         <a href='http://maps.google.com/?saddr=${this.position.coords.latitude},${this.position.coords.longitude}&daddr=${truck.latitude},${truck.longitude}'>Get Directions...</a>
