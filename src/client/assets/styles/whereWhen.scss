@@ -1,0 +1,41 @@
+.setLocation{
+	height: 100px;
+	width: 798px;
+	box-shadow: 10px 10px 5px #888888;
+}
+.setTime{
+	height: 100px;
+	width: 250px;
+	margin-bottom: 20px;
+	box-shadow: 10px 10px 5px #888888;
+
+}
+.whereWhenContainer{
+	margin: 0 auto;
+	height: 400px;
+	width: 800px;
+
+}
+.flexTime{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+
+}
+.wwContainer{
+	margin: 0 auto;
+	height: 450px;
+	width: 800px;
+}
+.updateProfile{
+	height: 35px;
+	width: 180px;
+	margin-top: 60px;
+	box-shadow: 10px 10px 5px #888888;
+}
+.timeTitle{
+	margin-bottom: 5px;
+}
+.locationTitle{
+	margin-bottom: 5px;
+}

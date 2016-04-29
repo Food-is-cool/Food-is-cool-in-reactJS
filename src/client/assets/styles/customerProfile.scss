@@ -1,0 +1,90 @@
+.customerContainer{
+	margin: 0 auto;
+	height: 500px;
+	width: 500px
+}
+.customerInput{
+	width: 492px;
+	outline: none;
+	height: 30px;
+    box-shadow: 10px 10px 5px #888888;
+}
+.CustomerProfileInput {
+	margin-top: 15px;
+}
+.CustomerProfileCheck{
+    margin-top: 15px;
+    box-shadow: 10px 10px 5px #888888;
+}
+.customerInputCity{
+    width: 250px;
+    outline: none;
+    height: 30px;
+    box-shadow: 10px 10px 5px #888888;
+}
+.customerInputState{
+    width: 50px;
+    outline: none;
+    height: 30px;
+    box-shadow: 10px 10px 5px #888888;
+}
+.customerInputZip{
+    width: 140px;
+    outline: none;
+    height: 30px;
+    box-shadow: 10px 10px 5px #888888; 
+    margin-right: 9px;  
+}
+.cszBox{
+    display: flex;
+    justify-content: space-between;
+}
+.checkLabel{
+	margin-left: 10px;
+}
+.customerSubmit{
+	margin-top: 15px;
+    box-shadow: 10px 10px 5px #888888;
+    height: 35px;
+    width: 180px;
+}
+.arrow {
+    position: relative;
+    top: -532px;
+    left: -80px;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 50px 0 50px 40px;
+    border-color: transparent rgb(180, 41, 46);
+}
+
+.rec {
+    position: relative;
+    top: -632px;
+    left: -307px;
+    width: 227px;
+    height: 100px;
+    background-color: rgb(180, 41, 46);
+    padding:20px;
+}
+
+.arrowgray {
+    position: relative;
+    top: -328px;
+    left: -78px;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 50px 0 50px 40px;
+    border-color: transparent rgba(0, 0, 0, 0.2);
+}
+
+.recgray {
+    position: relative;
+	top: -428px;
+    left: -305px;
+    width: 227px;
+    height: 100px;
+    background-color: rgba(0, 0, 0, 0.2);
+}

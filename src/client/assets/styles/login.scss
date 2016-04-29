@@ -1,0 +1,73 @@
+.loginContainer{
+	width: 700px;
+	height: 360px;
+	margin: 0 auto;
+	background: rgba(97,104,98,.4);
+	margin-top: 65px;
+	overflow: scroll;
+}	
+
+.loginBox{
+	height: 300px;
+	width: 300px;
+	margin-top:50px;
+	margin-left: 5px;
+}
+.registerBox{
+	height: 300px;
+	width: 300px;
+	margin-top:50px;
+	float: right;
+}
+.box{
+	height: 100px;
+	width: 100px;
+	padding-left:73px;
+	padding-top:10px;
+}
+
+.login{
+	background-color: #5e5a5a;
+	border: none;
+	width: 225px;
+    height: 45px;
+    margin-left:10px;
+    padding-left: 30px;	
+    border: 1px solid rgba(104,106,107,.9);
+    outline: none;
+    margin-bottom: 2px;
+}
+.password{
+	background-color: #5e5a5a;
+	border: none;
+	width: 225px;
+    height: 45px;
+    margin-left:9px;
+    padding-left: 30px;	
+    border: 1px solid rgba(104,106,107,.9);
+    outline: none;
+    margin-bottom: 2px;
+}
+.confirmPassword{
+	background-color: #5e5a5a;
+	border: none;
+	width: 225px;
+    height: 45px;
+    margin-left:9px;
+    padding-left: 30px;	
+    border: 1px solid rgba(104,106,107,.9);
+    outline: none;
+}
+.loginButton{
+	width: 224px;
+    height: 45px;
+    margin-left: 35px;
+    background-color: #e3e8e5;
+    margin-top: 25px;
+    outline: none;
+}
+.fa {
+	margin-left: 10px;
+	position: relative;
+	left: 30px;
+}

@@ -1,0 +1,31 @@
+html {box-sizing:border-box; height:100%;}
+*, *:before, *:after {box-sizing:inherit;}
+
+html, body, #app, #app > div {
+  height:100%;
+}
+html, body {
+  overflow: hidden;
+  background: radial-gradient(circle, #d2d1d3, #8e9091, #323332);
+}
+.logo{
+	height: 200px;
+	width: 200px;
+	position: relative;	
+	left: 115px;
+}
+.logoContainer{
+    width: 500px;
+    height: 200px;
+    margin: 0 auto;
+    position: relative;
+    top: -105px;
+    margin-bottom: -95px;
+}
+.foodiscool{
+    position: relative;
+    color: white;
+    top: -167px;
+    left: 167px;
+}
+
