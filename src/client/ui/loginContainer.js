@@ -1,6 +1,6 @@
 import React from 'react';
 import store from 'store';
-import { login } from 'api/data';
+import { login, getCurrentUser } from 'api/data';
 import { Link, browserHistory } from 'react-router';
 
 require('assets/styles/login.scss');
@@ -23,7 +23,13 @@ export default React.createClass({
   handleSubmit: function(e) {
     e.preventDefault();
     login(this.state.username, this.state.password)
-      .then(function(resp) {
+      .then(function() {
+        return getCurrentUser();
+      })
+      .then(function(userProfile) {
+        if (userProfile.is_staff) {
+          return browserHistory.push('/truckProfile');
+        }
         browserHistory.push('/map');
       });
   },

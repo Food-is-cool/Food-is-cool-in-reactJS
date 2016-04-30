@@ -1,35 +1,31 @@
-import axios from 'axios';
-import Cookie from 'js-cookie';
+import axios from "axios";
+import Cookie from "js-cookie";
 
-// 'api-token-auth':"Authorization: Token ${token}";
 var instance = axios.create();
 
-instance.new = function (url) {
-  this.defaults.baseURL = url;
-  // this.defaults.headers = {'Content-Type' : 'application/x-www-form-urlencoded'};
+instance.new = function(url) {
+    this.defaults.baseURL = url;
 };
 
-if (Cookie.get('token')) {
-  var token = Cookie.get('token');
-  instance.interceptors.request.use(function(config){
-    config.headers['Authorization'] = 'Token ' + token;
+instance.interceptors.request.use(function(config) {
+    var token = Cookie.get("token");
+    if (token) {
+        config.headers.Authorization = "Token " + token;
+    }
     return config;
-  });
-}
+});
 
 instance.login = function(user, pass) {
-  return this.post('api-token-auth/', {username: user, password:pass})
-    .then(function(resp){
-      var token = resp.data.token;
-      Cookie.set('token', token);
-      this.interceptors.request.use(function(config){
-        config.headers['Authorization'] = 'Token ' + token;
-        return config;
-      })
-      return resp;
-    }.bind(this))
+    const payload = {
+        username: user,
+        password: pass
+    };
+
+    return this.post("api-token-auth/", payload)
+        .then(function(resp) {
+            Cookie.set("token", resp.data.token);
+            return resp;
+        });
 };
-
-
 
 export default instance;
