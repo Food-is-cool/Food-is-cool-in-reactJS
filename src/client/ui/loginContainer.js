@@ -1,52 +1,44 @@
-import React from 'react';
-import store from 'store';
-import { login, getCurrentUser } from 'api/data';
-import { Link, browserHistory } from 'react-router';
+import React from "react";
+import store from "store";
+import { login, goToHomePage } from "api/data";
+import { Link, browserHistory } from "react-router";
 
-require('assets/styles/login.scss');
+require("assets/styles/login.scss");
 
 export default React.createClass({
-  getInitialState: function() {
-    return {
-      username: "",
-      password: ""
-    }
-  },
-
-  handleChange: function() {
-    this.setState({
-      username: this.refs.username.value,
-      password: this.refs.password.value
-    });
-  },
-
-  handleSubmit: function(e) {
-    e.preventDefault();
-    login(this.state.username, this.state.password)
-      .then(function() {
-        return getCurrentUser();
-      })
-      .then(function(userProfile) {
-        if (userProfile.is_staff) {
-          return browserHistory.push('/truckProfile');
+    getInitialState: function() {
+        return {
+            username: "",
+            password: ""
         }
-        browserHistory.push('/map');
-      });
-  },
+    },
 
-  render: function() {
-    return (
-      <div className="loginBox">
-        <form action="" method="post" onSubmit={ this.handleSubmit } id="loginForm">
-          <i className="fa fa-sign-in"></i>
-          <input ref="username" className="login" onChange={ this.handleChange } name="username" type="text" placeholder="User Name"></input>
-          <br />
-          <i className="fa fa-unlock"></i>
-          <input ref="password" className="password" type="password" onChange={ this.handleChange } name="password" placeholder="PassWord"></input>
-          <br />
-          <button className="loginButton">Login</button>
-        </form>
-      </div>
-      );
-  }
+    handleChange: function() {
+        this.setState({
+            username: this.refs.username.value,
+            password: this.refs.password.value
+        });
+    },
+
+    handleSubmit: function(e) {
+        e.preventDefault();
+        login(this.state.username, this.state.password)
+            .then(goToHomePage);
+    },
+
+    render: function() {
+        return (
+            <div className="loginBox">
+              <form action="" method="post" onSubmit={ this.handleSubmit } id="loginForm">
+                <i className="fa fa-sign-in"></i>
+                <input ref="username" className="login" onChange={ this.handleChange } name="username" type="text" placeholder="User Name"></input>
+                <br />
+                <i className="fa fa-unlock"></i>
+                <input ref="password" className="password" type="password" onChange={ this.handleChange } name="password" placeholder="PassWord"></input>
+                <br />
+                <button className="loginButton">Login</button>
+              </form>
+            </div>
+            );
+    }
 });

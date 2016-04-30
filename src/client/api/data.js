@@ -33,18 +33,38 @@ export function getCustomerProfile() {
         })
 }
 
-export function getTruck() {
+export function saveCustomerProfile(id, payload) {
+    return api.patch("customers/" + id, payload);
+}
+
+export function getTruckProfile() {
     return api.get("trucks/current/")
         .then(function(result) {
             return result.data.results[0];
         })
 }
+
+export function saveTruckProfile(id, payload) {
+    if (!id) {
+        return api.post("trucks/", payload);
+    }
+
+    return api.patch("trucks/" + id, payload);
+}
+
 export function getCurrentUser() {
     return api.get("users/current/")
         .then(function(result) {
             return result.data.results[0];
         })
 }
-export function saveCustomerProfile(id, payload) {
-    return api.patch("customers/" + id, payload);
+
+export function goToHomePage() {
+    return getCurrentUser()
+        .then(function(userProfile) {
+            if (userProfile.is_staff) {
+                return browserHistory.push("/truckProfile");
+            }
+            browserHistory.push("/map");
+        });
 }
