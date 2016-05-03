@@ -1,14 +1,16 @@
 .setLocation{
 	height: 100px;
 	width: 798px;
-	box-shadow: 10px 10px 5px #888888;
+	box-shadow: 10px 10px 5px #192B34;
 }
 .setTime{
 	height: 100px;
 	width: 250px;
 	margin-bottom: 20px;
-	box-shadow: 10px 10px 5px #888888;
-
+	box-shadow: 10px 10px 5px #192B34;
+}
+.selectedTime{
+	background-color: blue;
 }
 .whereWhenContainer{
 	margin: 0 auto;
@@ -31,7 +33,7 @@
 	height: 35px;
 	width: 180px;
 	margin-top: 60px;
-	box-shadow: 10px 10px 5px #888888;
+	box-shadow: 10px 10px 5px #192B34;
 }
 .timeTitle{
 	margin-bottom: 5px;

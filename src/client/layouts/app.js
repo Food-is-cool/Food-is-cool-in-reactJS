@@ -1,28 +1,36 @@
-import React from 'react';
-import { Link } from 'react-router';
+import React from "react";
+import { Link } from "react-router";
 
-require('normalize.scss/normalize.scss');
-require('assets/styles/layout.scss');
+require("normalize.scss/normalize.scss");
+require("assets/styles/layout.scss");
 
-var img = require('assets/images/foodtrucklogo.png');
+var img = require("assets/images/foodtrucklogo.png");
 
 
-export default ({children}) => {
-  return (
-    <div>
-	    <nav>
-	      <Link to="/">Login</Link><br />
-	      <Link to="/truckProfile">Truck Profile</Link><br />
-	      <Link to="/whereWhen">Where When</Link><br />
-	      <Link to="/map">Map</Link><br />
-	      <Link to="/truckInfo">Truck Info</Link><br />
-	      <Link to="/customerProfile">Customer Profile</Link><br />
-	    </nav>
-	    	<div className="logoContainer">
-	      	<img className="logo" src={img} />
-	      	<div className="foodiscool">Food is cool</div>
-	      </div>
-    	{children}
-    </div>
-  )
+export default ({
+        children
+    }) => {
+    return (
+        <div>
+          <nav className="navs">
+            <Link to="/" className="nav">Login</Link>
+            <br />
+            <Link to="/truckProfile" className="nav">Truck Profile</Link>
+            <br />
+            <Link to="/whereWhen" className="nav">Where When</Link>
+            <br />
+            <Link to="/map" className="nav">Map</Link>
+            <br />
+            <Link to="/truckInfo" className="nav">Truck Info</Link>
+            <br />
+            <Link to="/customerProfile" className="nav">Customer Profile</Link>
+            <br />
+          </nav>
+          <div className="logoContainer">
+            <img className="logo" src={ img } />
+            <div className="foodiscool">Foodis.cool</div>
+          </div>
+          { children }
+        </div>
+    )
 }

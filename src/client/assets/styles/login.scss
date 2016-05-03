@@ -4,7 +4,7 @@
 	margin: 0 auto;
 	margin-top: 65px;
 	overflow: scroll;
-}	
+}
 
 .loginBox{
 	height: 300px;
@@ -26,35 +26,35 @@
 }
 
 .login{
-	background-color: #5e5a5a;
+	background-color: #5C6E77;
 	border: none;
 	width: 225px;
     height: 45px;
     margin-left:10px;
-    padding-left: 30px;	
-    border: 1px solid rgba(104,106,107,.9);
+    padding-left: 30px;
+    border: 1px solid rgba(13,32,42,.4);
     outline: none;
     margin-bottom: 2px;
 }
 .password{
-	background-color: #5e5a5a;
+	background-color: #5C6E77;
 	border: none;
 	width: 225px;
     height: 45px;
     margin-left:9px;
-    padding-left: 30px;	
-    border: 1px solid rgba(104,106,107,.9);
+    padding-left: 30px;
+	border: 1px solid rgba(13,32,42,.4);
     outline: none;
     margin-bottom: 2px;
 }
 .confirmPassword{
-	background-color: #5e5a5a;
+	background-color: #5C6E77;
 	border: none;
 	width: 225px;
     height: 45px;
     margin-left:9px;
-    padding-left: 30px;	
-    border: 1px solid rgba(104,106,107,.9);
+    padding-left: 30px;
+	border: 1px solid rgba(13,32,42,.4);
     outline: none;
 }
 .loginButton{
@@ -62,11 +62,15 @@
     height: 45px;
     margin-left: 35px;
     background-color: #e3e8e5;
-    margin-top: 25px;
+    margin-top: 15px;
     outline: none;
 }
 .fa {
 	margin-left: 10px;
 	position: relative;
 	left: 30px;
+}
+.radioButtons{
+	margin-left: 45px;
+	margin-top: 5px;
 }

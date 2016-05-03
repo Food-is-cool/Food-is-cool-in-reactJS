@@ -1,6 +1,13 @@
+import React from "react";
 import api from "api/api";
 
+let position = {};
+
 api.new("http://arcane-beach-47500.herokuapp.com/api/");
+
+navigator.geolocation.getCurrentPosition(function(currentPosition) {
+    position = currentPosition;
+});
 
 export function login(user, pass) {
     return api.login(user, pass);
@@ -10,11 +17,11 @@ export function getUsers() {
     return api.get("users/users/");
 }
 
-export function addNewUser(username, password, type) {
+export function addNewUser(username, password, isTruck) {
     const payload = {
         username: username,
         password: password,
-        is_staff: type === "foodTruckVendor"
+        is_staff: isTruck
     };
 
     return api.post("users/", payload)
@@ -59,12 +66,17 @@ export function getCurrentUser() {
         })
 }
 
-export function goToHomePage() {
+export function getHomePage() {
     return getCurrentUser()
         .then(function(userProfile) {
             if (userProfile.is_staff) {
-                return browserHistory.push("/truckProfile");
+                return "/truckProfile";
             }
-            browserHistory.push("/map");
+
+            return "/map";
         });
+}
+
+export function getCurrentPosition() {
+    return position;
 }

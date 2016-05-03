@@ -8,10 +8,17 @@ html, body {
   overflow: hidden;
   background: radial-gradient(circle, #5C6E77, #41545D, #0D202A);
 }
+.navs{
+    background-color: #5D553E;
+}
+.nav{
+    text-decoration: none;
+    color: white;
+}
 .logo{
 	height: 200px;
 	width: 200px;
-	position: relative;	
+	position: relative;
 	left: 152px;
 }
 .logoContainer{
@@ -28,4 +35,3 @@ html, body {
     top: -167px;
     left: 203px;
 }
-

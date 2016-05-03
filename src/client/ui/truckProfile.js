@@ -70,45 +70,37 @@ export default React.createClass({
     render: function() {
         return (
             <div className="truckProfile">
-              <form>
+              <form className="truckForm">
                 <div className="profileInput">
-                  <span className="label">Company Name:</span>
-                  <input ref="companyName" className="input" type="text" name="companyName" value={ this.state.companyName } onChange={ this.handleChange } />
+                  <input ref="companyName" placeholder="Company Name" className="input" type="text" name="companyName" value={ this.state.companyName } onChange={ this.handleChange } />
                   <br />
                 </div>
                 <div className="profileInput">
-                  <span className="label">Cuisine:</span>
-                  <input ref="cuisine" className="input" type="text" name="cuisine" value={ this.state.cuisine } onChange={ this.handleChange } />
+                  <input ref="cuisine" placeholder="Cuisine" className="input" type="text" name="cuisine" value={ this.state.cuisine } onChange={ this.handleChange } />
                   <br />
                 </div>
                 <div className="profileInput">
-                  <span className="label">Email:</span>
-                  <input ref="email" className="input" type="email" name="email" value={ this.state.email } onChange={ this.handleChange } />
+                  <input ref="email" placeholder="Email" className="input" type="email" name="email" value={ this.state.email } onChange={ this.handleChange } />
                   <br />
                 </div>
                 <div className="profileInput">
-                  <span className="label">Phone:</span>
-                  <input ref="phone" className="input" type="tel" name="phone" value={ this.state.phone } onChange={ this.handleChange } />
+                  <input ref="phone" placeholder="Phone" className="input" type="tel" name="phone" value={ this.state.phone } onChange={ this.handleChange } />
                   <br />
                 </div>
                 <div className="profileInput">
-                  <span className="label">Web Address:</span>
-                  <input ref="url" className="input" type="url" name="url" value={ this.state.url } onChange={ this.handleChange } />
+                  <input ref="url" placeholder="Web Address" className="input" type="url" name="url" value={ this.state.url } onChange={ this.handleChange } />
                   <br />
                 </div>
                 <div className="profileInput">
-                  <span className="label">facebook:</span>
-                  <input ref="facebook" className="input" type="url" name="facebook" value={ this.state.facebook } onChange={ this.handleChange } />
+                  <input ref="facebook" placeholder="facebook" className="input" type="url" name="facebook" value={ this.state.facebook } onChange={ this.handleChange } />
                   <br />
                 </div>
                 <div className="profileInput">
-                  <span className="label">Logo:</span>
-                  <input ref="logo" className="input" type="text" name="logo" value={ this.state.logo } onChange={ this.handleChange } />
+                  <input ref="logo" placeholder="Logo" className="input" type="text" name="logo" value={ this.state.logo } onChange={ this.handleChange } />
                   <br />
                 </div>
                 <div className="profileInput">
-                  <span className="label">Description:</span>
-                  <textarea ref="description" className="profileText" rows="4" cols="50" value={ this.state.description } onChange={ this.handleChange }></textarea>
+                  <textarea ref="description" placeholder="Description" className="profileText" rows="4" cols="50" value={ this.state.description } onChange={ this.handleChange }></textarea>
                   <br />
                 </div>
                 <button className="profileButton" type="button" onClick={ this.onSubmit }>Submit</button>

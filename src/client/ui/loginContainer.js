@@ -1,6 +1,6 @@
 import React from "react";
 import store from "store";
-import { login, goToHomePage } from "api/data";
+import { login, getHomePage } from "api/data";
 import { Link, browserHistory } from "react-router";
 
 require("assets/styles/login.scss");
@@ -23,7 +23,8 @@ export default React.createClass({
     handleSubmit: function(e) {
         e.preventDefault();
         login(this.state.username, this.state.password)
-            .then(goToHomePage);
+            .then(getHomePage)
+            .then(url => browserHistory.push(url));
     },
 
     render: function() {
