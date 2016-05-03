@@ -21,7 +21,7 @@ export default ({
             <br />
             <Link to="/map" className="nav">Map</Link>
             <br />
-            <Link to="/truckInfo" className="nav">Truck Info</Link>
+            <Link to="/truckInfo/8" className="nav">Truck Info</Link>
             <br />
             <Link to="/customerProfile" className="nav">Customer Profile</Link>
             <br />

@@ -1,5 +1,5 @@
 import React from "react";
-import { saveTruckProfile, getTruckProfile } from "api/data";
+import { saveTruckProfile, getCurrentTruckProfile } from "api/data";
 
 require("assets/styles/truckProfile.scss");
 
@@ -18,7 +18,7 @@ export default React.createClass({
     },
 
     componentWillMount: function() {
-        getTruckProfile().then(this.updateStateWithProfile);
+        getCurrentTruckProfile().then(this.updateStateWithProfile);
     },
 
     updateStateWithProfile: function(profile) {

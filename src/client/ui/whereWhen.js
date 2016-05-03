@@ -1,5 +1,5 @@
 import React from "react";
-import { saveTruckProfile, getCurrentPosition, getTruckProfile } from "api/data";
+import { saveTruckProfile, getCurrentPosition, getCurrentTruckProfile } from "api/data";
 require("assets/styles/whereWhen.scss");
 
 export default React.createClass({
@@ -9,10 +9,11 @@ export default React.createClass({
         };
     },
     componentWillMount: function() {
-        getTruckProfile().then(function(truck) {
-            this.setState({
-                id: truck.id
-            });
+        getCurrentTruckProfile().then(this.handleTruckInfo);
+    },
+    handleTruckInfo: function(truck) {
+        this.setState({
+            id: truck.id
         });
     },
     getButtonClasses: function(hours) {
@@ -38,8 +39,8 @@ export default React.createClass({
         const position = getCurrentPosition();
 
         const payload = {
-            expiration_time: expiration,
-            latitude: position.coords.latitude,
+            expiration: expiration,
+            latitutde: position.coords.latitude,
             longitude: position.coords.longitude
         };
 

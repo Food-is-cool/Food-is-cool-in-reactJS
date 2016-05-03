@@ -44,10 +44,17 @@ export function saveCustomerProfile(id, payload) {
     return api.patch("customers/" + id, payload);
 }
 
-export function getTruckProfile() {
+export function getCurrentTruckProfile() {
     return api.get("trucks/current/")
         .then(function(result) {
             return result.data.results[0];
+        })
+}
+
+export function getTruckProfile(truckId) {
+    return api.get("trucks/" + truckId)
+        .then(function(result) {
+            return result.data;
         })
 }
 
