@@ -36,15 +36,15 @@ export default React.createClass({
         let expiration = new Date();
         expiration.setHours(expiration.getHours() + this.state.selectedHours);
 
-        const position = getCurrentPosition();
+        getCurrentPosition().then(function(position) {
+            const payload = {
+                expiration: expiration,
+                latitutde: position.coords.latitude,
+                longitude: position.coords.longitude
+            };
 
-        const payload = {
-            expiration: expiration,
-            latitutde: position.coords.latitude,
-            longitude: position.coords.longitude
-        };
-
-        saveTruckProfile(this.state.id, payload);
+            saveTruckProfile(this.state.id, payload);
+        });
     },
     render: function() {
         return (

@@ -25,6 +25,8 @@ export default ({
             <br />
             <Link to="/customerProfile" className="nav">Customer Profile</Link>
             <br />
+            <Link to="/fakeTrucks" className="nav">Set up Fake Trucks</Link>
+            <br />
           </nav>
           <div className="logoContainer">
             <img className="logo" src={ img } />

@@ -1,43 +1,31 @@
 import React from "react";
-import { getCurrentPosition } from "api/data";
+import { getCurrentPosition, getAllTrucks } from "api/data";
 
 require("assets/styles/map.scss");
 
 export default React.createClass({
     getInitialState: function() {
         return {
-            trucks: [
-                {
-                    name: "Truck 1",
-                    latitude: 36.255530,
-                    longitude: -115.288492
-                },
-                {
-                    name: "Truck 2",
-                    latitude: 36.237384,
-                    longitude: -115.291366
-                },
-                {
-                    name: "Truck 3",
-                    latitude: 36.260676,
-                    longitude: -115.269751
-                },
-                {
-                    name: "Truck 4",
-                    latitude: 36.272446,
-                    longitude: -115.310956
-                }
-            ]
+            trucks: []
         };
     },
 
     componentDidMount: function() {
-        const position = getCurrentPosition();
-        this.handlePosition(position);
-    },
+        getCurrentPosition().then(this.handlePosition);
 
+        getAllTrucks().then(this.onTrucks);
+    },
+    onTrucks: function(trucks) {
+        this.setState({
+            trucks: trucks
+        });
+
+        this.makeTruckMarkers();
+    },
     handlePosition: function(position) {
-        this.position = position;
+        this.setState({
+            position: position
+        });
 
         this.map = new google.maps.Map(document.getElementById("map"), {
             center: {
@@ -67,37 +55,53 @@ export default React.createClass({
         // TODO: We could use position.coords.accuracy (meters) to draw a circle around the "home" indicator
         // to indicate the accuracy.
 
-        this.markers = this.state.trucks.map(this.makeTruckMarker);
+        this.makeTruckMarkers();
+    },
+
+    makeTruckMarkers: function() {
+        if (this.map && this.state.trucks) {
+            this.markers = this.state.trucks.map(this.makeTruckMarker);
+        }
     },
 
     makeTruckMarker: function(truck) {
         const marker = new google.maps.Marker({
             position: {
-                lat: truck.latitude,
+                lat: truck.latitutde,
                 lng: truck.longitude
             },
             map: this.map,
-            title: truck.name
+            title: truck.truck_name
         });
 
-        const infowindow = new google.maps.InfoWindow({
+        let self = this;
+        marker.addListener("click", function() {
+            self.showInfoWindow(truck, marker);
+        });
+    },
+
+    showInfoWindow: function(truck, marker) {
+        if (this.infowindow) {
+            this.infowindow.close();
+        }
+
+        this.infowindow = new google.maps.InfoWindow({
             content: `
         <H2>${truck.name}</H2>
         <H3><i>Cuisine</i></H3>
-        <a href='/truckInfo'>Get Details...</a>
-        <a href='http://maps.google.com/?saddr=${this.position.coords.latitude},${this.position.coords.longitude}&daddr=${truck.latitude},${truck.longitude}'>Get Directions...</a>
+        <a href='/truckInfo/${truck.id}'>Get Details...</a>
+        <a href='http://maps.google.com/?saddr=${this.state.position.coords.latitude},${this.state.position.coords.longitude}&daddr=${truck.latitude},${truck.longitude}'>Get Directions...</a>
         `
         });
-
-        marker.addListener("click", function() {
-            infowindow.open(this.map, marker);
-        });
+        this.infowindow.open(this.map, marker);
     },
 
     render: function() {
         return (
             <div className="mapContainer">
-              <div className="map" id="map"></div>
+              <div className="map" id="map">
+                Loading...
+              </div>
             </div>
         )
     }

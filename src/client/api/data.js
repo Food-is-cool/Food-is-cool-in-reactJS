@@ -1,12 +1,16 @@
 import React from "react";
 import api from "api/api";
 
-let position = {};
+let positionResolves = [];
+let position = undefined;
 
 api.new("http://arcane-beach-47500.herokuapp.com/api/");
 
 navigator.geolocation.getCurrentPosition(function(currentPosition) {
+    console.log("Got the lat/long");
     position = currentPosition;
+    positionResolves.forEach(resolve => resolve(position));
+    positionResolves = [];
 });
 
 export function login(user, pass) {
@@ -42,6 +46,13 @@ export function getCustomerProfile() {
 
 export function saveCustomerProfile(id, payload) {
     return api.patch("customers/" + id, payload);
+}
+
+export function getAllTrucks() {
+    return api.get("trucks/")
+        .then(function(result) {
+            return result.data.results;
+        });
 }
 
 export function getCurrentTruckProfile() {
@@ -85,5 +96,13 @@ export function getHomePage() {
 }
 
 export function getCurrentPosition() {
-    return position;
+    if (position) {
+        return new Promise(resolve => {
+            resolve(position);
+        });
+    }
+
+    return new Promise(resolve => {
+        positionResolves.push(resolve);
+    });
 }
