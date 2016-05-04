@@ -39,7 +39,7 @@ export default React.createClass({
         getCurrentPosition().then(function(position) {
             const payload = {
                 expiration: expiration,
-                latitutde: position.coords.latitude,
+                latitude: position.coords.latitude,
                 longitude: position.coords.longitude
             };
 

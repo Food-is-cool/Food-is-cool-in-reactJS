@@ -1,6 +1,6 @@
 import React from "react";
 import store from "store";
-import { addNewUser, getHomePage } from "api/data";
+import { addNewUser } from "api/data";
 import { Link, browserHistory } from "react-router";
 
 
@@ -38,8 +38,14 @@ export default React.createClass({
         }
 
         addNewUser(this.state.username, this.state.password, this.state.isTruck)
-            .then(getHomePage)
-            .then(url => browserHistory.push(url));
+            .then(function() {
+                if (window.localStorage.getItem("is_truck")) {
+                    browserHistory.push("/truckProfile");
+
+                } else {
+                    browserHistory.push("/customerProfile");
+                }
+            });
     },
 
     render: function() {

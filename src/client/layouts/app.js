@@ -1,12 +1,17 @@
 import React from "react";
 import { Link } from "react-router";
+import { logout } from "api/data";
 
 require("normalize.scss/normalize.scss");
 require("assets/styles/layout.scss");
 
 var img = require("assets/images/foodtrucklogo.png");
 
+function onLogout(e) {
+    e.preventDefault();
 
+    logout();
+}
 export default ({
         children
     }) => {
@@ -32,6 +37,7 @@ export default ({
             <img className="logo" src={ img } />
             <div className="foodiscool">Foodis.cool</div>
           </div>
+          <button onClick={ onLogout }>Logout</button>
           { children }
         </div>
     )

@@ -1,6 +1,6 @@
 import React from "react";
 import store from "store";
-import { login, getHomePage } from "api/data";
+import { login } from "api/data";
 import { Link, browserHistory } from "react-router";
 
 require("assets/styles/login.scss");
@@ -23,8 +23,15 @@ export default React.createClass({
     handleSubmit: function(e) {
         e.preventDefault();
         login(this.state.username, this.state.password)
-            .then(getHomePage)
-            .then(url => browserHistory.push(url));
+            .then(function() {
+                debugger;
+                if (window.localStorage.getItem("is_truck")) {
+                    browserHistory.push("/whereWhen");
+
+                } else {
+                    browserHistory.push("/map");
+                }
+            });
     },
 
     render: function() {

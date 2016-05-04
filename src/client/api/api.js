@@ -8,7 +8,7 @@ instance.new = function(url) {
 };
 
 instance.interceptors.request.use(function(config) {
-    var token = Cookie.get("token");
+    var token = window.localStorage.getItem("token");
     if (token) {
         config.headers.Authorization = "Token " + token;
     }
@@ -21,10 +21,20 @@ instance.login = function(user, pass) {
         password: pass
     };
 
+    const self = this;
+
     return this.post("api-token-auth/", payload)
-        .then(function(resp) {
-            Cookie.set("token", resp.data.token);
-            return resp;
+        .then(function(result) {
+            window.localStorage.setItem("token", result.data.token);
+
+            return self.get("api/trucks/users/current/");
+        })
+        .then(function(result) {
+            const is_truck = (result.count > 0);
+            window.localStorage.setItem("is_truck", is_truck);
+        })
+        .catch(function(err) {
+            window.localStorage.removeItem("is_truck");
         });
 };
 

@@ -42,7 +42,7 @@ export default React.createClass({
 
                     const payload = {
                         expiration: expiration,
-                        latitutde: location.latitude,
+                        latitude: location.latitude,
                         longitude: location.longitude
                     };
                     debugger;

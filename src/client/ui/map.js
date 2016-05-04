@@ -67,7 +67,7 @@ export default React.createClass({
     makeTruckMarker: function(truck) {
         const marker = new google.maps.Marker({
             position: {
-                lat: truck.latitutde,
+                lat: truck.latitude,
                 lng: truck.longitude
             },
             map: this.map,
