@@ -1,6 +1,8 @@
 import React from "react";
 import { saveTruckProfile, getCurrentTruckProfile } from "api/data";
 import { notify } from "react-notify-toast";
+import MaskedInput from "react-maskedinput";
+import { emailRegEx, urlRegEx } from "utils/regEx";
 
 require("assets/styles/truckProfile.scss");
 
@@ -45,7 +47,7 @@ export default React.createClass({
             companyName: this.refs.companyName.value,
             cuisine: this.refs.cuisine.value,
             email: this.refs.email.value,
-            phone: this.refs.phone.value,
+            phone: this.refs.phone.input.value,
             url: this.refs.url.value,
             facebook: this.refs.facebook.value,
             logo: this.refs.logo.value,
@@ -54,11 +56,43 @@ export default React.createClass({
     },
 
     onSubmit: function() {
+        if (!this.state.companyName) {
+            return notify.show("Please enter your Company name!", "error");
+        }
+
+        if (!this.state.cuisine) {
+            return notify.show("Please enter a type of Cuisine!", "error");
+        }
+
+        if (!emailRegEx.test(this.state.email)) {
+            return notify.show("Please enter a valid email address.", "error");
+        }
+
+        if (!this.state.phone || this.state.phone.indexOf("_") >= 0) {
+            return notify.show("Please enter a full 10-digit phone number", "error");
+        }
+
+        if (!urlRegEx.test(this.state.url)) {
+            return notify.show("Please enter a valid url address.", "error");
+        }
+
+        if (!urlRegEx.test(this.state.facebook)) {
+            return notify.show("Please enter a valid facebook address.", "error");
+        }
+
+        if (!urlRegEx.test(this.state.logo)) {
+            return notify.show("Please enter a valid logo url address.", "error");
+        }
+
+        if (!this.state.description) {
+            return notify.show("Please enter your Company's description!", "error");
+        }
+
         const payload = {
             truck_name: this.state.companyName,
             cuisine: this.state.cuisine,
             email_address: this.state.email,
-            phone_number: this.state.phone,
+            phone_number: this.state.phone.replace(/\D/g, ""),
             website: this.state.url,
             facebook_page: this.state.facebook,
             logo_url: this.state.logo,
@@ -88,7 +122,8 @@ export default React.createClass({
                   <br />
                 </div>
                 <div className="profileInput">
-                  <input ref="phone" placeholder="Phone" className="input" type="tel" name="phone" value={ this.state.phone } onChange={ this.handleChange } />
+                  <MaskedInput mask="(111) 111-1111" ref="phone" placeholder="Phone" className="input" type="tel" name="phone" value={ this.state.phone } onChange={ this.handleChange }
+                  />
                   <br />
                 </div>
                 <div className="profileInput">

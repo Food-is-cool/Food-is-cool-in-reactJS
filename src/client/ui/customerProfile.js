@@ -2,11 +2,9 @@ import React from "react";
 import { getCustomerProfile, saveCustomerProfile } from "api/data";
 import { notify } from "react-notify-toast";
 import MaskedInput from "react-maskedinput";
+import { emailRegEx } from "utils/regEx";
 
 require("assets/styles/customerProfile.scss");
-
-// Got this ugly regex from http://stackoverflow.com/questions/46155/validate-email-address-in-javascript
-const emailRegEx = /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+(?:[A-Z]{2}|com|org|net|gov|mil|biz|info|mobi|name|aero|jobs|museum)\b/;
 
 export default React.createClass({
     getInitialState: function() {
