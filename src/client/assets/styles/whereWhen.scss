@@ -2,15 +2,47 @@
 	height: 100px;
 	width: 798px;
 	box-shadow: 10px 10px 5px #192B34;
+	border:none;
+	border-radius: 12px;
+	outline: none;
+	background-color: #C0C0C0;
+	border-bottom:7px solid #5C6E77;
+}
+.setLocation:active {
+	height: 90px;
+	width: 798px;
+	border-radius: 12px;
+	box-shadow: 10px 10px 5px #192B34;
+	outline: none;
+	border-bottom: none;
+	margin-top: 10px;
 }
 .setTime{
 	height: 100px;
 	width: 250px;
-	margin-bottom: 20px;
 	box-shadow: 10px 10px 5px #192B34;
+	border:none;
+	border-radius: 12px;
+	outline: none;
+	background-color: #C0C0C0;
+	border-bottom:7px solid #5C6E77;
+	margin-bottom: 20px;
+
+}
+.setTime:active {
+	height: 90px;
+	width: 250px;
+	border-radius: 12px;
+	box-shadow: 10px 10px 5px #192B34;
+	outline: none;
+	border-bottom: none;
+	margin-top: 10px;
+	margin-bottom: 20px;
 }
 .selectedTime{
-	background-color: blue;
+	background-color: #0D202A;
+	outline: none;
+	color:white;
 }
 .whereWhenContainer{
 	margin: 0 auto;
@@ -29,15 +61,33 @@
 	height: 450px;
 	width: 800px;
 }
+
 .updateProfile{
 	height: 35px;
 	width: 180px;
-	margin-top: 60px;
+	margin-top: 2px;
 	box-shadow: 10px 10px 5px #192B34;
+	border:none;
+	border-radius: 6px;
+	outline: none;
+	background-color: #C0C0C0;
+	border-bottom:3px solid #5C6E77;
+}
+.updateProfile:active {
+	height: 33px;
+	width: 180px;
+	margin-top: 2px;
+	border-radius: 6px;
+	box-shadow: 10px 10px 5px #192B34;
+	outline: none;
+	border-bottom: none;
+	margin-top: 5px;
 }
 .timeTitle{
 	margin-bottom: 5px;
+	color: #BCB08F;
 }
 .locationTitle{
 	margin-bottom: 5px;
+	color: #BCB08F;
 }

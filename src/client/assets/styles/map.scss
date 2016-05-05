@@ -9,3 +9,42 @@
 .map {
 	height: 100%;
 }
+
+#map > div:nth-child(1) > div:nth-child(1) > div:nth-child(4) > div:nth-child(4) > div:nth-child(1) > div:nth-child(1) > div:nth-child(4) {
+	background: #927D65 !important;
+	//border-radius: 20px !important;
+}
+
+#map > div:nth-child(1) > div:nth-child(1) > div:nth-child(4) > div:nth-child(4) > div:nth-child(1) > div:nth-child(1) > div:nth-child(3) > div:nth-child(1) > div:nth-child(1) {
+	background: #927D65 !important;
+	//border-radius: 20px !important;
+}
+
+#map > div:nth-child(1) > div:nth-child(1) > div:nth-child(4) > div:nth-child(4) > div:nth-child(1) > div:nth-child(1) > div:nth-child(3) > div:nth-child(2) > div:nth-child(1) {
+	background: #927D65 !important;
+	//border-radius: 20px !important;
+}
+
+.truckPopup a {
+	color:black;
+}
+
+.customerProfile{
+	height: 35px;
+	width: 180px;
+	margin-top: 10px;
+	box-shadow: 10px 10px 5px #192B34;
+	border:none;
+	border-radius: 6px;
+	outline: none;
+	border-bottom:3px solid #5C6E77;
+}
+.customerProfile:active {
+	height: 30px;
+	width: 180px;
+	margin-top: 10px;
+	border-radius: 6px;
+	box-shadow: 10px 10px 5px #192B34;
+	outline: none;
+	border-bottom: none;
+}

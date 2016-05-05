@@ -1,5 +1,6 @@
 import React from "react";
 import { getCustomerProfile, saveCustomerProfile } from "api/data";
+import StatesDropdown from "ui/statesDropdown";
 
 require("assets/styles/customerProfile.scss");
 
@@ -72,45 +73,45 @@ export default React.createClass({
             <div className="customerContainer">
               <form>
                 <div className="CustomerProfileInput">
-                  <span className="label">Name:</span>
+                  <span className="CustomerLabel">Name:</span>
                   <br />
                   <input ref="name" className="customerInput" type="text" name="name" value={ this.state.name } onChange={ this.handleChange } />
                   <br />
                 </div>
                 <div className="CustomerProfileInput">
-                  <span className="label">Email:</span>
+                  <span className="CustomerLabel">Email:</span>
                   <br />
                   <input ref="email" className="customerInput" type="email" name="email" value={ this.state.email } onChange={ this.handleChange } />
                   <br />
                 </div>
                 <div className="CustomerProfileInput">
-                  <span className="label">Phone:</span>
+                  <span className="CustomerLabel">Phone:</span>
                   <br />
                   <input ref="phone" className="customerInput" type="tel" name="phone" value={ this.state.phone } onChange={ this.handleChange } />
                   <br />
                 </div>
                 <div></div>
                 <div className="CustomerProfileInput">
-                  <span className="label">Address:</span>
+                  <span className="CustomerLabel">Address:</span>
                   <br />
                   <input ref="address" className="customerInput" type="text" name="address" value={ this.state.address } onChange={ this.handleChange } />
                   <br />
                 </div>
                 <div className="cszBox">
                   <div className="CustomerProfileInput">
-                    <span className="label">City:</span>
+                    <span className="CustomerLabel">City:</span>
                     <br />
                     <input ref="city" className="customerInputCity" type="text" name="city" value={ this.state.city } onChange={ this.handleChange } />
                     <br />
                   </div>
                   <div className="CustomerProfileInput">
-                    <span className="label">State:</span>
+                    <span className="CustomerLabel">State:</span>
                     <br />
                     <input ref="state" className="customerInputState" type="text" name="state" value={ this.state.state } onChange={ this.handleChange } />
                     <br />
                   </div>
                   <div className="CustomerProfileInput">
-                    <span className="label">Zip Code:</span>
+                    <span className="CustomerLabel">Zip Code:</span>
                     <br />
                     <input ref="zipcode" className="customerInputZip" type="text" name="zipcode" value={ this.state.zipcode } onChange={ this.handleChange } />
                     <br />
@@ -123,6 +124,7 @@ export default React.createClass({
                 <label className="checkLabel">Opt in to recieve texts of specials and Food Trucks in your area?</label>
                 <br />
                 <button className="customerSubmit" type="button" onClick={ this.onSubmit }>Submit</button>
+                <StatesDropdown />
               </form>
               <div className="arrowgray"></div>
               <div className="recgray"></div>

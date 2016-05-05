@@ -2,7 +2,6 @@ import React from "react";
 import { getTruckProfile } from "api/data";
 
 require("assets/styles/truckInfo.scss");
-var img = require("assets/images/lena.png");
 
 export default React.createClass({
     getInitialState: function() {

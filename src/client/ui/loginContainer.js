@@ -24,8 +24,8 @@ export default React.createClass({
         e.preventDefault();
         login(this.state.username, this.state.password)
             .then(function() {
-                debugger;
-                if (window.localStorage.getItem("is_truck")) {
+                const is_truck = JSON.parse(window.localStorage.getItem("is_truck"));
+                if (is_truck) {
                     browserHistory.push("/whereWhen");
 
                 } else {

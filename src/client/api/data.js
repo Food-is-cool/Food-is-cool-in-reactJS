@@ -35,6 +35,7 @@ export function addNewUser(username, password, isTruck) {
 
     return api.post(url, payload)
         .then(function() {
+            debugger;
             return api.login(username, password);
         })
         .catch(function(err) {
@@ -43,14 +44,14 @@ export function addNewUser(username, password, isTruck) {
 }
 
 export function getCustomerProfile() {
-    return api.get("api/customers/current/")
+    return api.get("api/customers/users/current/")
         .then(function(result) {
             return result.data.results[0];
         })
 }
 
 export function saveCustomerProfile(id, payload) {
-    return api.patch("api/customers/" + id, payload);
+    return api.patch("api/customers/users/" + id, payload);
 }
 
 export function getAllTrucks() {
@@ -63,13 +64,12 @@ export function getAllTrucks() {
 export function getCurrentTruckProfile() {
     return api.get("api/trucks/users/current/")
         .then(function(result) {
-            debugger;
             return result.data.results[0];
         })
 }
 
 export function getTruckProfile(truckId) {
-    return api.get("api/trucks/" + truckId)
+    return api.get("api/trucks/users/" + truckId)
         .then(function(result) {
             return result.data;
         })
@@ -77,10 +77,9 @@ export function getTruckProfile(truckId) {
 
 export function saveTruckProfile(id, payload) {
     if (!id) {
-        return api.post("api/trucks/", payload);
+        return api.post("api/trucks/users/", payload);
     }
-
-    return api.patch("api/trucks/" + id, payload);
+    return api.patch("api/trucks/users/" + id, payload);
 }
 
 export function getCurrentPosition() {

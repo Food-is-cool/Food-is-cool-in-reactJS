@@ -3,6 +3,39 @@ import { getCurrentPosition, getAllTrucks } from "api/data";
 
 require("assets/styles/map.scss");
 
+const mapStyles = [
+    {
+        featureType: "all",
+        stylers: [
+            {
+                saturation: -80
+            }
+        ]
+    }, {
+        featureType: "road.arterial",
+        elementType: "geometry",
+        stylers: [
+            {
+                hue: "#0D202A"
+            },
+            {
+                saturation: 30
+            },
+            {
+                lightness: -30
+            }
+        ]
+    }, {
+        featureType: "poi.business",
+        elementType: "labels",
+        stylers: [
+            {
+                visibility: "on"
+            }
+        ]
+    }
+];
+
 export default React.createClass({
     getInitialState: function() {
         return {
@@ -33,6 +66,10 @@ export default React.createClass({
                 lng: position.coords.longitude
             },
             zoom: 15
+        });
+
+        this.map.setOptions({
+            styles: mapStyles
         });
 
         this.home = new google.maps.Marker({
@@ -87,10 +124,13 @@ export default React.createClass({
 
         this.infowindow = new google.maps.InfoWindow({
             content: `
-        <H2>${truck.name}</H2>
-        <H3><i>Cuisine</i></H3>
-        <a href='/truckInfo/${truck.id}'>Get Details...</a>
-        <a href='http://maps.google.com/?saddr=${this.state.position.coords.latitude},${this.state.position.coords.longitude}&daddr=${truck.latitude},${truck.longitude}'>Get Directions...</a>
+            <div class="truckPopup">
+                <h2>${truck.truck_name}</h2>
+                <div><i>Cuisine: ${truck.cuisine}</i></div>
+                <div>Time Left:</div>
+                <a href='/truckInfo/${truck.id}'>Get Details...</a>
+                <a href='http://maps.google.com/?saddr=${this.state.position.coords.latitude},${this.state.position.coords.longitude}&daddr=${truck.latitude},${truck.longitude}'>Get Directions...</a>
+            </div>
         `
         });
         this.infowindow.open(this.map, marker);
@@ -102,6 +142,7 @@ export default React.createClass({
               <div className="map" id="map">
                 Loading...
               </div>
+              <button className="customerProfile">Update Profile</button>
             </div>
         )
     }

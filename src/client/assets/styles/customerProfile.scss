@@ -41,12 +41,30 @@
 }
 .checkLabel{
 	margin-left: 10px;
+	color: #BCB08F;
+}
+.CustomerLabel{
+	color: #BCB08F;
 }
 .customerSubmit{
+	height: 35px;
+	width: 180px;
 	margin-top: 15px;
-    box-shadow: 10px 10px 5px #192B34;
-    height: 35px;
-    width: 180px;
+	box-shadow: 10px 10px 5px #192B34;
+	border:none;
+	border-radius: 6px;
+	outline: none;
+	background-color: #C0C0C0;
+	border-bottom:4px solid #5C6E77;
+}
+.customerSubmit:active {
+	height: 37px;
+	width: 180px;
+	margin-top: 15px;
+	border-radius: 6px;
+	box-shadow: 10px 10px 5px #192B34;
+	outline: none;
+	border-bottom: none;
 }
 .arrow {
     position: relative;
@@ -56,7 +74,7 @@
     height: 0;
     border-style: solid;
     border-width: 50px 0 50px 40px;
-    border-color: transparent rgb(180, 41, 46);
+    border-color: transparent #927D65;
 }
 
 .rec {
@@ -65,8 +83,9 @@
     left: -307px;
     width: 227px;
     height: 100px;
-    background-color: rgb(180, 41, 46);
+    background-color: #927D65;
     padding:20px;
+	color:whitesmoke;
 }
 
 .arrowgray {
