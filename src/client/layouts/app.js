@@ -13,33 +13,49 @@ function onLogout(e) {
 
     logout();
 }
+
+function getNavs() {
+    if (!window.localStorage.getItem("token")) {
+        return (<div className="navs"></div>);
+    }
+
+    const is_truck = window.localStorage.getItem("is_truck") === "true";
+
+    if (is_truck) {
+        return (
+            <nav className="navs">
+              <Link to="/truckProfile" className="nav">Truck Profile</Link>
+              <br />
+              <Link to="/whereWhen" className="nav">Where When</Link>
+              <button onClick={ onLogout }>Logout</button>
+            </nav>
+            );
+    }
+
+    return (
+        <nav className="navs">
+          <Link to="/map" className="nav">Map</Link>
+          <br />
+          <Link to="/customerProfile" className="nav">Customer Profile</Link>
+          <button onClick={ onLogout }>Logout</button>
+        </nav>
+        );
+}
+
 export default ({
         children
     }) => {
+
     return (
         <div>
           <Notifications />
-          <nav className="navs">
-            <Link to="/" className="nav">Login</Link>
-            <br />
-            <Link to="/truckProfile" className="nav">Truck Profile</Link>
-            <br />
-            <Link to="/whereWhen" className="nav">Where When</Link>
-            <br />
-            <Link to="/map" className="nav">Map</Link>
-            <br />
-            <Link to="/truckInfo/3" className="nav">Truck Info</Link>
-            <br />
-            <Link to="/customerProfile" className="nav">Customer Profile</Link>
-            <br />
-            <Link to="/fakeTrucks" className="nav">Set up Fake Trucks</Link>
-            <br />
-          </nav>
+          { getNavs() }
           <div className="logoContainer">
-            <img className="logo" src={ img } />
-            <div className="foodiscool">Foodis.cool</div>
+            <a href="/fakeTrucks">
+              <img className="logo" src={ img } />
+              <div className="foodiscool">Foodis.cool</div>
+            </a>
           </div>
-          <button onClick={ onLogout }>Logout</button>
           { children }
         </div>
     )

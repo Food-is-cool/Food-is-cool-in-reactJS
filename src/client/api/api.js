@@ -33,7 +33,9 @@ instance.login = function(user, pass) {
             window.localStorage.setItem("is_truck", is_truck);
         })
         .catch(function(err) {
+            window.localStorage.removeItem("token");
             window.localStorage.removeItem("is_truck");
+            throw err;
         });
 };
 

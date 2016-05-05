@@ -2,7 +2,8 @@ import React from "react";
 import store from "store";
 import { addNewUser } from "api/data";
 import { Link, browserHistory } from "react-router";
-
+import { notify } from "react-notify-toast";
+import _ from "lodash";
 
 require("assets/styles/newUser.scss");
 
@@ -45,7 +46,20 @@ export default React.createClass({
                 } else {
                     browserHistory.push("/customerProfile");
                 }
-            });
+            })
+            .catch(function(err) {
+                const messages = _.map(err.data, function(messages, field) {
+                    if (field === "non_field_errors") {
+                        return messages[0];
+                    }
+
+                    return `${field}: ${messages[0]}`;
+                });
+
+                const message = messages[0] || "An unknown error occurred";
+
+                notify.show(message, "error");
+            })
     },
 
     render: function() {

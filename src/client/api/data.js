@@ -35,11 +35,7 @@ export function addNewUser(username, password, isTruck) {
 
     return api.post(url, payload)
         .then(function() {
-            debugger;
             return api.login(username, password);
-        })
-        .catch(function(err) {
-            console.log(err);
         });
 }
 

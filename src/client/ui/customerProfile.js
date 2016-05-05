@@ -26,6 +26,10 @@ export default React.createClass({
     },
 
     updateStateWithProfile: function(profile) {
+        if (!profile) {
+            return;
+        }
+
         this.setState({
             id: profile.id,
             name: profile.customer_name || "",
