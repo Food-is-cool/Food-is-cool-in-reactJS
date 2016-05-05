@@ -59,6 +59,7 @@ export default React.createClass({
         }
 
         this.infowindow = undefined;
+        this.unmounted = true;
     },
 
     updateTimeLeft: function() {
@@ -80,13 +81,22 @@ export default React.createClass({
     },
 
     onTrucks: function(trucks) {
+        if (this.unmounted) {
+            return;
+        }
+
         this.setState({
             trucks: trucks
         });
 
         this.makeTruckMarkers();
     },
+
     handlePosition: function(position) {
+        if (this.unmounted) {
+            return;
+        }
+
         this.setState({
             position: position
         });
@@ -185,10 +195,7 @@ export default React.createClass({
     onSubmit: function(e) {
         e.preventDefault();
 
-        // If user navigates away before we have the position React complains
-        if (this.state.position) {
-            browserHistory.push("/customerProfile");
-        }
+        browserHistory.push("/customerProfile");
     },
 
     render: function() {
