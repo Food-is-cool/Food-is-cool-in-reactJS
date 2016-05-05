@@ -1,6 +1,6 @@
 import React from "react";
 import { getCustomerProfile, saveCustomerProfile } from "api/data";
-import StatesDropdown from "ui/statesDropdown";
+import { notify } from "react-notify-toast";
 
 require("assets/styles/customerProfile.scss");
 
@@ -26,15 +26,15 @@ export default React.createClass({
     updateStateWithProfile: function(profile) {
         this.setState({
             id: profile.id,
-            name: profile.customer_name,
-            email: profile.email_address,
-            phone: profile.mobile_number,
-            address: profile.street_address,
-            city: profile.city,
-            state: profile.state,
-            zipcode: profile.zipcode,
-            emailOpt: profile.want_emails,
-            textOpt: profile.want_texts
+            name: profile.customer_name || "",
+            email: profile.email_address || "",
+            phone: profile.mobile_number || "",
+            address: profile.street_address || "",
+            city: profile.city || "",
+            state: profile.state || "",
+            zipcode: profile.zipcode || "",
+            emailOpt: profile.want_emails || false,
+            textOpt: profile.want_texts || false
         });
     },
 
@@ -65,7 +65,10 @@ export default React.createClass({
             want_texts: this.state.textOpt
         };
 
-        saveCustomerProfile(this.state.id, payload);
+        saveCustomerProfile(this.state.id, payload)
+            .then(function() {
+                notify.show("Your profile has been Saved!", "success");
+            })
     },
 
     render: function() {
@@ -124,7 +127,6 @@ export default React.createClass({
                 <label className="checkLabel">Opt in to recieve texts of specials and Food Trucks in your area?</label>
                 <br />
                 <button className="customerSubmit" type="button" onClick={ this.onSubmit }>Submit</button>
-                <StatesDropdown />
               </form>
               <div className="arrowgray"></div>
               <div className="recgray"></div>

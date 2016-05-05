@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router";
 import { logout } from "api/data";
+import Notifications from "react-notify-toast";
 
 require("normalize.scss/normalize.scss");
 require("assets/styles/layout.scss");
@@ -17,6 +18,7 @@ export default ({
     }) => {
     return (
         <div>
+          <Notifications />
           <nav className="navs">
             <Link to="/" className="nav">Login</Link>
             <br />
@@ -26,7 +28,7 @@ export default ({
             <br />
             <Link to="/map" className="nav">Map</Link>
             <br />
-            <Link to="/truckInfo/3"className="nav">Truck Info</Link>
+            <Link to="/truckInfo/3" className="nav">Truck Info</Link>
             <br />
             <Link to="/customerProfile" className="nav">Customer Profile</Link>
             <br />

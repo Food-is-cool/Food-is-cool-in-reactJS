@@ -25,19 +25,14 @@ instance.login = function(user, pass) {
 
     return this.post("api-token-auth/", payload)
         .then(function(result) {
-            debugger;
             window.localStorage.setItem("token", result.data.token);
-            debugger;
             return self.get("api/users/current/")
         })
         .then(function(result) {
-            debugger;
             const is_truck = (result.data.count > 0) && result.data.results[0].is_truck;
-            debugger;
             window.localStorage.setItem("is_truck", is_truck);
         })
         .catch(function(err) {
-            debugger;
             window.localStorage.removeItem("is_truck");
         });
 };

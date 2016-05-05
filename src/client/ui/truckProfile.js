@@ -1,5 +1,6 @@
 import React from "react";
 import { saveTruckProfile, getCurrentTruckProfile } from "api/data";
+import { notify } from "react-notify-toast";
 
 require("assets/styles/truckProfile.scss");
 
@@ -64,7 +65,10 @@ export default React.createClass({
             truck_description: this.state.description
         };
 
-        saveTruckProfile(this.state.id, payload);
+        saveTruckProfile(this.state.id, payload)
+            .then(function() {
+                notify.show("Your profile has been Saved!", "success");
+            })
     },
 
     render: function() {

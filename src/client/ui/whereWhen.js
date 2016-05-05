@@ -1,5 +1,8 @@
 import React from "react";
 import { saveTruckProfile, getCurrentPosition, getCurrentTruckProfile } from "api/data";
+import { browserHistory } from "react-router";
+
+
 require("assets/styles/whereWhen.scss");
 
 export default React.createClass({
@@ -46,6 +49,10 @@ export default React.createClass({
             saveTruckProfile(this.state.id, payload);
         });
     },
+    updateProfile: function(e) {
+        e.preventDefault();
+        browserHistory.push("/truckProfile");
+    },
     render: function() {
         return (
             <div className="wwContainer">
@@ -62,7 +69,7 @@ export default React.createClass({
                 <div className="locationTitle">Click to set location!</div>
                 <button className="setLocation" onClick={ this.onSubmit }>Set Location</button>
               </form>
-              <button className="updateProfile">Update Profile</button>
+              <button onClick={ this.updateProfile } className="updateProfile">Update Profile</button>
             </div>
         )
     }

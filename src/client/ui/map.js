@@ -1,5 +1,7 @@
 import React from "react";
+import Moment from "moment";
 import { getCurrentPosition, getAllTrucks } from "api/data";
+import { browserHistory } from "react-router";
 
 require("assets/styles/map.scss");
 
@@ -45,9 +47,38 @@ export default React.createClass({
 
     componentDidMount: function() {
         getCurrentPosition().then(this.handlePosition);
-
         getAllTrucks().then(this.onTrucks);
+
+        this.interval_id = setInterval(this.updateTimeLeft, 1000);
     },
+
+    componentWillUnMount: function() {
+        if (this.interval_id) {
+            clearInterval(this.interval_id);
+            this.interval_id = undefined;
+        }
+
+        this.infowindow = undefined;
+    },
+
+    updateTimeLeft: function() {
+        const timeLeft = document.getElementById("timeLeft");
+        const hereUntil = document.getElementById("hereUntil");
+        if (timeLeft) {
+            const expiration = Moment(this.infowindow.expiration);
+            const diff = expiration.diff(new Moment(), "milliseconds");
+            if (diff < 0) {
+                hereUntil.innerHTML = "Already gone";
+                timeLeft.innerHTML = "...";
+                return;
+            }
+
+            const remaining = Moment.utc(diff).format("H:mm:ss");
+            hereUntil.innerHTML = expiration.format("h:mm:ss A");
+            timeLeft.innerHTML = remaining;
+        }
+    },
+
     onTrucks: function(trucks) {
         this.setState({
             trucks: trucks
@@ -102,6 +133,10 @@ export default React.createClass({
     },
 
     makeTruckMarker: function(truck) {
+        if (!truck.latitude || !truck.longitude) {
+            return;
+        }
+
         const marker = new google.maps.Marker({
             position: {
                 lat: truck.latitude,
@@ -125,15 +160,35 @@ export default React.createClass({
         this.infowindow = new google.maps.InfoWindow({
             content: `
             <div class="truckPopup">
-                <h2>${truck.truck_name}</h2>
-                <div><i>Cuisine: ${truck.cuisine}</i></div>
-                <div>Time Left:</div>
+                <div class="truckName">${truck.truck_name}</div>
+                <div class="cuisine_container">
+                    <span class="cuisine">Cuisine:</span>
+                    <span> ${truck.cuisine}</span>
+                </div>
+                <div class="time_container">
+                    <span class="time">Time Remaining:</span>
+                    <span id="timeLeft"></span>
+                </div>
+                <div class="time_container">
+                    <span class="time">Here Until:</span>
+                    <span id="hereUntil"></span>
+                </div>
                 <a href='/truckInfo/${truck.id}'>Get Details...</a>
                 <a href='http://maps.google.com/?saddr=${this.state.position.coords.latitude},${this.state.position.coords.longitude}&daddr=${truck.latitude},${truck.longitude}'>Get Directions...</a>
             </div>
         `
         });
+        this.infowindow.expiration = truck.expiration;
         this.infowindow.open(this.map, marker);
+    },
+
+    onSubmit: function(e) {
+        e.preventDefault();
+
+        // If user navigates away before we have the position React complains
+        if (this.state.position) {
+            browserHistory.push("/customerProfile");
+        }
     },
 
     render: function() {
@@ -142,7 +197,7 @@ export default React.createClass({
               <div className="map" id="map">
                 Loading...
               </div>
-              <button className="customerProfile">Update Profile</button>
+              <button onClick={ this.onSubmit } className="customerProfile">Update Profile</button>
             </div>
         )
     }

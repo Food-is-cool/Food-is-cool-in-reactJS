@@ -1,6 +1,5 @@
 import React from "react";
 import { getAllTrucks, saveTruckProfile } from "api/data";
-import StatesDropdown from "ui/statesDropdown";
 
 require("assets/styles/customerProfile.scss");
 
@@ -16,7 +15,7 @@ const truckData = [
         truck_description: "The best Gyro in the valley.  You will not be dissappointed",
         expiration: "",
         latitude: 36.159182,
-        longitude: -115.152679,
+        longitude: -115.152679
     },
     {
         truck_name: "Burgers Amore",
@@ -29,7 +28,7 @@ const truckData = [
         truck_description: "Best burgers in the Las Vegas.  Voted Best burger in Las Vegas 2017",
         expiration: "",
         latitude: 36.255530,
-        longitude: -115.288492,
+        longitude: -115.288492
     },
     {
         truck_name: "Sushi Loca",
@@ -87,7 +86,7 @@ export default React.createClass({
                     let expiration = new Date();
                     expiration.setHours(expiration.getHours() + 4);
 
-                    const data = truckData[index % 4];
+                    const data = truckData[index % truckData.length];
 
                     const payload = {
                         truck_name: data.truck_name,
