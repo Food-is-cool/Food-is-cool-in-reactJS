@@ -192,19 +192,12 @@ export default React.createClass({
         this.infowindow.open(this.map, marker);
     },
 
-    onSubmit: function(e) {
-        e.preventDefault();
-
-        browserHistory.push("/customerProfile");
-    },
-
     render: function() {
         return (
             <div className="mapContainer">
               <div className="map" id="map">
                 Loading...
               </div>
-              <button onClick={ this.onSubmit } className="customerProfile">Update Profile</button>
             </div>
         )
     }

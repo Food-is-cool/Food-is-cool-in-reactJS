@@ -22,6 +22,7 @@ html, body {
 	position: relative;
 	left: 152px;
 }
+
 .logoContainer{
     width: 500px;
     height: 200px;
@@ -32,7 +33,123 @@ html, body {
 }
 .foodiscool{
     position: relative;
-    color: white;
-    top: -167px;
-    left: 203px;
+    color: #BCB08F;
+    top: -131px;
+    left: 194px;
+    background-color: white;
+    width: 76px;
+    height: 33px;
+    padding-top: 8px;
+}
+.fakeTrucks{
+    text-decoration: none;
+}
+.profileButtonContainer{
+    position: relative;
+    top: 67px;
+    left: 427px;
+    z-index: 10;
+}
+.updateProfilebutton{
+    position:relative;
+	height: 35px;
+	width: 180px;
+	margin-top: 2px;
+	box-shadow: 10px 10px 5px #192B34;
+	border:none;
+	border-radius: 6px;
+	outline: none;
+	background-color: #C0C0C0;
+	border-bottom:3px solid #5C6E77;
+}
+.updateProfilebutton:active {
+	box-shadow: 10px 10px 5px #192B34;
+	outline: none;
+	border-bottom: none;
+	top: 5px;
+}
+.WhenWhereButtonContainer{
+    position: relative;
+    top: 31px;
+    left: 835px;
+    z-index: 10;
+}
+.updateWhereWhen{
+    position:relative;
+	height: 35px;
+	width: 180px;
+	margin-top: 2px;
+	box-shadow: 10px 10px 5px #192B34;
+	border:none;
+	border-radius: 6px;
+	outline: none;
+	background-color: #C0C0C0;
+	border-bottom:3px solid #5C6E77;
+}
+.updateWhereWhen:active {
+	box-shadow: 10px 10px 5px #192B34;
+	outline: none;
+	border-bottom: none;
+	top: 5px;
+}
+.logoutButtonContainer{
+    position: relative;
+    top: -55px;
+    left: 1342px;
+}
+.logout{
+    position:relative;
+	height: 60px;
+	width: 60px;
+	margin-top: 2px;
+	border:none;
+    cursor: pointer;
+}
+.toMapContainer{
+    position: relative;
+    top: 68px;
+    left: 426px;
+    z-index: 10;
+}
+.toMap{
+    position:relative;
+	height: 35px;
+	width: 180px;
+	margin-top: 2px;
+	box-shadow: 10px 10px 5px #192B34;
+	border:none;
+	border-radius: 6px;
+	outline: none;
+	background-color: #C0C0C0;
+	border-bottom:3px solid #5C6E77;
+}
+.toMap:active {
+	box-shadow: 10px 10px 5px #192B34;
+	outline: none;
+	border-bottom: none;
+	top: 5px;
+}
+.toCustomerProfileContainer{
+    position: relative;
+    top: 31px;
+    left: 835px;
+    z-index: 10;
+}
+.toCustomerProfile{
+    position:relative;
+	height: 35px;
+	width: 180px;
+	margin-top: 2px;
+	box-shadow: 10px 10px 5px #192B34;
+	border:none;
+	border-radius: 6px;
+	outline: none;
+	background-color: #C0C0C0;
+	border-bottom:3px solid #5C6E77;
+}
+.toCustomerProfile:active {
+	box-shadow: 10px 10px 5px #192B34;
+	outline: none;
+	border-bottom: none;
+	top: 5px;
 }

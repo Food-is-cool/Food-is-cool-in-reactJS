@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router";
+import { Link, browserHistory } from "react-router";
 import { logout } from "api/data";
 import Notifications from "react-notify-toast";
 
@@ -7,11 +7,32 @@ require("normalize.scss/normalize.scss");
 require("assets/styles/layout.scss");
 
 var img = require("assets/images/foodtrucklogo.png");
+var image = require("assets/images/logout5.png")
 
 function onLogout(e) {
     e.preventDefault();
 
     logout();
+}
+
+function updateProfilebutton(e) {
+    e.preventDefault();
+    browserHistory.push("/truckProfile");
+}
+
+function updateWhereWhen(e) {
+    e.preventDefault();
+    browserHistory.push("/whereWhen");
+}
+
+function toMap(e) {
+    e.preventDefault();
+    browserHistory.push("/map");
+}
+
+function toCustomerProfile(e) {
+    e.preventDefault();
+    browserHistory.push("/customerProfile");
 }
 
 function getNavs() {
@@ -24,20 +45,30 @@ function getNavs() {
     if (is_truck) {
         return (
             <nav className="navs">
-              <Link to="/truckProfile" className="nav">Truck Profile</Link>
-              <br />
-              <Link to="/whereWhen" className="nav">Where When</Link>
-              <button onClick={ onLogout }>Logout</button>
+              <div className="profileButtonContainer">
+                <button onClick={ updateProfilebutton } className="updateProfilebutton">Update Profile</button>
+              </div>
+              <div className="WhenWhereButtonContainer">
+                <button onClick={ updateWhereWhen } className="updateWhereWhen">Update Location</button>
+              </div>
+              <a className="logoutButtonContainer">
+                <img src={ image } onClick={ onLogout } className="logout" />
+              </a>
             </nav>
             );
     }
 
     return (
         <nav className="navs">
-          <Link to="/map" className="nav">Map</Link>
-          <br />
-          <Link to="/customerProfile" className="nav">Customer Profile</Link>
-          <button onClick={ onLogout }>Logout</button>
+          <div className="toMapContainer">
+            <button onClick={ toMap } className="toMap">To maps</button>
+          </div>
+          <div className="toCustomerProfileContainer">
+            <button onClick={ toCustomerProfile } className="toCustomerProfile">To Profile</button>
+          </div>
+          <a className="logoutButtonContainer">
+            <img src={ image } onClick={ onLogout } className="logout" />
+          </a>
         </nav>
         );
 }
@@ -51,9 +82,9 @@ export default ({
           <Notifications />
           { getNavs() }
           <div className="logoContainer">
-            <a href="/fakeTrucks">
+            <a className="fakeTrucks" href="/fakeTrucks">
               <img className="logo" src={ img } />
-              <div className="foodiscool">Foodis.cool</div>
+              <div className="foodiscool">foodis.cool</div>
             </a>
           </div>
           { children }

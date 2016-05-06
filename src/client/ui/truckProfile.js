@@ -144,6 +144,23 @@ export default React.createClass({
                 </div>
                 <button className="profileButton" type="button" onClick={ this.onSubmit }>Submit</button>
               </form>
+              <div className="truckLabels">
+                <label className="companyLabels">Company Name: </label>
+                <br />
+                <label className="cuisineLabels">Cuisine: </label>
+                <br />
+                <label className="emailLabels">Email: </label>
+                <br />
+                <label className="phoneLabels">Phone: </label>
+                <br />
+                <label className="webAddressLabels">Web Address: </label>
+                <br />
+                <label className="facebookLabels">facebook: </label>
+                <br />
+                <label className="logoLabels">Logo: </label>
+                <br />
+                <label className="descriptionLabels">Description: </label>
+              </div>
             </div>
         )
     }

@@ -156,11 +156,15 @@ export default React.createClass({
                     <br />
                   </div>
                 </div>
-                <input ref="emailOpt" className="CustomerProfileCheck" type="checkbox" name="emailOpt" checked={ this.state.emailOpt } onChange={ this.handleChange } />
-                <label className="checkLabel">Opt in to recieve emails of specials and Food Trucks in your area?</label>
+                <div className="checkboxEmailCustomer">
+                  <input ref="emailOpt" className="CustomerProfileEmailCheck" type="checkbox" name="emailOpt" checked={ this.state.emailOpt } onChange={ this.handleChange } />
+                  <label className="checkLabel">Opt in to recieve emails of specials and Food Trucks in your area?</label>
+                </div>
                 <br />
-                <input ref="textOpt" className="CustomerProfileCheck" type="checkbox" name="textOpt" checked={ this.state.textOpt } onChange={ this.handleChange } />
-                <label className="checkLabel">Opt in to recieve texts of specials and Food Trucks in your area?</label>
+                <div className="checkboxTextCustomer">
+                  <input ref="textOpt" className="CustomerProfileTextCheck" type="checkbox" name="textOpt" checked={ this.state.textOpt } onChange={ this.handleChange } />
+                  <label className="checkLabel">Opt in to recieve texts of specials and Food Trucks in your area?</label>
+                </div>
                 <br />
                 <button className="customerSubmit" type="button" onClick={ this.onSubmit }>Submit</button>
               </form>

@@ -10,23 +10,88 @@
 	height: 30px;
 	box-shadow: 10px 10px 5px #192B34;
 	padding-left: 15px;
+	background-color: #BCB08F;
+	border:none;
 }
 .profileInput {
 	margin-top: 7px;
 }
+
 .profileButton{
-	box-shadow: 10px 10px 5px #192B34;
+	float: left;
+    position:relative;
 	height: 35px;
 	width: 180px;
 	margin-top: 15px;
-	float: left;
+	box-shadow: 10px 10px 5px #192B34;
+	border:none;
+	border-radius: 6px;
+	outline: none;
+	background-color: #C0C0C0;
+	border-bottom:3px solid #5C6E77;
+}
+.profileButton:active {
+	box-shadow: 10px 10px 5px #192B34;
+	outline: none;
+	border-bottom: none;
+	top: 5px;
 }
 .profileText{
 	box-shadow: 10px 10px 5px #192B34;
 	outline: none;
 	padding-left: 15px;
 	border: 2px solid #9A9A9A;
+	background: #BCB08F;
+	border:none;
 }
 .truckForm{
 	text-align: center;
+}
+.truckLabels{
+	position: relative;
+    top: -339px;
+    left: -311px;
+}
+.companyLabels{
+	color: #BCB08F;
+}
+.cuisineLabels{
+	position: relative;
+    top: 17px;
+    color: #BCB08F;
+}
+.emailLabels{
+	position: relative;
+    top: 37px;
+    color: #BCB08F;
+}
+.phoneLabels{
+	position: relative;
+    top: 57px;
+    color: #BCB08F;
+    left: 180px;
+}
+.webAddressLabels{
+	position: relative;
+    top: 77px;
+    color: #BCB08F;
+    left: 180px;
+}
+.facebookLabels{
+	position: relative;
+    top: 97px;
+    color: #BCB08F;
+    left: 180px;
+}
+.logoLabels{
+	position: relative;
+    top: 117px;
+    color: #BCB08F;
+    left: 180px;
+}
+.descriptionLabels{
+	position: relative;
+    top: 137px;
+    color: #BCB08F;
+    left: 180px;
 }

@@ -48,23 +48,23 @@ export default React.createClass({
                   </div>
                   <br />
                   <div className="info">
-                    { this.state.cuisine }
+                    <span><b>Cuisine: </b>{ this.state.cuisine }</span>
                   </div>
                   <br />
                   <div className="info">
-                    { this.state.email }
+                    <span><b>Email: </b>{ this.state.email }</span>
                   </div>
                   <br />
                   <div className="info">
-                    { this.state.phone }
+                    <span><b>Phone: </b>{ this.state.phone }</span>
                   </div>
                   <br />
                   <div className="info">
-                    { this.state.url }
+                    <span><b>Website Address: </b>{ this.state.url }</span>
                   </div>
                   <br />
                   <div className="info">
-                    { this.state.facebook }
+                    <span><b>facebook: </b>{ this.state.facebook }</span>
                   </div>
                   <br />
                   <div>
