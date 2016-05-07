@@ -24,15 +24,18 @@ export default React.createClass({
         if (!profile) {
             return;
         }
+
+        const phone = profile.phone_number || "";
+
         this.setState({
-            companyName: profile.truck_name,
-            cuisine: profile.cuisine,
-            email: profile.email_address,
-            phone: profile.phone_number,
-            url: profile.website,
-            facebook: profile.facebook_page,
-            logo: profile.logo_url,
-            description: profile.truck_description
+            companyName: profile.truck_name || "",
+            cuisine: profile.cuisine || "",
+            email: profile.email_address || "",
+            phone: phone.replace(/(\d{3})(\d{3})(\d{4})/, "($1) $2-$3"),
+            url: profile.website || "",
+            facebook: profile.facebook_page || "",
+            logo: profile.logo_url || "",
+            description: profile.truck_description || ""
         });
     },
     render: function() {

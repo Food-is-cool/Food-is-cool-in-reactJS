@@ -1,38 +1,38 @@
 import React from "react";
-import { Link, browserHistory } from "react-router";
 import { logout } from "api/data";
 import Notifications from "react-notify-toast";
+import { goToUrl } from "utils/animation";
 
 require("normalize.scss/normalize.scss");
 require("assets/styles/layout.scss");
 
-var img = require("assets/images/foodtrucklogo.png");
+var foodTruck = require("assets/images/FoodTruck.png");
+var foodTruckBackground = require("assets/images/FoodTruckBackground.png");
 var image = require("assets/images/logout5.png")
 
 function onLogout(e) {
     e.preventDefault();
-
     logout();
 }
 
 function updateProfilebutton(e) {
     e.preventDefault();
-    browserHistory.push("/truckProfile");
+    goToUrl("/truckProfile");
 }
 
 function updateWhereWhen(e) {
     e.preventDefault();
-    browserHistory.push("/whereWhen");
+    goToUrl("/whereWhen");
 }
 
 function toMap(e) {
     e.preventDefault();
-    browserHistory.push("/map");
+    goToUrl("/map");
 }
 
 function toCustomerProfile(e) {
     e.preventDefault();
-    browserHistory.push("/customerProfile");
+    goToUrl("/customerProfile");
 }
 
 function getNavs() {
@@ -82,10 +82,13 @@ export default ({
           <Notifications />
           { getNavs() }
           <div className="logoContainer">
-            <a className="fakeTrucks" href="/fakeTrucks">
-              <img className="logo" src={ img } />
-              <div className="foodiscool">foodis.cool</div>
-            </a>
+            <img className="foodTruckBackground" src={ foodTruckBackground } />
+            <div id="foodTruck" className="foodTruck animated bounceInLeft">
+              <img className="foodTruckImage" src={ foodTruck } />
+              <a className="fakeTrucks" href="/fakeTrucks">
+                <div className="foodiscool">foodis.cool</div>
+              </a>
+            </div>
           </div>
           { children }
         </div>

@@ -1,9 +1,9 @@
 import React from "react";
 import store from "store";
 import { login } from "api/data";
-import { Link, browserHistory } from "react-router";
 import { notify } from "react-notify-toast";
 import _ from "lodash";
+import { goToUrl } from "utils/animation";
 
 require("assets/styles/login.scss");
 
@@ -28,13 +28,13 @@ export default React.createClass({
             .then(function() {
                 const is_truck = JSON.parse(window.localStorage.getItem("is_truck"));
                 if (is_truck) {
-                    browserHistory.push("/whereWhen");
-
+                    goToUrl("/whereWhen");
                 } else {
-                    browserHistory.push("/map");
+                    goToUrl("/map");
                 }
             })
             .catch(function(err) {
+                debugger;
                 const messages = _.map(err.data, function(messages, field) {
                     if (field === "non_field_errors") {
                         return messages[0];

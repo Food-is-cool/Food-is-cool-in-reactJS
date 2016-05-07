@@ -1,9 +1,9 @@
 import React from "react";
 import store from "store";
 import { addNewUser } from "api/data";
-import { Link, browserHistory } from "react-router";
 import { notify } from "react-notify-toast";
 import _ from "lodash";
+import { goToUrl } from "utils/animation";
 
 require("assets/styles/newUser.scss");
 
@@ -41,10 +41,10 @@ export default React.createClass({
         addNewUser(this.state.username, this.state.password, this.state.isTruck)
             .then(function() {
                 if (window.localStorage.getItem("is_truck")) {
-                    browserHistory.push("/truckProfile");
+                    goToUrl("/truckProfile");
 
                 } else {
-                    browserHistory.push("/customerProfile");
+                    goToUrl("/customerProfile");
                 }
             })
             .catch(function(err) {

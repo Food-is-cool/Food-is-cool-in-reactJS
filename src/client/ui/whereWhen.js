@@ -1,7 +1,5 @@
 import React from "react";
 import { saveTruckProfile, getCurrentPosition, getCurrentTruckProfile } from "api/data";
-import { browserHistory } from "react-router";
-
 
 require("assets/styles/whereWhen.scss");
 

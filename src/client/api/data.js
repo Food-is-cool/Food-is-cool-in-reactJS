@@ -1,5 +1,6 @@
 import React from "react";
 import api from "api/api";
+import { goToUrl } from "utils/animation";
 
 let positionResolves = [];
 let position = undefined;
@@ -93,5 +94,5 @@ export function getCurrentPosition() {
 export function logout() {
     window.localStorage.removeItem("token");
     window.localStorage.removeItem("is_truck");
-    location = "/";
+    goToUrl("/");
 }
