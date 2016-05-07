@@ -21,23 +21,23 @@ html, body {
 	height: 200px;
 	width: 200px;
 	position: relative;
-	left: 152px;
 }
 
 .foodTruck{
 	position: relative;
     top: -200px;
+    z-index: 5000;
+    height: 200px;
 }
 
 .foodTruckImage{
 	height: 200px;
 	width: 200px;
 	position: relative;
-	left: 152px;
 }
 
 .logoContainer{
-    width: 500px;
+    width: 200px;
     height: 200px;
     margin: 0 auto;
     position: relative;
@@ -46,7 +46,8 @@ html, body {
 }
 .foodiscool{
     position: relative;
-    top: -100px;
+    top: -123px;
+    left: 48px;
     font-size: 14px;
     color: #BCB08F;
     background-color: white;
