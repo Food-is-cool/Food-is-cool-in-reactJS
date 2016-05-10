@@ -1,5 +1,6 @@
 import React from "react";
 import { getTruckProfile } from "api/data";
+import mapUtils from "utils/map";
 
 require("assets/styles/truckInfo.scss");
 
@@ -40,6 +41,24 @@ export default React.createClass({
             logo: profile.logo_url || "",
             description: profile.truck_description || ""
         });
+
+        const options = {
+            position: {
+                coords: {
+                    latitude: profile.latitude,
+                    longitude: profile.longitude
+                }
+            },
+            markers: [
+                {
+                    latitude: profile.latitude,
+                    longitude: profile.longitude,
+                    title: profile.truck_name
+                }
+            ]
+        };
+
+        this.map = mapUtils.createMap(options);
     },
 
     render: function() {
@@ -81,6 +100,11 @@ export default React.createClass({
                   <div className="info">
                     <span>Description: { this.state.description }</span>
                   </div>
+                </div>
+              </div>
+              <div className="mapContainer">
+                <div className="map" id="map">
+                  Loading...
                 </div>
               </div>
             </div>

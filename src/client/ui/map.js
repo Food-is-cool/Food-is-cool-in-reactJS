@@ -1,41 +1,9 @@
 import React from "react";
 import Moment from "moment";
 import { getCurrentPosition, getAllTrucks } from "api/data";
+import mapUtils from "utils/map";
 
 require("assets/styles/map.scss");
-
-const mapStyles = [
-    {
-        featureType: "all",
-        stylers: [
-            {
-                saturation: -80
-            }
-        ]
-    }, {
-        featureType: "road.arterial",
-        elementType: "geometry",
-        stylers: [
-            {
-                hue: "#0D202A"
-            },
-            {
-                saturation: 30
-            },
-            {
-                lightness: -30
-            }
-        ]
-    }, {
-        featureType: "poi.business",
-        elementType: "labels",
-        stylers: [
-            {
-                visibility: "on"
-            }
-        ]
-    }
-];
 
 export default React.createClass({
     getInitialState: function() {
@@ -104,38 +72,14 @@ export default React.createClass({
             position: position
         });
 
-        this.map = new google.maps.Map(document.getElementById("map"), {
-            center: {
-                lat: position.coords.latitude,
-                lng: position.coords.longitude
-            },
-            zoom: 15
-        });
-
-        this.map.setOptions({
-            styles: mapStyles
-        });
-
-        this.home = new google.maps.Marker({
-            position: {
-                lat: position.coords.latitude,
-                lng: position.coords.longitude
-            },
-            icon: {
-                path: google.maps.SymbolPath.CIRCLE,
-                fillColor: "#0080FF",
-                fillOpacity: 1.0,
-                strokeColor: "white",
-                strokeWeight: 2,
-                scale: 8
-            },
-            draggable: false,
-            map: this.map
-        });
+        const options = {
+            position: position,
+            currentPosition: position
+        };
+        this.map = mapUtils.createMap(options);
 
         // TODO: We could use position.coords.accuracy (meters) to draw a circle around the "home" indicator
         // to indicate the accuracy.
-
         this.makeTruckMarkers();
     },
 
