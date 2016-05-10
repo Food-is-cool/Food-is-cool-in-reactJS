@@ -48,7 +48,6 @@ export default React.createClass({
                 }
             })
             .catch(function(err) {
-                debugger;
                 const messages = _.map(err.data, function(messages, field) {
                     if (field === "non_field_errors") {
                         return messages[0];

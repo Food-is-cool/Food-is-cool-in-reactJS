@@ -54,7 +54,7 @@ html, body {
     width: 180px;
     margin:0 auto;
 }
-.foodiscool{
+.fakeTrucks{
     position: relative;
     top: -123px;
     left: 48px;
@@ -147,6 +147,7 @@ html, body {
 	border-bottom:3px solid #5C6E77;
 }
 .toMap:active {
+    position: relative;
 	box-shadow: 10px 10px 5px #192B34;
 	outline: none;
 	border-bottom: none;

@@ -26,7 +26,7 @@
 }
 
 .login{
-	background-color: #5C6E77;
+	background-color: #eae6e1;
 	border: none;
 	width: 225px;
     height: 45px;
@@ -35,9 +35,11 @@
     border: 1px solid rgba(13,32,42,.4);
     outline: none;
     margin-bottom: 2px;
+	color:#423513;
+	box-shadow: 10px 10px 5px #192B34;
 }
 .password{
-	background-color: #5C6E77;
+	background-color: #eae6e1;
 	border: none;
 	width: 225px;
     height: 45px;
@@ -46,9 +48,11 @@
 	border: 1px solid rgba(13,32,42,.4);
     outline: none;
     margin-bottom: 2px;
+	color:#423513;
+	box-shadow: 10px 10px 5px #192B34;
 }
 .confirmPassword{
-	background-color: #5C6E77;
+	background-color: #eae6e1;
 	border: none;
 	width: 225px;
     height: 45px;
@@ -56,6 +60,8 @@
     padding-left: 30px;
 	border: 1px solid rgba(13,32,42,.4);
     outline: none;
+	color:#423513;
+	box-shadow: 10px 10px 5px #192B34;
 }
 
 .loginButton{
@@ -74,7 +80,7 @@
 	height: 40px;
 	width: 224px;
 	margin-left: 35px;
-	margin-top: 15px;
+	margin-top: 20px;
 	border-radius: 6px;
 	box-shadow: 10px 10px 5px #192B34;
 	outline: none;

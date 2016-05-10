@@ -37,7 +37,7 @@ function createMap(options) {
             lat: options.position.coords.latitude,
             lng: options.position.coords.longitude
         },
-        zoom: 15
+        zoom: 14
     });
 
     map.setOptions({

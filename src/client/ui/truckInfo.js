@@ -63,46 +63,48 @@ export default React.createClass({
 
     render: function() {
         return (
-            <div className="truckInfoContainer">
-              <div>
-                <img className="infoLogo" src={ this.state.logo } />
-              </div>
-              <div>
-                <div className="infoStyle">
-                  <div className="companyName">
-                    { this.state.companyName }
-                  </div>
-                  <br />
-                  <div className="info">
-                    <span><b>Cuisine: </b>{ this.state.cuisine }</span>
-                  </div>
-                  <br />
-                  <div className="info">
-                    <span><b>Specials: </b>{ this.state.specials }</span>
-                  </div>
-                  <br />
-                  <div className="info">
-                    <span><b>Email: </b>{ this.state.email }</span>
-                  </div>
-                  <br />
-                  <div className="info">
-                    <span><b>Phone: </b>{ this.state.phone }</span>
-                  </div>
-                  <br />
-                  <div className="info">
-                    <span><b>Website Address: </b>{ this.state.url }</span>
-                  </div>
-                  <br />
-                  <div className="info">
-                    <span><b>facebook: </b>{ this.state.facebook }</span>
-                  </div>
-                  <br />
-                  <div className="info">
-                    <span>Description: { this.state.description }</span>
+            <div>
+              <div className="truckInfoContainer">
+                <div>
+                  <img className="infoLogo" src={ this.state.logo } />
+                </div>
+                <div>
+                  <div className="infoStyle">
+                    <div className="companyName">
+                      { this.state.companyName }
+                    </div>
+                    <br />
+                    <div className="info">
+                      <span><b>Cuisine: </b>{ this.state.cuisine }</span>
+                    </div>
+                    <br />
+                    <div className="info">
+                      <span><b>Specials: </b>{ this.state.specials }</span>
+                    </div>
+                    <br />
+                    <div className="info">
+                      <span><b>Email: </b>{ this.state.email }</span>
+                    </div>
+                    <br />
+                    <div className="info">
+                      <span><b>Phone: </b>{ this.state.phone }</span>
+                    </div>
+                    <br />
+                    <div className="info">
+                      <span><b>Website Address: </b>{ this.state.url }</span>
+                    </div>
+                    <br />
+                    <div className="info">
+                      <span><b>facebook: </b>{ this.state.facebook }</span>
+                    </div>
+                    <br />
+                    <div className="info">
+                      <span>Description: { this.state.description }</span>
+                    </div>
                   </div>
                 </div>
               </div>
-              <div className="mapContainer">
+              <div className="mapTruckContainer">
                 <div className="map" id="map">
                   Loading...
                 </div>

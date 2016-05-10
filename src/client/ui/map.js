@@ -130,7 +130,10 @@ export default React.createClass({
                     <span class="time">Here Until:</span>
                     <span id="hereUntil"></span>
                 </div>
-                <div>Specials:${truck.specials}</div>
+                <div>
+                    <span class="specialsTitle">Specials:</span>
+                    <span>${truck.specials}</span>
+                </div>
                 <a href='/truckInfo/${truck.id}' onclick="return goToUrl('/truckInfo/${truck.id}')">Get Details...</a>
                 <a href='http://maps.google.com/?saddr=${this.state.position.coords.latitude},${this.state.position.coords.longitude}&daddr=${truck.latitude},${truck.longitude}'>Get Directions...</a>
             </div>
