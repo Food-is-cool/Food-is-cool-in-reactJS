@@ -8,6 +8,7 @@ export default React.createClass({
         return {
             companyName: "",
             cuisine: "",
+            specails: "",
             email: "",
             phone: "",
             url: "",
@@ -16,6 +17,7 @@ export default React.createClass({
             description: ""
         };
     },
+
     componentWillMount: function() {
         getTruckProfile(this.props.params.truckId).then(this.updateStateWithProfile);
     },
@@ -30,6 +32,7 @@ export default React.createClass({
         this.setState({
             companyName: profile.truck_name || "",
             cuisine: profile.cuisine || "",
+            specials: profile.specials || "",
             email: profile.email_address || "",
             phone: phone.replace(/(\d{3})(\d{3})(\d{4})/, "($1) $2-$3"),
             url: profile.website || "",
@@ -38,6 +41,7 @@ export default React.createClass({
             description: profile.truck_description || ""
         });
     },
+
     render: function() {
         return (
             <div className="truckInfoContainer">
@@ -52,6 +56,10 @@ export default React.createClass({
                   <br />
                   <div className="info">
                     <span><b>Cuisine: </b>{ this.state.cuisine }</span>
+                  </div>
+                  <br />
+                  <div className="info">
+                    <span><b>Specials: </b>{ this.state.specials }</span>
                   </div>
                   <br />
                   <div className="info">
@@ -70,8 +78,8 @@ export default React.createClass({
                     <span><b>facebook: </b>{ this.state.facebook }</span>
                   </div>
                   <br />
-                  <div>
-                    { this.state.description }
+                  <div className="info">
+                    <span>Description: { this.state.description }</span>
                   </div>
                 </div>
               </div>

@@ -1,22 +1,28 @@
 import React from "react";
 import { saveTruckProfile, getCurrentPosition, getCurrentTruckProfile } from "api/data";
+import { notify } from "react-notify-toast";
 
 require("assets/styles/whereWhen.scss");
 
 export default React.createClass({
     getInitialState: function() {
         return {
-            selectedHours: ""
+            selectedHours: "",
+            specials: ""
         };
     },
+
     componentWillMount: function() {
         getCurrentTruckProfile().then(this.handleTruckInfo);
     },
+
     handleTruckInfo: function(truck) {
         this.setState({
-            id: truck.id
+            id: truck.id,
+            specials: truck.specials || ""
         });
     },
+
     getButtonClasses: function(hours) {
         const classes = ["setTime"];
         if (this.state.selectedHours === hours) {
@@ -24,6 +30,7 @@ export default React.createClass({
         }
         return classes.join(" ");
     },
+
     handleTimeClick: function(e) {
         e.preventDefault();
 
@@ -31,6 +38,7 @@ export default React.createClass({
             selectedHours: parseInt(e.target.dataset.hours)
         });
     },
+
     onSubmit: function(e) {
         e.preventDefault();
 
@@ -43,10 +51,17 @@ export default React.createClass({
             const payload = {
                 expiration: expiration,
                 latitude: position.coords.latitude,
-                longitude: position.coords.longitude
+                longitude: position.coords.longitude,
+                specials: self.refs.specials.value
             };
 
-            saveTruckProfile(self.state.id, payload);
+            saveTruckProfile(self.state.id, payload)
+                .then(function() {
+                    notify.show("Saved!", "success");
+                })
+                .catch(function(err) {
+                    notify.show("Did not save!", "error");
+                });
         });
     },
 
@@ -64,7 +79,7 @@ export default React.createClass({
                   <button data-hours="12" className={ this.getButtonClasses(12) } onClick={ this.handleTimeClick }>12 Hours</button>
                 </div>
                 <span className="specialText">Any Specials?</span>
-                <input ref="specials" className="specials" type="text" placeholder="Enter any specials here!"></input>
+                <input ref="specials" className="specials" type="text" value={ this.state.specials } placeholder="Enter any specials here!"></input>
                 <div className="locationTitle">Click to set location!</div>
                 <button className="setLocation" onClick={ this.onSubmit }>Set Location</button>
               </form>

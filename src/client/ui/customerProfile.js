@@ -103,6 +103,9 @@ export default React.createClass({
             .then(function() {
                 notify.show("Your profile has been Saved!", "success");
             })
+            .catch(function(err) {
+                notify.show("Did not save!", "error");
+            });
     },
 
     render: function() {
