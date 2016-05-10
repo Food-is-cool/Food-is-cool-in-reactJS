@@ -54,7 +54,7 @@
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-between;
-
+	margin-bottom:5px;
 }
 .wwContainer{
 	margin: 0 auto;
@@ -88,6 +88,21 @@
 	color: #BCB08F;
 }
 .locationTitle{
+	margin-top:20px;
 	margin-bottom: 5px;
 	color: #BCB08F;
+}
+.specialText{
+	margin-right:20px;
+	color: #BCB08F;
+}
+.specials{
+	width:678px;
+	height:35px;
+	background-color: #eae6e1;
+	color:#423513;
+	outline: none;
+	padding-left: 15px;
+	box-shadow: 10px 10px 5px #192B34;
+	border:none;
 }

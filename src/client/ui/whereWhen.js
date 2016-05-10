@@ -63,6 +63,8 @@ export default React.createClass({
                   <button data-hours="10" className={ this.getButtonClasses(10) } onClick={ this.handleTimeClick }>10 Hours</button>
                   <button data-hours="12" className={ this.getButtonClasses(12) } onClick={ this.handleTimeClick }>12 Hours</button>
                 </div>
+                <span className="specialText">Any Specials?</span>
+                <input ref="specials" className="specials" type="text" placeholder="Enter any specials here!"></input>
                 <div className="locationTitle">Click to set location!</div>
                 <button className="setLocation" onClick={ this.onSubmit }>Set Location</button>
               </form>

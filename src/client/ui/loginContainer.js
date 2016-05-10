@@ -22,9 +22,23 @@ export default React.createClass({
         });
     },
 
+    demoCustomer: function(e) {
+        e.preventDefault();
+        this.doLogin("customer1", "password!")
+    },
+
+    demoTruck: function(e) {
+        e.preventDefault();
+        this.doLogin("truck1", "password!")
+    },
+
     handleSubmit: function(e) {
         e.preventDefault();
-        login(this.state.username, this.state.password)
+        this.doLogin(this.state.username, this.state.password);
+    },
+
+    doLogin: function(username, password) {
+        login(username, password)
             .then(function() {
                 const is_truck = JSON.parse(window.localStorage.getItem("is_truck"));
                 if (is_truck) {
@@ -51,16 +65,23 @@ export default React.createClass({
 
     render: function() {
         return (
-            <div className="loginBox">
-              <form action="" method="post" onSubmit={ this.handleSubmit } id="loginForm">
-                <i className="fa fa-sign-in"></i>
-                <input ref="username" className="login" onChange={ this.handleChange } name="username" type="text" placeholder="User Name"></input>
+            <div>
+              <div className="loginBox">
+                <form action="" method="post" onSubmit={ this.handleSubmit } id="loginForm">
+                  <i className="fa fa-sign-in"></i>
+                  <input ref="username" className="login" onChange={ this.handleChange } name="username" type="text" placeholder="User Name"></input>
+                  <br />
+                  <i className="fa fa-unlock"></i>
+                  <input ref="password" className="password" type="password" onChange={ this.handleChange } name="password" placeholder="PassWord"></input>
+                  <br />
+                  <button className="loginButton">Login</button>
+                </form>
+              </div>
+              <div className="demo">
+                <button onClick={ this.demoCustomer } className="demoCustomer">DEMO Customer</button>
                 <br />
-                <i className="fa fa-unlock"></i>
-                <input ref="password" className="password" type="password" onChange={ this.handleChange } name="password" placeholder="PassWord"></input>
-                <br />
-                <button className="loginButton">Login</button>
-              </form>
+                <button onClick={ this.demoTruck } className="demoTruck">DEMO Truck User </button>
+              </div>
             </div>
             );
     }

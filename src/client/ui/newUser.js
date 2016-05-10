@@ -75,12 +75,22 @@ export default React.createClass({
                 <i className="fa fa-unlock"></i>
                 <input ref="confirm" className="confirmPassword" value={ this.state.confirm } onChange={ this.handleChange } type="password" placeholder="Confirm PassWord"></input>
                 <br />
-                <input ref="customer" className="radioButtons" onChange={ this.handleChange } type="radio" name="customerType" value="foodTruckCustomer" checked={ !this.state.isTruck }
-                /> Food Truck Customer
-                <br />
-                <input ref="truck" className="radioButtons" onChange={ this.handleChange } type="radio" name="customerType" value="foodTruckVendor" checked={ this.state.isTruck }
-                /> Food Truck Vendor
-                <br />
+                <div className="radioButtonsContainer">
+                  <div className="radioButton">
+                    <span>
+                                                <input ref="customer" className="radioButtons" onChange={ this.handleChange } type="radio" name="customerType" value="foodTruckCustomer" checked={ !this.state.isTruck }></input>
+                                                <span className="radioTitle">Food Truck Customer</span>
+                    </span>
+                    <br />
+                  </div>
+                  <div className="radioButton">
+                    <span>
+                                                <input ref="truck" className="radioButtons" onChange={ this.handleChange } type="radio" name="customerType" value="foodTruckVendor" checked={ this.state.isTruck }></input>
+                                                <span className="radioTitle">Food Truck Vendor</span>
+                    </span>
+                    <br />
+                  </div>
+                </div>
                 <button className="loginButton">Register</button>
               </form>
             </div>

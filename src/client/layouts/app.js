@@ -45,14 +45,17 @@ function getNavs() {
     if (is_truck) {
         return (
             <nav className="navs">
-              <div className="profileButtonContainer">
-                <button onClick={ updateProfilebutton } className="updateProfilebutton">Update Profile</button>
-              </div>
-              <div className="WhenWhereButtonContainer">
-                <button onClick={ updateWhereWhen } className="updateWhereWhen">Update Location</button>
+              <div className="navButtons">
+                <div className="profileButtonContainer">
+                  <button onClick={ updateProfilebutton } className="updateProfilebutton">Update Profile</button>
+                </div>
+                <div className="WhenWhereButtonContainer">
+                  <button onClick={ updateWhereWhen } className="updateWhereWhen">Update Location</button>
+                </div>
               </div>
               <a className="logoutButtonContainer">
                 <img src={ image } onClick={ onLogout } className="logout" />
+                <div className="logoutText">Logout</div>
               </a>
             </nav>
             );
@@ -60,14 +63,18 @@ function getNavs() {
 
     return (
         <nav className="navs">
-          <div className="toMapContainer">
-            <button onClick={ toMap } className="toMap">To maps</button>
-          </div>
-          <div className="toCustomerProfileContainer">
-            <button onClick={ toCustomerProfile } className="toCustomerProfile">To Profile</button>
+          <div className="navButtons">
+            <div className="toMapContainer">
+              <button onClick={ toMap } className="toMap">To maps</button>
+            </div>
+            <div className="fakeDiv"></div>
+            <div className="toCustomerProfileContainer">
+              <button onClick={ toCustomerProfile } className="toCustomerProfile">To Profile</button>
+            </div>
           </div>
           <a className="logoutButtonContainer">
             <img src={ image } onClick={ onLogout } className="logout" />
+            <div className="logoutText">Logout</div>
           </a>
         </nav>
         );
