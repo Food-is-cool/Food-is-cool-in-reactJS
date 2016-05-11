@@ -1,3 +1,11 @@
+@import "./range";
+
+$track-width: 640px;
+
+input[type=range] {
+	@include input-type-range;
+}
+
 .setLocation{
 	height: 100px;
 	width: 798px;
@@ -95,14 +103,22 @@
 .specialText{
 	margin-right:20px;
 	color: #BCB08F;
+	margin-bottom: 5px;
 }
 .specials{
-	width:678px;
-	height:35px;
+	width:798px;
+	height:30px;
 	background-color: #eae6e1;
 	color:#423513;
 	outline: none;
 	padding-left: 15px;
 	box-shadow: 10px 10px 5px #192B34;
 	border:none;
+}
+.sliderTime{
+	margin-left: 5px;
+	color: #BCB08F;
+}
+.timeSlider{
+	margin-bottom: 12px;
 }
