@@ -20,8 +20,24 @@ function goToUrl(url) {
     return false;
 }
 
+function flipLogin(e) {
+    e.preventDefault();
+
+    const container = document.getElementById("loginPageContainer");
+    let classes = container.className.split(" ");
+
+    if (_.includes(classes, "flipped")) {
+        classes = _.without(classes, "flipped");
+    } else {
+        classes.push("flipped");
+    }
+
+    container.className = classes.join(" ");
+}
+
 global.goToUrl = goToUrl;
 
 export default {
-    goToUrl
+    goToUrl,
+    flipLogin
 }

@@ -1,23 +1,80 @@
-.loginContainer{
-	width: 700px;
-	height: 360px;
+.loginPageContainer{
+	width: 300px;
+	height: 500px;
 	margin: 0 auto;
-	margin-top: 65px;
 	overflow: scroll;
+	-moz-perspective: 800px;
+	-webkit-perspective: 800px;
+	perspective: 800px;
+	padding: 50px 0;
 }
 
-.loginBox{
-	height: 300px;
-	width: 300px;
-	margin-top:50px;
-	margin-left: 5px;
+.flipLinkLoginContainer {
+	margin-top: 20px;
 }
-.registerBox{
-	height: 300px;
-	width: 300px;
-	margin-top:50px;
+.flipLinkContainer {
+	margin-top: 20px;
+}
+.flipLink {
 	float: right;
+    color: #BCB08F;
+    position: relative;
+    left: -40px;
 }
+.flipLinkLogin {
+	float: right;
+	margin-right: -90px;
+	color:#BCB08F;
+}
+.loginBox, .registerBox {
+	width: 300px;
+	height: 320px;
+	margin: 0 auto;
+	padding: 20px 0;
+
+
+	/* Enabling 3d space for the transforms */
+	-moz-transform-style: preserve-3d;
+	-webkit-transform-style: preserve-3d;
+	transform-style: preserve-3d;
+
+	/* When the forms are flipped, they will be hidden */
+	-moz-backface-visibility: hidden;
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+
+	/* Enabling a smooth animated transition */
+	-moz-transition:0.8s;
+	-webkit-transition:0.8s;
+	transition:0.8s;
+}
+
+.loginBox {
+	z-index: 100;
+	opacity: 1;
+	margin-top: -320px;
+	transform:rotateY(0deg);
+}
+
+.flipped .loginBox {
+	opacity: 0;
+	transform:rotateY(-180deg);
+}
+
+.loginControls{
+}
+
+.registerBox{
+	z-index: 1;
+	opacity: 0;
+	transform:rotateY(180deg);
+}
+
+.flipped .registerBox {
+	opacity: 1;
+	transform:rotateY(0deg);
+}
+
 .box{
 	height: 100px;
 	width: 100px;
@@ -94,17 +151,27 @@
 .radioButtons{
 	margin-left: 45px;
 	margin-top: 5px;
+	box-shadow: 10px 10px 5px #192B34;
 }
 .demo{
-	margin-top: -120px;
-	margin-left: 40px;
+	width: 229px;
+	margin: 0 auto;
+	padding-top: 20px;
 }
 .demoCustomer{
-	width:150px;
-	margin-bottom: 10px;
+	width: 224px;
 	background-color: #5C6E77;
+	height:35px;
+	border-radius: 6px;
+	box-shadow: 10px 10px 5px #192B34;
+	outline: none;
 }
 .demoTruck{
-	width:150px;
+	width: 224px;
+	margin-top: 10px;
 	background-color: #5C6E77;
+	height:35px;
+	border-radius: 6px;
+	box-shadow: 10px 10px 5px #192B34;
+	outline: none;
 }

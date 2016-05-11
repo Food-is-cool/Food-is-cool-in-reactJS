@@ -3,7 +3,7 @@ import store from "store";
 import { addNewUser } from "api/data";
 import { notify } from "react-notify-toast";
 import _ from "lodash";
-import { goToUrl } from "utils/animation";
+import { goToUrl, flipLogin } from "utils/animation";
 
 require("assets/styles/newUser.scss");
 
@@ -77,22 +77,21 @@ export default React.createClass({
                 <br />
                 <div className="radioButtonsContainer">
                   <div className="radioButton">
-                    <span>
-                                                <input ref="customer" className="radioButtons" onChange={ this.handleChange } type="radio" name="customerType" value="foodTruckCustomer" checked={ !this.state.isTruck }></input>
-                                                <span className="radioTitle">Food Truck Customer</span>
-                    </span>
+                    <input ref="customer" className="radioButtons" onChange={ this.handleChange } type="radio" name="customerType" value="foodTruckCustomer" checked={ !this.state.isTruck }></input>
+                    <span className="radioTitle">Food Truck Customer</span>
                     <br />
                   </div>
                   <div className="radioButton">
-                    <span>
-                                                <input ref="truck" className="radioButtons" onChange={ this.handleChange } type="radio" name="customerType" value="foodTruckVendor" checked={ this.state.isTruck }></input>
-                                                <span className="radioTitle">Food Truck Vendor</span>
-                    </span>
+                    <input ref="truck" className="radioButtons" onChange={ this.handleChange } type="radio" name="customerType" value="foodTruckVendor" checked={ this.state.isTruck }></input>
+                    <span className="radioTitle">Food Truck Vendor</span>
                     <br />
                   </div>
                 </div>
                 <button className="loginButton">Register</button>
               </form>
+              <div className="flipLinkContainer">
+                <a className="flipLink" href="#" onClick={ flipLogin }>Click here to login</a>
+              </div>
             </div>
         )
     }

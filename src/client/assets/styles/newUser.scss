@@ -20,6 +20,7 @@ input[type='radio'] {
     position: relative;
     cursor:pointer;
     border:none;
+    background-color: #eae6e1;
 }
 input[type='radio']:after {
     content:"";
@@ -37,18 +38,18 @@ input[type='radio']:after {
     -webkit-box-shadow: inset 0px 1px 1px #5C6E77, 0px 1px 0px #5C6E77;
     -moz-box-shadow: inset 0px 1px 1px #5C6E77, 0px 1px 0px #5C6E77;
     box-shadow: inset 0px 1px 1px #5C6E77, 0px 1px 0px #5C6E77;
-    background: #5C6E77;
+    background-color: #eae6e1;
     border: 1px solid #3C4E58;
 }
 input[type='radio']:checked:after {
-    background: #5C6E77;
+    background-color: #eae6e1;
     content:'\2714';
     color: #000000;
     border: 1px solid #3C4E58;
 }
 .radioButtonsContainer{
     margin-left:34px;
-    margin-top: 10px;
+    margin-top: 17px;
 }
 .radioButton{
     margin-top: 5px;

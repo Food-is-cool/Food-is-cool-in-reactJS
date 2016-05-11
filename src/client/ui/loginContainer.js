@@ -3,7 +3,7 @@ import store from "store";
 import { login } from "api/data";
 import { notify } from "react-notify-toast";
 import _ from "lodash";
-import { goToUrl } from "utils/animation";
+import { goToUrl, flipLogin } from "utils/animation";
 
 require("assets/styles/login.scss");
 
@@ -64,8 +64,8 @@ export default React.createClass({
 
     render: function() {
         return (
-            <div>
-              <div className="loginBox">
+            <div className="loginBox">
+              <div className="loginControls">
                 <form action="" method="post" onSubmit={ this.handleSubmit } id="loginForm">
                   <i className="fa fa-sign-in"></i>
                   <input ref="username" className="login" onChange={ this.handleChange } name="username" type="text" placeholder="User Name"></input>
@@ -80,6 +80,9 @@ export default React.createClass({
                 <button onClick={ this.demoCustomer } className="demoCustomer">DEMO Customer</button>
                 <br />
                 <button onClick={ this.demoTruck } className="demoTruck">DEMO Truck User </button>
+              </div>
+              <div className="flipLinkLoginContainer">
+                <a className="flipLinkLogin" href="#" onClick={ flipLogin }>Need to register?</a>
               </div>
             </div>
             );
