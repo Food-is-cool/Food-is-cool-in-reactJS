@@ -9,7 +9,7 @@ input[type=range] {
 .setLocation{
 	height: 100px;
 	width: 798px;
-	box-shadow: 10px 10px 5px #192B34;
+	box-shadow: 3px 3px 5px #192B34;
 	border:none;
 	border-radius: 12px;
 	outline: none;
@@ -28,7 +28,7 @@ input[type=range] {
 .setTime{
 	height: 100px;
 	width: 250px;
-	box-shadow: 10px 10px 5px #192B34;
+	box-shadow: 3px 3px 5px #192B34;
 	border:none;
 	border-radius: 12px;
 	outline: none;
@@ -62,7 +62,7 @@ input[type=range] {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-between;
-	margin-bottom:5px;
+	margin-top: 10px;
 }
 .wwContainer{
 	margin: 0 auto;
@@ -74,7 +74,7 @@ input[type=range] {
 	height: 35px;
 	width: 180px;
 	margin-top: 2px;
-	box-shadow: 10px 10px 5px #192B34;
+	box-shadow: 3px 3px 5px #192B34;
 	border:none;
 	border-radius: 6px;
 	outline: none;
@@ -96,11 +96,12 @@ input[type=range] {
 	color: #BCB08F;
 }
 .locationTitle{
-	margin-top:20px;
+	margin-top:15px;
 	margin-bottom: 5px;
 	color: #BCB08F;
 }
 .specialText{
+	margin-top: -5px;
 	margin-right:20px;
 	color: #BCB08F;
 	margin-bottom: 5px;
@@ -112,7 +113,7 @@ input[type=range] {
 	color:#423513;
 	outline: none;
 	padding-left: 15px;
-	box-shadow: 10px 10px 5px #192B34;
+	box-shadow: 3px 3px 5px #192B34;
 	border:none;
 }
 .sliderTime{

@@ -61,9 +61,6 @@
 	transform:rotateY(-180deg);
 }
 
-.loginControls{
-}
-
 .registerBox{
 	z-index: 1;
 	opacity: 0;
@@ -93,7 +90,7 @@
     outline: none;
     margin-bottom: 2px;
 	color:#423513;
-	box-shadow: 10px 10px 5px #192B34;
+	box-shadow: 3px 3px 5px #192B34;
 }
 .password{
 	background-color: #eae6e1;
@@ -106,7 +103,7 @@
     outline: none;
     margin-bottom: 2px;
 	color:#423513;
-	box-shadow: 10px 10px 5px #192B34;
+	box-shadow: 3px 3px 5px #192B34;
 }
 .confirmPassword{
 	background-color: #eae6e1;
@@ -118,7 +115,7 @@
 	border: 1px solid rgba(13,32,42,.4);
     outline: none;
 	color:#423513;
-	box-shadow: 10px 10px 5px #192B34;
+	box-shadow: 3px 3px 5px #192B34;
 }
 
 .loginButton{
@@ -126,7 +123,7 @@
 	width: 224px;
 	margin-left: 35px;
 	margin-top: 15px;
-	box-shadow: 10px 10px 5px #192B34;
+	box-shadow: 3px 3px 5px #192B34;
 	border:none;
 	border-radius: 6px;
 	outline: none;
@@ -154,7 +151,7 @@
 .radioButtons{
 	margin-left: 45px;
 	margin-top: 5px;
-	box-shadow: 10px 10px 5px #192B34;
+	box-shadow: 3px 3px 5px #192B34;
 }
 .demo{
 	width: 229px;
@@ -166,7 +163,7 @@
 	background-color: #5C6E77;
 	height:35px;
 	border-radius: 6px;
-	box-shadow: 10px 10px 5px #192B34;
+	box-shadow: 3px 3px 5px #192B34;
 	outline: none;
 }
 .demoTruck{
@@ -175,6 +172,6 @@
 	background-color: #5C6E77;
 	height:35px;
 	border-radius: 6px;
-	box-shadow: 10px 10px 5px #192B34;
+	box-shadow: 3px 3px 5px #192B34;
 	outline: none;
 }
