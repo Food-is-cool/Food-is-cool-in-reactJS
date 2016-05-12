@@ -1,9 +1,17 @@
 .mapContainer{
+	height:450px;
+	width: 800px;
+	margin:0 auto;
+	display: flex;
+	flex-direction: column;
+}
+.mapBox{
 	border:1px solid black;
 	height: 400px;
 	width: 700px;
 	margin: 0 auto;
 	box-shadow: 10px 10px 5px #192B34;
+	margin-top: 20px;
 }
 
 .map {
@@ -23,6 +31,13 @@
 #map > div:nth-child(1) > div:nth-child(1) > div:nth-child(4) > div:nth-child(4) > div:nth-child(1) > div:nth-child(1) > div:nth-child(3) > div:nth-child(2) > div:nth-child(1) {
 	background: #927D65 !important;
 	//border-radius: 20px !important;
+}
+.favoriteText{
+	margin-left: 5px;
+}
+.favoriteContainer{
+	margin-left: 51px;
+	color: #BCB08F;
 }
 
 .truckPopup a {
@@ -44,4 +59,7 @@
 }
 .specialsTitle{
 	font-weight: bold;
+}
+.favoriteCheckbox{
+
 }

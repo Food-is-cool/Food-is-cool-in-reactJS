@@ -1,4 +1,5 @@
 import { browserHistory } from "react-router";
+import { toggleClass } from "utils/classNames";
 
 function animateFoodTruckOut() {
     const foodTruck = document.getElementById("foodTruck");
@@ -23,16 +24,8 @@ function goToUrl(url) {
 function flipLogin(e) {
     e.preventDefault();
 
-    const container = document.getElementById("loginPageContainer");
-    let classes = container.className.split(" ");
-
-    if (_.includes(classes, "flipped")) {
-        classes = _.without(classes, "flipped");
-    } else {
-        classes.push("flipped");
-    }
-
-    container.className = classes.join(" ");
+    const element = document.getElementById("loginPageContainer");
+    toggleClass(element, "flipped");
 }
 
 global.goToUrl = goToUrl;

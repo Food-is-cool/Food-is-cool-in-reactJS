@@ -1,8 +1,12 @@
 .truckInfoContainer{
 	height: 400px;
-	width: 950px;
+	width: 750px;
 	margin: 0 auto;
 	display: flex;
+	margin-top: 20px;
+}
+.infoContainer{
+	width: 350px;
 }
 .infoLogo{
 	height: auto;
@@ -11,12 +15,15 @@
 }
 .companyName{
 	font-size: 25px;
-	margin-bottom: 5px;
 	font-weight: bold;
 	margin-left: 20px;
+	color: #BCB08F;
 }
 .infoStyle{
-	margin: 0px 20px 20px 25px;
+	margin: 0px 0px 20px 25px;
+}
+.cuisineInfo{
+	margin-top: 25px;
 }
 .info{
 	margin-top: 10px;
@@ -32,8 +39,11 @@
 	margin: 0 auto;
 	box-shadow: 10px 10px 5px #192B34;
 	position: relative;
-	top:-400px;
+	top:-150px;
 	margin-right: 60px;
+}
+.fa-thumbs-o-up{
+	margin-left: 40px;
 }
 .socialMedia{
 	margin-top:10px;
@@ -51,4 +61,7 @@
 .fa-instagram{
     color: #BCB08F;
 	text-decoration: none;
+}
+.favoriteSelected{
+	color: #78a081;
 }

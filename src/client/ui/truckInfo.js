@@ -1,8 +1,7 @@
 import React from "react";
-import { getTruckProfile } from "api/data";
+import { getTruckProfile, getCustomerProfile, saveCustomerProfile } from "api/data";
 import mapUtils from "utils/map";
-import { notify } from "react-notify-toast";
-
+import _ from "lodash";
 
 require("assets/styles/truckInfo.scss");
 
@@ -24,47 +23,84 @@ export default React.createClass({
     },
 
     componentWillMount: function() {
-        getTruckProfile(this.props.params.truckId).then(this.updateStateWithProfile);
+        Promise.all([
+            getTruckProfile(this.props.params.truckId),
+            getCustomerProfile()
+        ]).then(this.updateStateWithProfiles);
     },
 
-    updateStateWithProfile: function(profile) {
-        if (!profile) {
+    updateStateWithProfiles: function(profiles) {
+        const truckProfile = profiles[0];
+        const userProfile = profiles[1];
+
+        this.updateStateWithTruckProfile(truckProfile);
+
+        this.setState({
+            isFavorite: _.includes(userProfile.liked_trucks, truckProfile.id),
+            userProfile: userProfile,
+            truckProfile: truckProfile
+        });
+    },
+
+    updateStateWithTruckProfile: function(truckProfile) {
+        if (!truckProfile) {
             return;
         }
 
-        const phone = profile.phone_number || "";
+        const phone = truckProfile.phone_number || "";
 
         this.setState({
-            companyName: profile.truck_name || "",
-            cuisine: profile.cuisine || "",
-            specials: profile.specials || "",
-            email: profile.email_address || "",
+            companyName: truckProfile.truck_name || "",
+            cuisine: truckProfile.cuisine || "",
+            specials: truckProfile.specials || "",
+            email: truckProfile.email_address || "",
             phone: phone.replace(/(\d{3})(\d{3})(\d{4})/, "($1) $2-$3"),
-            url: profile.website || "",
-            facebook: profile.facebook_page || "",
-            twitter: profile.twitter_page || "",
-            instagram: profile.instagram_page || "",
-            logo: profile.logo_url || "",
-            description: profile.truck_description || ""
+            url: truckProfile.website || "",
+            facebook: truckProfile.facebook_page || "",
+            twitter: truckProfile.twitter_page || "",
+            instagram: truckProfile.instagram_page || "",
+            logo: truckProfile.logo_url || "",
+            description: truckProfile.truck_description || ""
         });
 
         const options = {
             position: {
                 coords: {
-                    latitude: profile.latitude,
-                    longitude: profile.longitude
+                    latitude: truckProfile.latitude,
+                    longitude: truckProfile.longitude
                 }
             },
             markers: [
                 {
-                    latitude: profile.latitude,
-                    longitude: profile.longitude,
-                    title: profile.truck_name
+                    latitude: truckProfile.latitude,
+                    longitude: truckProfile.longitude,
+                    title: truckProfile.truck_name
                 }
             ]
         };
 
         this.map = mapUtils.createMap(options);
+    },
+
+    clickFavorite: function(e) {
+        e.preventDefault();
+
+        const truck_id = this.state.truckProfile.id;
+        let liked_trucks = this.state.userProfile.liked_trucks;
+        if (this.state.isFavorite) {
+            liked_trucks = _.without(liked_trucks, truck_id);
+        } else {
+            liked_trucks.push(truck_id);
+        }
+
+        const payload = {
+            liked_trucks: liked_trucks
+        };
+        saveCustomerProfile(this.state.userProfile.id, payload);
+
+        this.setState({
+            isFavorite: !this.state.isFavorite
+        });
     },
 
     render: function() {
@@ -74,19 +110,18 @@ export default React.createClass({
                 <div>
                   <img className="infoLogo" src={ this.state.logo } />
                 </div>
-                <div>
+                <div className="infoContainer">
                   <div className="infoStyle">
-                    <div className="companyName">
-                      { this.state.companyName }
-                    </div>
-                    <div className="info">
+                    <span className="companyName">{ this.state.companyName }</span>
+                    <span className={ this.state.isFavorite ? "favoriteSelected" : "" } ref="favorite" onClick={ this.clickFavorite } title="Favorite this"><i className="fa fa-thumbs-o-up fa-2x"></i></span>
+                    <div className="cuisineInfo">
                       <span><b>Cuisine: </b><span className="infoText">{ this.state.cuisine }</span></span>
                     </div>
                     <div className="info">
                       <span><b>Specials: </b><span className="infoText">{ this.state.specials }</span></span>
                     </div>
                     <div className="info">
-                      <span><b>Email: </b><span className="infoText">{ this.state.email }</span></span>
+                      <span><b>Email: </b><a href={ this.state.email } className="infoText">{ this.state.email }</a></span>
                     </div>
                     <div className="info">
                       <span><b>Phone: </b><span className="infoText">{ this.state.phone }</span></span>

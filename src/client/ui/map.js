@@ -1,6 +1,6 @@
 import React from "react";
 import Moment from "moment";
-import { getCurrentPosition, getAllTrucks } from "api/data";
+import { getCurrentPosition, getAllTrucks, getCustomerProfile } from "api/data";
 import mapUtils from "utils/map";
 
 require("assets/styles/map.scss");
@@ -13,8 +13,11 @@ export default React.createClass({
     },
 
     componentDidMount: function() {
-        getCurrentPosition().then(this.handlePosition);
-        getAllTrucks().then(this.onTrucks);
+        Promise.all([
+            getCurrentPosition(),
+            getAllTrucks(),
+            getCustomerProfile()
+        ]).then(this.handleData);
 
         this.interval_id = setInterval(this.updateTimeLeft, 1000);
     },
@@ -51,42 +54,53 @@ export default React.createClass({
         }
     },
 
-    onTrucks: function(trucks) {
+    handleData: function(results) {
         if (this.unmounted) {
             return;
         }
 
+        const position = results[0];
+        const trucks = results[1];
+        const userProfile = results[2];
+
+        this.createMap(position);
+
         this.setState({
-            trucks: trucks
+            trucks: trucks,
+            position: position,
+            userProfile: userProfile
         });
 
         this.makeTruckMarkers();
     },
 
-    handlePosition: function(position) {
-        if (this.unmounted) {
-            return;
-        }
-
-        this.setState({
-            position: position
-        });
-
+    createMap: function(position) {
         const options = {
             position: position,
             currentPosition: position
         };
+
         this.map = mapUtils.createMap(options);
 
-        // TODO: We could use position.coords.accuracy (meters) to draw a circle around the "home" indicator
-        // to indicate the accuracy.
-        this.makeTruckMarkers();
+    // TODO: We could use position.coords.accuracy (meters) to draw a circle around the "home" indicator
+    // to indicate the accuracy.
     },
 
-    makeTruckMarkers: function() {
-        if (this.map && this.state.trucks) {
-            this.markers = this.state.trucks.map(this.makeTruckMarker);
+    makeTruckMarkers: function(favoritesOnly) {
+        if (this.markers && this.markers.length) {
+            _.each(this.markers, marker => marker.setMap(null));
         }
+
+        let trucks = this.state.trucks;
+
+        if (favoritesOnly) {
+            const liked_trucks = this.state.userProfile.liked_trucks;
+            trucks = _.filter(this.state.trucks, truck => {
+                return _.includes(liked_trucks, truck.id)
+            });
+        }
+
+        this.markers = trucks.map(this.makeTruckMarker);
     },
 
     makeTruckMarker: function(truck) {
@@ -107,6 +121,8 @@ export default React.createClass({
         marker.addListener("click", function() {
             self.showInfoWindow(truck, marker);
         });
+
+        return marker;
     },
 
     showInfoWindow: function(truck, marker) {
@@ -143,11 +159,21 @@ export default React.createClass({
         this.infowindow.open(this.map, marker);
     },
 
+    toggleFavorite: function() {
+        this.makeTruckMarkers(this.refs.favoriteChecked.checked);
+    },
+
     render: function() {
         return (
             <div className="mapContainer">
-              <div className="map" id="map">
-                Loading...
+              <div className="favoriteContainer">
+                <input ref="favoriteChecked" type="checkbox" className="favoriteCheckbox" onChange={ this.toggleFavorite } />
+                <span className="favoriteText">Show only your favorite food trucks!</span>
+              </div>
+              <div className="mapBox">
+                <div className="map" id="map">
+                  Loading...
+                </div>
               </div>
             </div>
         )
