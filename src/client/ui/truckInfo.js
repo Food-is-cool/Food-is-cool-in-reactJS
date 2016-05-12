@@ -1,6 +1,8 @@
 import React from "react";
 import { getTruckProfile } from "api/data";
 import mapUtils from "utils/map";
+import { notify } from "react-notify-toast";
+
 
 require("assets/styles/truckInfo.scss");
 
@@ -14,6 +16,8 @@ export default React.createClass({
             phone: "",
             url: "",
             facebook: "",
+            twitter: "",
+            instagram: "",
             logo: "",
             description: ""
         };
@@ -38,6 +42,8 @@ export default React.createClass({
             phone: phone.replace(/(\d{3})(\d{3})(\d{4})/, "($1) $2-$3"),
             url: profile.website || "",
             facebook: profile.facebook_page || "",
+            twitter: profile.twitter_page || "",
+            instagram: profile.instagram_page || "",
             logo: profile.logo_url || "",
             description: profile.truck_description || ""
         });
@@ -73,33 +79,25 @@ export default React.createClass({
                     <div className="companyName">
                       { this.state.companyName }
                     </div>
-                    <br />
                     <div className="info">
-                      <span><b>Cuisine: </b>{ this.state.cuisine }</span>
+                      <span><b>Cuisine: </b><span className="infoText">{ this.state.cuisine }</span></span>
                     </div>
-                    <br />
                     <div className="info">
-                      <span><b>Specials: </b>{ this.state.specials }</span>
+                      <span><b>Specials: </b><span className="infoText">{ this.state.specials }</span></span>
                     </div>
-                    <br />
                     <div className="info">
-                      <span><b>Email: </b>{ this.state.email }</span>
+                      <span><b>Email: </b><span className="infoText">{ this.state.email }</span></span>
                     </div>
-                    <br />
                     <div className="info">
-                      <span><b>Phone: </b>{ this.state.phone }</span>
+                      <span><b>Phone: </b><span className="infoText">{ this.state.phone }</span></span>
                     </div>
-                    <br />
                     <div className="info">
-                      <span><b>Website Address: </b>{ this.state.url }</span>
+                      <span><b>Description: </b><span className="infoText">{ this.state.description }</span></span>
                     </div>
-                    <br />
-                    <div className="info">
-                      <span><b>facebook: </b>{ this.state.facebook }</span>
-                    </div>
-                    <br />
-                    <div className="info">
-                      <span>Description: { this.state.description }</span>
+                    <div className="socialMedia">
+                      <span><a href={ this.state.facebook } className="fa fa-facebook-square fa-2x"></a></span>
+                      <span><a href={ this.state.twitter } className="fa fa-twitter-square fa-2x"></a></span>
+                      <span><a href={ this.state.instagram } className="fa fa-instagram fa-2x"></a></span>
                     </div>
                   </div>
                 </div>

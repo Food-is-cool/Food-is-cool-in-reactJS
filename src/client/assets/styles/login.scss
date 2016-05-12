@@ -87,7 +87,7 @@
 	border: none;
 	width: 225px;
     height: 45px;
-    margin-left:10px;
+    margin-left:20px;
     padding-left: 30px;
     border: 1px solid rgba(13,32,42,.4);
     outline: none;
@@ -100,7 +100,7 @@
 	border: none;
 	width: 225px;
     height: 45px;
-    margin-left:9px;
+    margin-left:19px;
     padding-left: 30px;
 	border: 1px solid rgba(13,32,42,.4);
     outline: none;
@@ -143,10 +143,13 @@
 	outline: none;
 	border-bottom: none;
 }
-.fa {
-	margin-left: 10px;
+.fa-sign-in {
 	position: relative;
-	left: 30px;
+	left: 40px;
+}
+.fa-unlock {
+	position: relative;
+	left: 40px;
 }
 .radioButtons{
 	margin-left: 45px;

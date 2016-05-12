@@ -48,6 +48,8 @@
 }
 .truckForm{
 	text-align: center;
+	z-index: 1000;
+	position: relative;
 }
 .truckLabels{
 	position: relative;
@@ -56,44 +58,58 @@
 }
 .companyLabels{
 	color: #BCB08F;
+	top: -68px;
+	position: relative;
 }
 .cuisineLabels{
 	position: relative;
-    top: 17px;
+    top: -49px;
     color: #BCB08F;
 }
 .emailLabels{
 	position: relative;
-    top: 37px;
+    top: -30px;
     color: #BCB08F;
 }
 .phoneLabels{
 	position: relative;
-    top: 57px;
+    top: -11px;
     color: #BCB08F;
     left: 180px;
 }
 .webAddressLabels{
 	position: relative;
-    top: 77px;
+    top: 8px;
     color: #BCB08F;
     left: 180px;
 }
 .facebookLabels{
 	position: relative;
-    top: 97px;
+    top: 26px;
     color: #BCB08F;
     left: 180px;
 }
+.twitterLabels{
+	position: relative;
+	top: 46px;
+	color: #BCB08F;
+	left: 180px;
+}
+.instagramLabels{
+	position: relative;
+	top: 64px;
+	color: #BCB08F;
+	left: 180px;
+}
 .logoLabels{
 	position: relative;
-    top: 117px;
+    top: 84px;
     color: #BCB08F;
     left: 180px;
 }
 .descriptionLabels{
 	position: relative;
-    top: 137px;
+    top: 98px;
     color: #BCB08F;
     left: 180px;
 }

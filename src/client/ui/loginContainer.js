@@ -71,7 +71,7 @@ export default React.createClass({
                   <input ref="username" className="login" onChange={ this.handleChange } name="username" type="text" placeholder="User Name"></input>
                   <br />
                   <i className="fa fa-unlock"></i>
-                  <input ref="password" className="password" type="password" onChange={ this.handleChange } name="password" placeholder="PassWord"></input>
+                  <input ref="password" className="password" type="password" onChange={ this.handleChange } name="password" placeholder="Password"></input>
                   <br />
                   <button className="loginButton">Login</button>
                 </form>

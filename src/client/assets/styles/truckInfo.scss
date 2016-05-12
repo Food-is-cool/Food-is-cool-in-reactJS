@@ -5,7 +5,7 @@
 	display: flex;
 }
 .infoLogo{
-	height: 400px;
+	height: auto;
 	width: 400px;
 	box-shadow: 10px 10px 5px #192B34;
 }
@@ -16,10 +16,13 @@
 	margin-left: 20px;
 }
 .infoStyle{
-	margin: 0px 20px 20px 20px;
+	margin: 0px 20px 20px 25px;
 }
 .info{
-	margin-top: -10px;
+	margin-top: 10px;
+}
+.infoText{
+	color: #BCB08F;
 }
 .mapTruckContainer{
 	float:right;
@@ -29,6 +32,23 @@
 	margin: 0 auto;
 	box-shadow: 10px 10px 5px #192B34;
 	position: relative;
-	top:-485px;
-	margin-right: 20px;
+	top:-400px;
+	margin-right: 60px;
+}
+.socialMedia{
+	margin-top:10px;
+}
+.fa-facebook-square{
+	margin-right:5px;
+	color: #BCB08F;
+	text-decoration: none;
+}
+.fa-twitter-square{
+	margin-right:5px;
+    color: #BCB08F;
+	text-decoration: none;
+}
+.fa-instagram{
+    color: #BCB08F;
+	text-decoration: none;
 }
