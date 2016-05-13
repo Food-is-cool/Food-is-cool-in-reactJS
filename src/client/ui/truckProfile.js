@@ -19,7 +19,27 @@ export default React.createClass({
             twitter: "",
             instagram: "",
             logo: "",
-            description: ""
+            description: "",
+            menu1: "",
+            menu2: "",
+            menu3: "",
+            menu4: "",
+            menu5: "",
+            menu6: "",
+            menu7: "",
+            menu8: "",
+            menu9: "",
+            menu10: "",
+            menuPrice1: "",
+            menuPrice2: "",
+            menuPrice3: "",
+            menuPrice4: "",
+            menuPrice5: "",
+            menuPrice6: "",
+            menuPrice7: "",
+            menuPrice8: "",
+            menuPrice9: "",
+            menuPrice10: ""
         };
     },
 
@@ -33,17 +53,37 @@ export default React.createClass({
         }
 
         this.setState({
-            id: profile.id,
-            companyName: profile.truck_name,
-            cuisine: profile.cuisine,
-            email: profile.email_address,
-            phone: profile.phone_number,
-            url: profile.website,
-            facebook: profile.facebook_page,
-            twitter: profile.twitter_page,
-            instagram: profile.instagram_page,
-            logo: profile.logo_url,
-            description: profile.truck_description
+            id: profile.id || "",
+            companyName: profile.truck_name || "",
+            cuisine: profile.cuisine || "",
+            email: profile.email_address || "",
+            phone: profile.phone_number || "",
+            url: profile.website || "",
+            facebook: profile.facebook_page || "",
+            twitter: profile.twitter_page || "",
+            instagram: profile.instagram_page || "",
+            logo: profile.logo_url || "",
+            description: profile.truck_description || "",
+            menu1: profile.menu_item_1 || "",
+            menu2: profile.menu_item_2 || "",
+            menu3: profile.menu_item_3 || "",
+            menu4: profile.menu_item_4 || "",
+            menu5: profile.menu_item_5 || "",
+            menu6: profile.menu_item_6 || "",
+            menu7: profile.menu_item_7 || "",
+            menu8: profile.menu_item_8 || "",
+            menu9: profile.menu_item_9 || "",
+            menu10: profile.menu_item_10 || "",
+            menuPrice1: profile.item_1_price || "",
+            menuPrice2: profile.item_2_price || "",
+            menuPrice3: profile.item_3_price || "",
+            menuPrice4: profile.item_4_price || "",
+            menuPrice5: profile.item_5_price || "",
+            menuPrice6: profile.item_6_price || "",
+            menuPrice7: profile.item_7_price || "",
+            menuPrice8: profile.item_8_price || "",
+            menuPrice9: profile.item_9_price || "",
+            menuPrice10: profile.item_10_price || ""
         });
     },
 
@@ -58,7 +98,27 @@ export default React.createClass({
             twitter: this.refs.twitter.value,
             innstagram: this.refs.instagram.value,
             logo: this.refs.logo.value,
-            description: this.refs.description.value
+            description: this.refs.description.value,
+            menu1: this.refs.menu1.value,
+            menu2: this.refs.menu2.value,
+            menu3: this.refs.menu3.value,
+            menu4: this.refs.menu4.value,
+            menu5: this.refs.menu5.value,
+            menu6: this.refs.menu6.value,
+            menu7: this.refs.menu7.value,
+            menu8: this.refs.menu8.value,
+            menu9: this.refs.menu9.value,
+            menu10: this.refs.menu10.value,
+            menuPrice1: this.refs.menuPrice1.value,
+            menuPrice2: this.refs.menuPrice2.value,
+            menuPrice3: this.refs.menuPrice3.value,
+            menuPrice4: this.refs.menuPrice4.value,
+            menuPrice5: this.refs.menuPrice5.value,
+            menuPrice6: this.refs.menuPrice6.value,
+            menuPrice7: this.refs.menuPrice7.value,
+            menuPrice8: this.refs.menuPrice8.value,
+            menuPrice9: this.refs.menuPrice9.value,
+            menuPrice10: this.refs.menuPrice10.value
         });
     },
 
@@ -101,9 +161,28 @@ export default React.createClass({
             twitter_page: this.state.twitter,
             instagram_page: this.state.instagram,
             logo_url: this.state.logo,
-            truck_description: this.state.description
+            truck_description: this.state.description,
+            menu_item_1: this.state.menu1,
+            menu_item_2: this.state.menu2,
+            menu_item_3: this.state.menu3,
+            menu_item_4: this.state.menu4,
+            menu_item_5: this.state.menu5,
+            menu_item_6: this.state.menu6,
+            menu_item_7: this.state.menu7,
+            menu_item_8: this.state.menu8,
+            menu_item_9: this.state.menu9,
+            menu_item_10: this.state.menu10,
+            item_1_price: this.state.menuPrice1,
+            item_2_price: this.state.menuPrice2,
+            item_3_price: this.state.menuPrice3,
+            item_4_price: this.state.menuPrice4,
+            item_5_price: this.state.menuPrice5,
+            item_6_price: this.state.menuPrice6,
+            item_7_price: this.state.menuPrice7,
+            item_8_price: this.state.menuPrice8,
+            item_9_price: this.state.menuPrice9,
+            item_10_price: this.state.menuPrice10
         };
-
         saveTruckProfile(this.state.id, payload)
             .then(function() {
                 notify.show("Your profile has been Saved!", "success");
@@ -117,70 +196,117 @@ export default React.createClass({
         return (
             <div className="truckProfile">
               <form className="truckForm">
-                <div className="profileInput">
-                  <input ref="companyName" placeholder="Company Name" className="input" type="text" name="companyName" value={ this.state.companyName } onChange={ this.handleChange } />
+                <div className="truckLabels">
+                  <div>
+                    <label className="companyLabels">Company Name: </label>
+                  </div>
+                  <div>
+                    <label className="cuisineLabels">Cuisine: </label>
+                  </div>
+                  <div>
+                    <label className="emailLabels">Email: </label>
+                  </div>
+                  <div>
+                    <label className="phoneLabels">Phone: </label>
+                  </div>
+                  <div>
+                    <label className="webAddressLabels">Web Address: </label>
+                  </div>
+                  <div>
+                    <label className="facebookLabels">facebook: </label>
+                  </div>
+                  <div>
+                    <label className="twitterLabels">twitter: </label>
+                  </div>
+                  <div>
+                    <label className="instagramLabels">Instagram: </label>
+                  </div>
+                  <div>
+                    <label className="logoLabels">Logo: </label>
+                  </div>
+                  <div>
+                    <label className="descriptionLabels">Description: </label>
+                  </div>
                 </div>
-                <div className="profileInput">
-                  <input ref="cuisine" placeholder="Cuisine" className="input" type="text" name="cuisine" value={ this.state.cuisine } onChange={ this.handleChange } />
+                <div className="truckInformationContainer">
+                  <div className="profileTruckInput">
+                    <input ref="companyName" placeholder="Company Name" className="input" type="text" name="companyName" value={ this.state.companyName } onChange={ this.handleChange } />
+                  </div>
+                  <div className="profileTruckInput">
+                    <input ref="cuisine" placeholder="Cuisine" className="input" type="text" name="cuisine" value={ this.state.cuisine } onChange={ this.handleChange } />
+                  </div>
+                  <div className="profileTruckInput">
+                    <input ref="email" placeholder="Email" className="input" type="email" name="email" value={ this.state.email } onChange={ this.handleChange } />
+                  </div>
+                  <div className="profileTruckInput">
+                    <MaskedInput mask="(111) 111-1111" ref="phone" placeholder="Phone" className="input" type="tel" name="phone" value={ this.state.phone } onChange={ this.handleChange }
+                    />
+                  </div>
+                  <div className="profileTruckInput">
+                    <input ref="url" placeholder="Web Address" className="input" type="url" name="url" value={ this.state.url } onChange={ this.handleChange } />
+                  </div>
+                  <div className="profileTruckInput">
+                    <input ref="facebook" placeholder="facebook" className="input" type="url" name="facebook" value={ this.state.facebook } onChange={ this.handleChange } />
+                  </div>
+                  <div className="profileTruckInput">
+                    <input ref="twitter" placeholder="twitter" className="input" type="url" name="twitter" value={ this.state.twitter } onChange={ this.handleChange } />
+                  </div>
+                  <div className="profileTruckInput">
+                    <input ref="instagram" placeholder="Instagram" className="input" type="url" name="instagram" value={ this.state.instagram } onChange={ this.handleChange } />
+                  </div>
+                  <div className="profileTruckInput">
+                    <input ref="logo" placeholder="Logo" className="input" type="text" name="logo" value={ this.state.logo } onChange={ this.handleChange } />
+                  </div>
+                  <div className="profileTruckInput">
+                    <input ref="description" placeholder="Description" className="input" value={ this.state.description } onChange={ this.handleChange }></input>
+                  </div>
                 </div>
-                <div className="profileInput">
-                  <input ref="email" placeholder="Email" className="input" type="email" name="email" value={ this.state.email } onChange={ this.handleChange } />
+                <label className="menuItemTitle">Menu Items:</label>
+                <div className="menuContainer">
+                  <div className="menuInput">
+                    <input ref="menu1" placeholder="Menu Item" className="profileText" value={ this.state.menu1 } onChange={ this.handleChange } />
+                    <input ref="menuPrice1" placeholder="Price" className="menuPrice" value={ this.state.menuPrice1 } onChange={ this.handleChange } />
+                  </div>
+                  <div className="menuInput">
+                    <input ref="menu2" placeholder="Menu Item" className="profileText" value={ this.state.menu2 } onChange={ this.handleChange } />
+                    <input ref="menuPrice2" placeholder="Price" className="menuPrice" value={ this.state.menuPrice2 } onChange={ this.handleChange } />
+                  </div>
+                  <div className="menuInput">
+                    <input ref="menu3" placeholder="Menu Item" className="profileText" value={ this.state.menu3 } onChange={ this.handleChange } />
+                    <input ref="menuPrice3" placeholder="Price" className="menuPrice" value={ this.state.menuPrice3 } onChange={ this.handleChange } />
+                  </div>
+                  <div className="menuInput">
+                    <input ref="menu4" placeholder="Menu Item" className="profileText" value={ this.state.menu4 } onChange={ this.handleChange } />
+                    <input ref="menuPrice4" placeholder="Price" className="menuPrice" value={ this.state.menuPrice4 } onChange={ this.handleChange } />
+                  </div>
+                  <div className="menuInput">
+                    <input ref="menu5" placeholder="Menu Item" className="profileText" value={ this.state.menu5 } onChange={ this.handleChange } />
+                    <input ref="menuPrice5" placeholder="Price" className="menuPrice" value={ this.state.menuPrice5 } onChange={ this.handleChange } />
+                  </div>
+                  <div className="menuInput">
+                    <input ref="menu6" placeholder="Menu Item" className="profileText" value={ this.state.menu6 } onChange={ this.handleChange } />
+                    <input ref="menuPrice6" placeholder="Price" className="menuPrice" value={ this.state.menuPrice6 } onChange={ this.handleChange } />
+                  </div>
+                  <div className="menuInput">
+                    <input ref="menu7" placeholder="Menu Item" className="profileText" value={ this.state.menu7 } onChange={ this.handleChange } />
+                    <input ref="menuPrice7" placeholder="Price" className="menuPrice" value={ this.state.menuPrice7 } onChange={ this.handleChange } />
+                  </div>
+                  <div className="menuInput">
+                    <input ref="menu8" placeholder="Menu Item" className="profileText" value={ this.state.menu8 } onChange={ this.handleChange } />
+                    <input ref="menuPrice8" placeholder="Price" className="menuPrice" value={ this.state.menuPrice8 } onChange={ this.handleChange } />
+                  </div>
+                  <div className="menuInput">
+                    <input ref="menu9" placeholder="Menu Item" className="profileText" value={ this.state.menu9 } onChange={ this.handleChange } />
+                    <input ref="menuPrice9" placeholder="Price" className="menuPrice" value={ this.state.menuPrice9 } onChange={ this.handleChange } />
+                  </div>
+                  <div className="menuInput">
+                    <input ref="menu10" placeholder="Menu Item" className="profileText" value={ this.state.menu10 } onChange={ this.handleChange } />
+                    <input ref="menuPrice10" placeholder="Price" className="menuPrice" value={ this.state.menuPrice10 } onChange={ this.handleChange } />
+                  </div>
                 </div>
-                <div className="profileInput">
-                  <MaskedInput mask="(111) 111-1111" ref="phone" placeholder="Phone" className="input" type="tel" name="phone" value={ this.state.phone } onChange={ this.handleChange }
-                  />
-                </div>
-                <div className="profileInput">
-                  <input ref="url" placeholder="Web Address" className="input" type="url" name="url" value={ this.state.url } onChange={ this.handleChange } />
-                </div>
-                <div className="profileInput">
-                  <input ref="facebook" placeholder="facebook" className="input" type="url" name="facebook" value={ this.state.facebook } onChange={ this.handleChange } />
-                </div>
-                <div className="profileInput">
-                  <input ref="twitter" placeholder="twitter" className="input" type="url" name="twitter" value={ this.state.twitter } onChange={ this.handleChange } />
-                </div>
-                <div className="profileInput">
-                  <input ref="instagram" placeholder="Instagram" className="input" type="url" name="instagram" value={ this.state.instagram } onChange={ this.handleChange } />
-                </div>
-                <div className="profileInput">
-                  <input ref="logo" placeholder="Logo" className="input" type="text" name="logo" value={ this.state.logo } onChange={ this.handleChange } />
-                </div>
-                <div className="profileInput">
-                  <textarea ref="description" placeholder="Description" className="profileText" rows="4" cols="50" value={ this.state.description } onChange={ this.handleChange }></textarea>
-                </div>
-                <button className="profileButton" type="button" onClick={ this.onSubmit }>Submit</button>
               </form>
-              <div className="truckLabels">
-                <div>
-                  <label className="companyLabels">Company Name: </label>
-                </div>
-                <div>
-                  <label className="cuisineLabels">Cuisine: </label>
-                </div>
-                <div>
-                  <label className="emailLabels">Email: </label>
-                </div>
-                <div>
-                  <label className="phoneLabels">Phone: </label>
-                </div>
-                <div>
-                  <label className="webAddressLabels">Web Address: </label>
-                </div>
-                <div>
-                  <label className="facebookLabels">facebook: </label>
-                </div>
-                <div>
-                  <label className="twitterLabels">twitter: </label>
-                </div>
-                <div>
-                  <label className="instagramLabels">Instagram: </label>
-                </div>
-                <div>
-                  <label className="logoLabels">Logo: </label>
-                </div>
-                <div>
-                  <label className="descriptionLabels">Description: </label>
-                </div>
+              <div className="truckButtonContainer">
+                <button className="profileButton" type="button" onClick={ this.onSubmit }>Submit</button>
               </div>
             </div>
         )

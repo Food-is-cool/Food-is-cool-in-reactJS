@@ -1,11 +1,11 @@
 .truckProfile{
 	margin: 0 auto;
 	height: 500px;
-	width: 422px;
+	width: 900px;
 }
 
 .input{
-	width: 434px;
+	width: 350px;
 	outline: none;
 	height: 30px;
 	box-shadow: 3px 3px 5px #192B34;
@@ -14,13 +14,10 @@
 	border:none;
 	color:#423513;
 }
-.profileInput {
-	margin-top: 7px;
+.truckButtonContainer{
+	text-align: center;
 }
-
 .profileButton{
-	float: left;
-    position:relative;
 	height: 35px;
 	width: 180px;
 	margin-top: 15px;
@@ -38,6 +35,8 @@
 	top: 5px;
 }
 .profileText{
+	width:150px;
+	height: 30px;
 	box-shadow: 3px 3px 5px #192B34;
 	outline: none;
 	padding-left: 15px;
@@ -46,70 +45,40 @@
 	border:none;
 	color:#423513;
 }
+.menuPrice{
+	width:75px;
+	height: 30px;
+	box-shadow: 3px 3px 5px #192B34;
+	outline: none;
+	padding-left: 15px;
+	border: 2px solid #9A9A9A;
+	background: #eae6e1;
+	border:none;
+	color:#423513;
+	margin-left: 9px;
+}
 .truckForm{
-	text-align: center;
-	z-index: 1000;
-	position: relative;
+	display: flex;
+	width:100%;
+
 }
+
 .truckLabels{
-	position: relative;
-    top: -339px;
-    left: -311px;
-}
-.companyLabels{
 	color: #BCB08F;
-	top: -68px;
-	position: relative;
+	margin-top:1px;
+	height:370px;
+	width:125px;
+	display:flex;
+	flex-direction: column;
+	justify-content: space-around;
 }
-.cuisineLabels{
-	position: relative;
-    top: -49px;
-    color: #BCB08F;
+.menuContainer{
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
 }
-.emailLabels{
-	position: relative;
-    top: -30px;
-    color: #BCB08F;
-}
-.phoneLabels{
-	position: relative;
-    top: -11px;
-    color: #BCB08F;
-    left: 180px;
-}
-.webAddressLabels{
-	position: relative;
-    top: 8px;
-    color: #BCB08F;
-    left: 180px;
-}
-.facebookLabels{
-	position: relative;
-    top: 26px;
-    color: #BCB08F;
-    left: 180px;
-}
-.twitterLabels{
-	position: relative;
-	top: 46px;
+.menuItemTitle{
 	color: #BCB08F;
-	left: 180px;
-}
-.instagramLabels{
-	position: relative;
-	top: 64px;
-	color: #BCB08F;
-	left: 180px;
-}
-.logoLabels{
-	position: relative;
-    top: 84px;
-    color: #BCB08F;
-    left: 180px;
-}
-.descriptionLabels{
-	position: relative;
-    top: 98px;
-    color: #BCB08F;
-    left: 180px;
+	margin: 0 5px 0 30px;
+
 }

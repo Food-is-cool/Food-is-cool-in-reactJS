@@ -45,9 +45,6 @@
 .fa-thumbs-o-up{
 	margin-left: 40px;
 }
-.socialMedia{
-	margin-top:10px;
-}
 .fa-facebook-square{
 	margin-right:5px;
 	color: #BCB08F;
@@ -64,4 +61,24 @@
 }
 .favoriteSelected{
 	color: #78a081;
+}
+.truckInformationContainer{
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+.socialMediaIcons{
+	margin-top: 10px;
+    float: right;
+    margin-left: -92px;
+}
+.menuContainerInfo{
+	display: flex;
+	width:150px;
+	font-size: 13px;
+	margin-left: 50px;
+}
+.infoTextPrice{
+	color: #BCB08F;
+	margin-left: 20px;
 }
