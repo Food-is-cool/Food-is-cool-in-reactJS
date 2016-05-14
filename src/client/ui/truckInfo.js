@@ -1,5 +1,6 @@
 import React from "react";
 import { getTruckProfile, getCustomerProfile, saveCustomerProfile } from "api/data";
+import { goToUrl } from "utils/animation";
 import mapUtils from "utils/map";
 import _ from "lodash";
 
@@ -18,28 +19,8 @@ export default React.createClass({
             twitter: "",
             instagram: "",
             logo: "",
-            description: "",
-            menu1: "",
-            menu1: "",
-            menu2: "",
-            menu3: "",
-            menu4: "",
-            menu5: "",
-            menu6: "",
-            menu7: "",
-            menu8: "",
-            menu9: "",
-            menu10: "",
-            menuPrice1: "",
-            menuPrice2: "",
-            menuPrice3: "",
-            menuPrice4: "",
-            menuPrice5: "",
-            menuPrice6: "",
-            menuPrice7: "",
-            menuPrice8: "",
-            menuPrice9: "",
-            menuPrice10: ""
+            description: ""
+
         };
     },
 
@@ -81,27 +62,7 @@ export default React.createClass({
             twitter: truckProfile.twitter_page || "",
             instagram: truckProfile.instagram_page || "",
             logo: truckProfile.logo_url || "",
-            description: truckProfile.truck_description || "",
-            menu1: truckProfile.menu_item_1 || "",
-            menu2: truckProfile.menu_item_2 || "",
-            menu3: truckProfile.menu_item_3 || "",
-            menu4: truckProfile.menu_item_4 || "",
-            menu5: truckProfile.menu_item_5 || "",
-            menu6: truckProfile.menu_item_6 || "",
-            menu7: truckProfile.menu_item_7 || "",
-            menu8: truckProfile.menu_item_8 || "",
-            menu9: truckProfile.menu_item_9 || "",
-            menu10: truckProfile.menu_item_10 || "",
-            menuPrices1: truckProfile.item_1_price || "",
-            menuPrices2: truckProfile.item_2_price || "",
-            menuPrices3: truckProfile.item_3_price || "",
-            menuPrices4: truckProfile.item_4_price || "",
-            menuPrices5: truckProfile.item_5_price || "",
-            menuPrices6: truckProfile.item_6_price || "",
-            menuPrices7: truckProfile.item_7_price || "",
-            menuPrices8: truckProfile.item_8_price || "",
-            menuPrices9: truckProfile.item_9_price || "",
-            menuPrices10: truckProfile.item_10_price || ""
+            description: truckProfile.truck_description || ""
         });
 
         const options = {
@@ -143,24 +104,30 @@ export default React.createClass({
             isFavorite: !this.state.isFavorite
         });
     },
+    onMenuClick: function(e) {
+        e.preventDefault();
+        goToUrl("/menu/" + this.state.truckProfile.id);
+    },
+
+
 
     render: function() {
         return (
             <div>
-              <div className="truckInfoContainer">
-                <div>
-                  <img className="infoLogo" src={ this.state.logo } />
-                  <div className="socialMediaIcons">
-                    <span><a href={ this.state.facebook } className="fa fa-facebook-square fa-2x"></a></span>
-                    <span><a href={ this.state.twitter } className="fa fa-twitter-square fa-2x"></a></span>
-                    <span><a href={ this.state.instagram } className="fa fa-instagram fa-2x"></a></span>
+              <span className="companyName">{ this.state.companyName }</span>
+              <span className={ this.state.isFavorite ? "favoriteSelected" : "" } ref="favorite" onClick={ this.clickFavorite } title="Favorite this"><i className="fa fa-thumbs-o-up fa-2x"></i></span>
+              <div className="cuisineInfo">
+                <div className="truckInfoContainer">
+                  <div>
+                    <img className="infoLogo" src={ this.state.logo } />
+                    <div className="socialMediaIcons">
+                      <span><a href={ this.state.facebook } className="fa fa-facebook-square fa-2x"></a></span>
+                      <span><a href={ this.state.twitter } className="fa fa-twitter-square fa-2x"></a></span>
+                      <span><a href={ this.state.instagram } className="fa fa-instagram fa-2x"></a></span>
+                    </div>
                   </div>
-                </div>
-                <div className="infoContainer">
-                  <div className="infoStyle">
-                    <span className="companyName">{ this.state.companyName }</span>
-                    <span className={ this.state.isFavorite ? "favoriteSelected" : "" } ref="favorite" onClick={ this.clickFavorite } title="Favorite this"><i className="fa fa-thumbs-o-up fa-2x"></i></span>
-                    <div className="cuisineInfo">
+                  <div className="infoContainer">
+                    <div className="infoStyle">
                       <span><b>Cuisine: </b><span className="infoText">{ this.state.cuisine }</span></span>
                     </div>
                     <div className="info">
@@ -175,74 +142,9 @@ export default React.createClass({
                     <div className="info">
                       <span><b>Description: </b><span className="infoText">{ this.state.description }</span></span>
                     </div>
+                    <button onClick={ this.onMenuClick } className="buttonMenu">Menu</button>
                     <div className="info">
                       <span><b>Menu: </b></span>
-                      <div className="menuContainerInfo">
-                        <div className="infoText">
-                          <div>
-                            { this.state.menu1 }
-                          </div>
-                          <div>
-                            { this.state.menu2 }
-                          </div>
-                          <div>
-                            { this.state.menu3 }
-                          </div>
-                          <div>
-                            { this.state.menu4 }
-                          </div>
-                          <div>
-                            { this.state.menu5 }
-                          </div>
-                          <div>
-                            { this.state.menu6 }
-                          </div>
-                          <div>
-                            { this.state.menu7 }
-                          </div>
-                          <div>
-                            { this.state.menu8 }
-                          </div>
-                          <div>
-                            { this.state.menu9 }
-                          </div>
-                          <div>
-                            { this.state.menu10 }
-                          </div>
-                        </div>
-                        <div className="infoTextPrice">
-                          <div>$
-                            { this.state.menuPrices1 }
-                          </div>
-                          <div>$
-                            { this.state.menuPrices2 }
-                          </div>
-                          <div> $
-                            { this.state.menuPrices3 }
-                          </div>
-                          <div> $
-                            { this.state.menuPrices4 }
-                          </div>
-                          <div> $
-                            { this.state.menuPrices5 }
-                          </div>
-                          <div> $
-                            { this.state.menuPrices6 }
-                          </div>
-                          <div> $
-                            { this.state.menuPrices7 }
-                          </div>
-                          <div> $
-                            { this.state.menuPrices8 }
-                          </div>
-                          <div> $
-                            { this.state.menuPrices9 }
-                          </div>
-                          <div> $
-                            { this.state.menuPrices10 }
-                          </div>
-                        </div>
-                      </div>
                     </div>
                   </div>
                 </div>

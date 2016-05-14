@@ -39,7 +39,17 @@ export default React.createClass({
             menuPrice7: "",
             menuPrice8: "",
             menuPrice9: "",
-            menuPrice10: ""
+            menuPrice10: "",
+            menuImage1: "",
+            menuImage2: "",
+            menuImage3: "",
+            menuImage4: "",
+            menuImage5: "",
+            menuImage6: "",
+            menuImage7: "",
+            menuImage8: "",
+            menuImage9: "",
+            menuImage10: ""
         };
     },
 
@@ -83,7 +93,17 @@ export default React.createClass({
             menuPrice7: profile.item_7_price || "",
             menuPrice8: profile.item_8_price || "",
             menuPrice9: profile.item_9_price || "",
-            menuPrice10: profile.item_10_price || ""
+            menuPrice10: profile.item_10_price || "",
+            menuImage1: profile.item_1_image || "",
+            menuImage2: profile.item_2_image || "",
+            menuImage3: profile.item_3_image || "",
+            menuImage4: profile.item_4_image || "",
+            menuImage5: profile.item_5_image || "",
+            menuImage6: profile.item_6_image || "",
+            menuImage7: profile.item_7_image || "",
+            menuImage8: profile.item_8_image || "",
+            menuImage9: profile.item_9_image || "",
+            menuImage10: profile.item_10_image || ""
         });
     },
 
@@ -118,7 +138,17 @@ export default React.createClass({
             menuPrice7: this.refs.menuPrice7.value,
             menuPrice8: this.refs.menuPrice8.value,
             menuPrice9: this.refs.menuPrice9.value,
-            menuPrice10: this.refs.menuPrice10.value
+            menuPrice10: this.refs.menuPrice10.value,
+            menuImage1: this.refs.menuImage1.value,
+            menuImage2: this.refs.menuImage2.value,
+            menuImage3: this.refs.menuImage3.value,
+            menuImage4: this.refs.menuImage4.value,
+            menuImage5: this.refs.menuImage5.value,
+            menuImage6: this.refs.menuImage6.value,
+            menuImage7: this.refs.menuImage7.value,
+            menuImage8: this.refs.menuImage8.value,
+            menuImage9: this.refs.menuImage9.value,
+            menuImage10: this.refs.menuImage10.value
         });
     },
 
@@ -181,7 +211,17 @@ export default React.createClass({
             item_7_price: this.state.menuPrice7,
             item_8_price: this.state.menuPrice8,
             item_9_price: this.state.menuPrice9,
-            item_10_price: this.state.menuPrice10
+            item_10_price: this.state.menuPrice10,
+            item_1_image: this.state.menuImage1,
+            item_2_image: this.state.menuImage2,
+            item_3_image: this.state.menuImage3,
+            item_4_image: this.state.menuImage4,
+            item_5_image: this.state.menuImage5,
+            item_6_image: this.state.menuImage6,
+            item_7_image: this.state.menuImage7,
+            item_8_image: this.state.menuImage8,
+            item_9_image: this.state.menuImage9,
+            item_10_image: this.state.menuImage10
         };
         saveTruckProfile(this.state.id, payload)
             .then(function() {
@@ -266,42 +306,52 @@ export default React.createClass({
                   <div className="menuInput">
                     <input ref="menu1" placeholder="Menu Item" className="profileText" value={ this.state.menu1 } onChange={ this.handleChange } />
                     <input ref="menuPrice1" placeholder="Price" className="menuPrice" value={ this.state.menuPrice1 } onChange={ this.handleChange } />
+                    <input ref="menuImage1" placeholder="Enter image url" className="menuImage" value={ this.state.menuImage1 } onChange={ this.handleChange } />
                   </div>
                   <div className="menuInput">
                     <input ref="menu2" placeholder="Menu Item" className="profileText" value={ this.state.menu2 } onChange={ this.handleChange } />
                     <input ref="menuPrice2" placeholder="Price" className="menuPrice" value={ this.state.menuPrice2 } onChange={ this.handleChange } />
+                    <input ref="menuImage2" placeholder="Enter image url" className="menuImage" value={ this.state.menuImage2 } onChange={ this.handleChange } />
                   </div>
                   <div className="menuInput">
                     <input ref="menu3" placeholder="Menu Item" className="profileText" value={ this.state.menu3 } onChange={ this.handleChange } />
                     <input ref="menuPrice3" placeholder="Price" className="menuPrice" value={ this.state.menuPrice3 } onChange={ this.handleChange } />
+                    <input ref="menuImage3" placeholder="Enter image url" className="menuImage" value={ this.state.menuImage3 } onChange={ this.handleChange } />
                   </div>
                   <div className="menuInput">
                     <input ref="menu4" placeholder="Menu Item" className="profileText" value={ this.state.menu4 } onChange={ this.handleChange } />
                     <input ref="menuPrice4" placeholder="Price" className="menuPrice" value={ this.state.menuPrice4 } onChange={ this.handleChange } />
+                    <input ref="menuImage4" placeholder="Enter image url" className="menuImage" value={ this.state.menuImage4 } onChange={ this.handleChange } />
                   </div>
                   <div className="menuInput">
                     <input ref="menu5" placeholder="Menu Item" className="profileText" value={ this.state.menu5 } onChange={ this.handleChange } />
                     <input ref="menuPrice5" placeholder="Price" className="menuPrice" value={ this.state.menuPrice5 } onChange={ this.handleChange } />
+                    <input ref="menuImage5" placeholder="Enter image url" className="menuImage" value={ this.state.menuImage5 } onChange={ this.handleChange } />
                   </div>
                   <div className="menuInput">
                     <input ref="menu6" placeholder="Menu Item" className="profileText" value={ this.state.menu6 } onChange={ this.handleChange } />
                     <input ref="menuPrice6" placeholder="Price" className="menuPrice" value={ this.state.menuPrice6 } onChange={ this.handleChange } />
+                    <input ref="menuImage6" placeholder="Enter image url" className="menuImage" value={ this.state.menuImage6 } onChange={ this.handleChange } />
                   </div>
                   <div className="menuInput">
                     <input ref="menu7" placeholder="Menu Item" className="profileText" value={ this.state.menu7 } onChange={ this.handleChange } />
                     <input ref="menuPrice7" placeholder="Price" className="menuPrice" value={ this.state.menuPrice7 } onChange={ this.handleChange } />
+                    <input ref="menuImage7" placeholder="Enter image url" className="menuImage" value={ this.state.menuImage7 } onChange={ this.handleChange } />
                   </div>
                   <div className="menuInput">
                     <input ref="menu8" placeholder="Menu Item" className="profileText" value={ this.state.menu8 } onChange={ this.handleChange } />
                     <input ref="menuPrice8" placeholder="Price" className="menuPrice" value={ this.state.menuPrice8 } onChange={ this.handleChange } />
+                    <input ref="menuImage8" placeholder="Enter image url" className="menuImage" value={ this.state.menuImage8 } onChange={ this.handleChange } />
                   </div>
                   <div className="menuInput">
                     <input ref="menu9" placeholder="Menu Item" className="profileText" value={ this.state.menu9 } onChange={ this.handleChange } />
                     <input ref="menuPrice9" placeholder="Price" className="menuPrice" value={ this.state.menuPrice9 } onChange={ this.handleChange } />
+                    <input ref="menuImage9" placeholder="Enter image url" className="menuImage" value={ this.state.menuImage9 } onChange={ this.handleChange } />
                   </div>
                   <div className="menuInput">
                     <input ref="menu10" placeholder="Menu Item" className="profileText" value={ this.state.menu10 } onChange={ this.handleChange } />
                     <input ref="menuPrice10" placeholder="Price" className="menuPrice" value={ this.state.menuPrice10 } onChange={ this.handleChange } />
+                    <input ref="menuImage10" placeholder="Enter image url" className="menuImage" value={ this.state.menuImage10 } onChange={ this.handleChange } />
                   </div>
                 </div>
               </form>

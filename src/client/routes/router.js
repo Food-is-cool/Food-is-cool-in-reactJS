@@ -14,6 +14,7 @@ import Maps from "ui/map";
 import TruckInfo from "ui/truckInfo";
 import CustomerProfile from "ui/customerProfile";
 import FakeTrucks from "ui/fakeTrucks";
+import Menu from "ui/menu";
 
 export default (
 <Router history={ browserHistory }>
@@ -24,6 +25,7 @@ export default (
     <Route path="/map" component={ Maps } />
     <Route path="/truckInfo/:truckId" component={ TruckInfo } />
     <Route path="/customerProfile" component={ CustomerProfile } />
+    <Route path="/menu/:truckId" component={ Menu } />
     <Route path="/fakeTrucks" component={ FakeTrucks } />
     <Route path="*" component={ NotFound } />
   </Route>

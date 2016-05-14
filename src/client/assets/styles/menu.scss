@@ -1,0 +1,25 @@
+.menuContainerInfo{
+	display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.infoTextPrice{
+	color: #BCB08F;
+}
+.infoText{
+	color: #BCB08F;
+    margin-right: 20px;
+}
+.menuImageInfo{
+    width: 270px;
+    height: auto;
+}
+.menuCards{
+    height: 268;
+    width: 268;
+    margin-top: 40px;
+}
+.imageInfoCard{
+    display: flex;
+    justify-content: center;;
+}
