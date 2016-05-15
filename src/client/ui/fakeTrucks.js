@@ -1,10 +1,12 @@
 import React from "react";
+import _ from "lodash";
 import { getAllTrucks, saveTruckProfile } from "api/data";
 
 require("assets/styles/customerProfile.scss");
 
 const truckData = [
     {
+        id: 3,
         truck_name: "Gyro King",
         cuisine: "Greek",
         phone_number: "702-222-2222",
@@ -18,6 +20,7 @@ const truckData = [
         longitude: -115.152679
     },
     {
+        id: 4,
         truck_name: "Burgers Amore",
         cuisine: "Burgers",
         phone_number: "111-111-1111",
@@ -31,6 +34,7 @@ const truckData = [
         longitude: -115.288492
     },
     {
+        id: 2,
         truck_name: "Sushi Loca",
         cuisine: "Japanese",
         phone_number: "702-111-1111",
@@ -44,6 +48,7 @@ const truckData = [
         longitude: -115.291366
     },
     {
+        id: 1,
         truck_name: "Pho Sizzle",
         cuisine: "Vietnamese",
         phone_number: "702-333-3344",
@@ -57,6 +62,7 @@ const truckData = [
         longitude: -115.269751
     },
     {
+        id: 5,
         truck_name: "Sin City Dogs",
         cuisine: "American Fast Food",
         phone_number: "702-555-5454",
@@ -83,18 +89,12 @@ export default React.createClass({
         getAllTrucks()
             .then(function(trucks) {
                 trucks.forEach(function(truck, index) {
-                    let expiration = new Date();
-                    expiration.setHours(expiration.getHours() + 4);
+                    const data = _.find(truckData, "id", truck.id);
 
-                    const data = truckData[index % truckData.length];
+                    const payload = _.omit(data, "id");
+                    payload.expiration = new Date();
+                    payload.expiration.setHours(expiration.getHours() + 4);
 
-                    const payload = {
-                        truck_name: data.truck_name,
-                        cuisine: data.cuisine,
-                        expiration: expiration,
-                        latitude: data.latitude,
-                        longitude: data.longitude
-                    };
                     saveTruckProfile(truck.id, payload);
                 });
             });
