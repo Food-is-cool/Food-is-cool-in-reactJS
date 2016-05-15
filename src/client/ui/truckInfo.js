@@ -114,10 +114,12 @@ export default React.createClass({
     render: function() {
         return (
             <div>
-              <span className="companyName">{ this.state.companyName }</span>
-              <span className={ this.state.isFavorite ? "favoriteSelected" : "" } ref="favorite" onClick={ this.clickFavorite } title="Favorite this"><i className="fa fa-thumbs-o-up fa-2x"></i></span>
-              <div className="cuisineInfo">
-                <div className="truckInfoContainer">
+              <div className="truckInfoContainer">
+                <div>
+                  <span className="companyName">{ this.state.companyName }</span>
+                  <span className={ this.state.isFavorite ? "favoriteSelected" : "" } ref="favorite" onClick={ this.clickFavorite } title="Favorite this"><i className="fa fa-thumbs-o-up fa-2x"></i></span>
+                </div>
+                <div className="infoContent">
                   <div>
                     <img className="infoLogo" src={ this.state.logo } />
                     <div className="socialMediaIcons">
@@ -142,9 +144,8 @@ export default React.createClass({
                     <div className="info">
                       <span><b>Description: </b><span className="infoText">{ this.state.description }</span></span>
                     </div>
-                    <button onClick={ this.onMenuClick } className="buttonMenu">Menu</button>
-                    <div className="info">
-                      <span><b>Menu: </b></span>
+                    <div className="menuLinkContainer">
+                      <a onClick={ this.onMenuClick } href="#" className="menuLink">See our Menu!</a>
                     </div>
                   </div>
                 </div>

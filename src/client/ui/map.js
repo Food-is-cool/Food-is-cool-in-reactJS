@@ -168,7 +168,7 @@ export default React.createClass({
             <div className="mapContainer">
               <div className="favoriteContainer">
                 <input ref="favoriteChecked" type="checkbox" className="favoriteCheckbox" onChange={ this.toggleFavorite } />
-                <span className="favoriteText">Show only your favorite food trucks!</span>
+                <span className="favoriteText">Only my favorites</span>
               </div>
               <div className="mapBox">
                 <div className="map" id="map">

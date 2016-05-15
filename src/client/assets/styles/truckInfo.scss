@@ -4,10 +4,11 @@
 	margin: 0 auto;
 	display: flex;
 	margin-top: 20px;
+	flex-direction: column;
 }
 .infoContainer{
 	width: 350px;
-	margin-left: 20px;
+	margin: 25px;
 }
 .infoLogo{
 	height: auto;
@@ -18,10 +19,13 @@
 .companyName{
 	font-size: 25px;
 	font-weight: bold;
-	margin-left: 365px;
 	color: #BCB08F;
+	margin-left: -30px;
 }
-
+.infoContent{
+	display: flex;
+	margin-top: 10px;
+}
 .cuisineInfo{
 	margin-top: 25px;
 }
@@ -37,7 +41,7 @@
 	margin: 0 auto;
 	box-shadow: 3px 3px 5px #192B34;
 	position: relative;
-	top:-150px;
+	top:-180px;
 	margin-right: 60px;
 }
 .fa-thumbs-o-up{
@@ -68,4 +72,10 @@
 .socialMediaIcons{
 	margin-top: 10px;
     margin-left: 265px;
+}
+.menuLink{
+	color: #BCB08F;
+}
+.menuLinkContainer{
+	margin-top:20px;
 }
