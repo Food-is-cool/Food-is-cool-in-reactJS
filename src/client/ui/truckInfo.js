@@ -1,5 +1,5 @@
 import React from "react";
-import { getTruckProfile, getCustomerProfile, saveCustomerProfile } from "api/data";
+import { getTruckProfile, getCustomerProfile, saveCustomerProfile, getYelpReviews } from "api/data";
 import { goToUrl } from "utils/animation";
 import mapUtils from "utils/map";
 import _ from "lodash";
@@ -27,20 +27,24 @@ export default React.createClass({
     componentWillMount: function() {
         Promise.all([
             getTruckProfile(this.props.params.truckId),
-            getCustomerProfile()
+            getCustomerProfile(),
+            getYelpReviews(this.props.params.truckId)
         ]).then(this.updateStateWithProfiles);
     },
 
     updateStateWithProfiles: function(profiles) {
         const truckProfile = profiles[0];
         const userProfile = profiles[1];
+        const yelp = profiles[2];
+
 
         this.updateStateWithTruckProfile(truckProfile);
 
         this.setState({
             isFavorite: _.includes(userProfile.liked_trucks, truckProfile.id),
             userProfile: userProfile,
-            truckProfile: truckProfile
+            truckProfile: truckProfile,
+            rating_img_url: yelp.rating_img_url
         });
     },
 
@@ -115,9 +119,13 @@ export default React.createClass({
         return (
             <div>
               <div className="truckInfoContainer">
-                <div>
+                <div className="infoLogoContainer">
                   <span className="companyName">{ this.state.companyName }</span>
-                  <span className={ this.state.isFavorite ? "favoriteSelected" : "" } ref="favorite" onClick={ this.clickFavorite } title="Favorite this"><i className="fa fa-thumbs-o-up fa-2x"></i></span>
+                  <span className={ this.state.isFavorite ? "favoriteSelected" : "" } ref="favorite" onClick={ this.clickFavorite } title="Favorite this"><i className="fa fa-heart-o fa-lg"></i></span>
+                  <span className="yelpContainer">
+                                              <img className="yelpLogo" src="http://s3-media2.fl.yelpcdn.com/assets/srv0/www_pages/95212dafe621/assets/img/brand_guidelines/yelp-2c.png" />
+                                              <img className="yelpRating" src={ this.state.rating_img_url } />
+                                        </span>
                 </div>
                 <div className="infoContent">
                   <div>

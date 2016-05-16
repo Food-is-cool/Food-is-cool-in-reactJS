@@ -72,6 +72,13 @@ export function getTruckProfile(truckId) {
         })
 }
 
+export function getYelpReviews(truckId) {
+    return api.get("api/trucks/users/yelp/" + truckId)
+        .then(function(result) {
+            return result.data;
+        })
+}
+
 export function saveTruckProfile(id, payload) {
     if (!id) {
         return api.post("api/trucks/users/", payload);

@@ -22,7 +22,6 @@ export default React.createClass({
         }
 
         let menuItems = _.times(10, n => {
-            debugger;
             return {
                 name: truckProfile[`menu_item_${n + 1}`],
                 price: truckProfile[`item_${n + 1}_price`],

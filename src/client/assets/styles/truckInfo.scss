@@ -44,8 +44,8 @@
 	top:-180px;
 	margin-right: 60px;
 }
-.fa-thumbs-o-up{
-	margin-left: 40px;
+.fa-heart-o{
+	margin-left: 15px;
 }
 .fa-facebook-square{
 	margin-right:5px;
@@ -62,7 +62,7 @@
 	text-decoration: none;
 }
 .favoriteSelected{
-	color: #78a081;
+	color: #f20909;
 }
 .truckInformationContainer{
 	display: flex;
@@ -78,4 +78,22 @@
 }
 .menuLinkContainer{
 	margin-top:20px;
+}
+.yelpRating{
+	width:75px;
+	margin-bottom:-3px;
+}
+.yelpLogo{
+	width: 55px;
+	height: auto;
+	margin-bottom:-8px;
+}
+.infoLogoContainer{
+	width: 400px;
+	height:50px;
+	margin-bottom:-20px;
+}
+.yelpContainer{
+	float:right;
+	margin-right:30px;
 }
