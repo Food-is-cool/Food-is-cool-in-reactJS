@@ -58,9 +58,9 @@ export default React.createClass({
                 );
         }
 
-        return this.state.menuItems.map(item => {
+        return this.state.menuItems.map((item, index) => {
             return (
-                <div className="menuCards">
+                <div key={ index } className="menuCards">
                   <img className="menuImageInfo" src={ this.getMenuImageUrl(item.image) } />
                   <div className="imageInfoCard">
                     <span className="infoText">{ item.name }</span>

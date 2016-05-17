@@ -2,13 +2,17 @@ import React from "react";
 import Moment from "moment";
 import { getCurrentPosition, getAllTrucks, getCustomerProfile } from "api/data";
 import mapUtils from "utils/map";
+import _ from "lodash";
 
 require("assets/styles/map.scss");
 
 export default React.createClass({
     getInitialState: function() {
         return {
-            trucks: []
+            trucks: [],
+            userProfile: {
+                liked_trucks: []
+            }
         };
     },
 
@@ -164,15 +168,33 @@ export default React.createClass({
     },
 
     render: function() {
+        const liked_truck_ids = this.state.userProfile.liked_trucks;
+        const liked_trucks = _.filter(this.state.trucks, truck => _.includes(liked_truck_ids, truck.id));
+        var favoritesList = liked_trucks.map(function(liked_truck) {
+            return (
+                <div key={ liked_truck.id }>
+                  { liked_truck.truck_name }
+                </div>
+            )
+        })
+
         return (
-            <div className="mapContainer">
-              <div className="favoriteContainer">
-                <input ref="favoriteChecked" type="checkbox" className="favoriteCheckbox" onChange={ this.toggleFavorite } />
-                <span className="favoriteText">Only my favorites</span>
+            <div>
+              <div className="mapContainer">
+                <div className="favoritesListCheckbox">
+                  <input ref="favoriteChecked" type="checkbox" className="favoriteCheckbox" onChange={ this.toggleFavorite } />
+                  <span className="favoriteText">Only my favorites</span>
+                </div>
+                <div className="mapBox">
+                  <div className="map" id="map">
+                    Loading...
+                  </div>
+                </div>
               </div>
-              <div className="mapBox">
-                <div className="map" id="map">
-                  Loading...
+              <div className="favoriteContainerList">
+                <div className="favoritesListTitle">My Favorite Food Trucks:</div>
+                <div className="favoritesList">
+                  { favoritesList }
                 </div>
               </div>
             </div>

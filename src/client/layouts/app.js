@@ -47,7 +47,7 @@ function getNavs() {
             <nav className="navs">
               <div className="navButtons">
                 <div className="profileButtonContainer">
-                  <button onClick={ updateProfilebutton } className="updateProfilebutton">Update Profile</button>
+                  <button onClick={ updateProfilebutton } className="updateProfilebutton">My Profile</button>
                 </div>
                 <div className="WhenWhereButtonContainer">
                   <button onClick={ updateWhereWhen } className="updateWhereWhen">Update Location</button>
@@ -65,11 +65,11 @@ function getNavs() {
         <nav className="navs">
           <div className="navButtons">
             <div className="toMapContainer">
-              <button onClick={ toMap } className="toMap">To maps</button>
+              <button onClick={ toMap } className="toMap">Food Truck Map</button>
             </div>
             <div className="fakeDiv"></div>
             <div className="toCustomerProfileContainer">
-              <button onClick={ toCustomerProfile } className="toCustomerProfile">To Profile</button>
+              <button onClick={ toCustomerProfile } className="toCustomerProfile">My Profile</button>
             </div>
           </div>
           <a className="logoutButtonContainer">

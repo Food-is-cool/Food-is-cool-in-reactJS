@@ -42,7 +42,9 @@ export function addNewUser(username, password, isTruck) {
 
 export function getCustomerProfile() {
     return api.get("api/customers/users/current/")
+
         .then(function(result) {
+            console.log(result)
             return result.data.results[0];
         })
 }

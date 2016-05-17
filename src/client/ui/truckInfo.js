@@ -120,12 +120,10 @@ export default React.createClass({
             <div>
               <div className="truckInfoContainer">
                 <div className="infoLogoContainer">
-                  <span className="companyName">{ this.state.companyName }</span>
-                  <span className={ this.state.isFavorite ? "favoriteSelected" : "" } ref="favorite" onClick={ this.clickFavorite } title="Favorite this"><i className="fa fa-heart-o fa-lg"></i></span>
                   <span className="yelpContainer">
-                                              <img className="yelpLogo" src="http://s3-media2.fl.yelpcdn.com/assets/srv0/www_pages/95212dafe621/assets/img/brand_guidelines/yelp-2c.png" />
-                                              <img className="yelpRating" src={ this.state.rating_img_url } />
-                                        </span>
+                                                                          <img className="yelpLogo" src="http://s3-media2.fl.yelpcdn.com/assets/srv0/www_pages/95212dafe621/assets/img/brand_guidelines/yelp-2c.png" />
+                                                                          <img className="yelpRating" src={ this.state.rating_img_url } />
+                                                                    </span>
                 </div>
                 <div className="infoContent">
                   <div>
@@ -137,7 +135,9 @@ export default React.createClass({
                     </div>
                   </div>
                   <div className="infoContainer">
-                    <div className="infoStyle">
+                    <span className="companyName">{ this.state.companyName }</span>
+                    <span className={ this.state.isFavorite ? "favoriteSelected" : "" } ref="favorite" onClick={ this.clickFavorite } title="Favorite this"><i className="fa fa-heart-o fa-lg"></i></span>
+                    <div className="info">
                       <span><b>Cuisine: </b><span className="infoText">{ this.state.cuisine }</span></span>
                     </div>
                     <div className="info">

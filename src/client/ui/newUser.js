@@ -67,13 +67,13 @@ export default React.createClass({
             <div className="registerBox">
               <form action="" method="post" onSubmit={ this.handleSubmit } id="loginForm">
                 <i className="fa fa-sign-in"></i>
-                <input ref="username" className="login" value={ this.state.username } onChange={ this.handleChange } type="text" placeholder="User Name"></input>
+                <input ref="username" className="login" value={ this.state.username } onChange={ this.handleChange } type="text" placeholder="username"></input>
                 <br />
                 <i className="fa fa-unlock"></i>
-                <input ref="password" className="password" value={ this.state.password } onChange={ this.handleChange } type="password" placeholder="PassWord"></input>
+                <input ref="password" className="password" value={ this.state.password } onChange={ this.handleChange } type="password" placeholder="password"></input>
                 <br />
                 <i className="fa fa-unlock"></i>
-                <input ref="confirm" className="confirmPassword" value={ this.state.confirm } onChange={ this.handleChange } type="password" placeholder="Confirm PassWord"></input>
+                <input ref="confirm" className="confirmPassword" value={ this.state.confirm } onChange={ this.handleChange } type="password" placeholder="confirm password"></input>
                 <br />
                 <div className="radioButtonsContainer">
                   <div className="radioButton">

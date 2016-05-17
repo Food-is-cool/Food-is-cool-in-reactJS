@@ -68,10 +68,10 @@ export default React.createClass({
               <div className="loginControls">
                 <form action="" method="post" onSubmit={ this.handleSubmit } id="loginForm">
                   <i className="fa fa-sign-in"></i>
-                  <input ref="username" className="login" onChange={ this.handleChange } name="username" type="text" placeholder="User Name"></input>
+                  <input ref="username" className="login" onChange={ this.handleChange } name="username" type="text" placeholder="username"></input>
                   <br />
                   <i className="fa fa-unlock"></i>
-                  <input ref="password" className="password" type="password" onChange={ this.handleChange } name="password" placeholder="Password"></input>
+                  <input ref="password" className="password" type="password" onChange={ this.handleChange } name="password" placeholder="password"></input>
                   <br />
                   <button className="loginButton">Login</button>
                 </form>

@@ -11,13 +11,11 @@
     margin-right: 20px;
 }
 .menuImageInfo{
-    width: 270px;
-    height: auto;
+    max-width: 200px;
+    max-height: 200px;
 }
 .menuCards{
-    height: 268;
-    width: 268;
-    margin-top: 40px;
+	margin: 0 25px 25px 25px;
 }
 .imageInfoCard{
     display: flex;
