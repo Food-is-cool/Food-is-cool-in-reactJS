@@ -117,50 +117,50 @@ export default React.createClass({
 
     render: function() {
         return (
-            <div>
-              <div className="truckInfoContainer">
-                <div className="infoLogoContainer">
-                  <span className="yelpContainer">
-                                                                          <img className="yelpLogo" src="http://s3-media2.fl.yelpcdn.com/assets/srv0/www_pages/95212dafe621/assets/img/brand_guidelines/yelp-2c.png" />
-                                                                          <img className="yelpRating" src={ this.state.rating_img_url } />
-                                                                    </span>
-                </div>
-                <div className="infoContent">
-                  <div>
-                    <img className="infoLogo" src={ this.state.logo } />
-                    <div className="socialMediaIcons">
-                      <span><a href={ this.state.facebook } className="fa fa-facebook-square fa-2x"></a></span>
-                      <span><a href={ this.state.twitter } className="fa fa-twitter-square fa-2x"></a></span>
-                      <span><a href={ this.state.instagram } className="fa fa-instagram fa-2x"></a></span>
-                    </div>
-                  </div>
-                  <div className="infoContainer">
-                    <span className="companyName">{ this.state.companyName }</span>
-                    <span className={ this.state.isFavorite ? "favoriteSelected" : "" } ref="favorite" onClick={ this.clickFavorite } title="Favorite this"><i className="fa fa-heart-o fa-lg"></i></span>
-                    <div className="info">
-                      <span><b>Cuisine: </b><span className="infoText">{ this.state.cuisine }</span></span>
-                    </div>
-                    <div className="info">
-                      <span><b>Specials: </b><span className="infoText">{ this.state.specials }</span></span>
-                    </div>
-                    <div className="info">
-                      <span><b>Email: </b><a href={ this.state.email } className="infoText">{ this.state.email }</a></span>
-                    </div>
-                    <div className="info">
-                      <span><b>Phone: </b><span className="infoText">{ this.state.phone }</span></span>
-                    </div>
-                    <div className="info">
-                      <span><b>Description: </b><span className="infoText">{ this.state.description }</span></span>
-                    </div>
-                    <div className="menuLinkContainer">
-                      <a onClick={ this.onMenuClick } href="#" className="menuLink">See our Menu!</a>
-                    </div>
-                  </div>
-                </div>
+            <div className="truckInfoContainer">
+              <div className="infoLogoContainer">
+                <span className="yelpContainer">
+                                                                                                                                                                                      <img className="yelpLogo" src="http://s3-media2.fl.yelpcdn.com/assets/srv0/www_pages/95212dafe621/assets/img/brand_guidelines/yelp-2c.png" />
+                                                                                                                                                                                      <img className="yelpRating" src={ this.state.rating_img_url } />
+                                                                                                                                                                                </span>
               </div>
-              <div className="mapTruckContainer">
-                <div className="map" id="map">
-                  Loading...
+              <div className="infoContent">
+                <div>
+                  <img className="infoLogo" src={ this.state.logo } />
+                  <div className="logoIconsContainer">
+                    <div className="mapTruckContainer">
+                      <div className="map" id="map">
+                        Loading...
+                      </div>
+                    </div>
+                    <span className="socialMediaIcons">
+                                                                                  <span><a href={ this.state.facebook } className="fa fa-facebook-square fa-2x"></a></span>
+                    <span><a href={ this.state.twitter } className="fa fa-twitter-square fa-2x"></a></span>
+                    <span><a href={ this.state.instagram } className="fa fa-instagram fa-2x"></a></span>
+                    </span>
+                  </div>
+                </div>
+                <div className="infoContainer">
+                  <span className="companyName">{ this.state.companyName }</span>
+                  <span className={ this.state.isFavorite ? "favoriteSelected" : "" } ref="favorite" onClick={ this.clickFavorite } title="Favorite this"><i className="fa fa-heart-o fa-lg"></i></span>
+                  <div className="info">
+                    <span><b>Cuisine: </b><span className="infoText">{ this.state.cuisine }</span></span>
+                  </div>
+                  <div className="info">
+                    <span><b>Specials: </b><span className="infoText">{ this.state.specials }</span></span>
+                  </div>
+                  <div className="info">
+                    <span><b>Email: </b><a href={ this.state.email } className="infoText">{ this.state.email }</a></span>
+                  </div>
+                  <div className="info">
+                    <span><b>Phone: </b><span className="infoText">{ this.state.phone }</span></span>
+                  </div>
+                  <div className="info">
+                    <span><b>Description: </b><span className="infoText">{ this.state.description }</span></span>
+                  </div>
+                  <div className="menuLinkContainer">
+                    <a onClick={ this.onMenuClick } href="#" className="menuLink">See our Menu!</a>
+                  </div>
                 </div>
               </div>
             </div>
