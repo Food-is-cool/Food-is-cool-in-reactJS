@@ -120,12 +120,12 @@ export default React.createClass({
             <div className="truckInfoContainer">
               <div className="infoLogoContainer">
                 <span className="yelpContainer">
-                                                                                                                                                                                      <img className="yelpLogo" src="http://s3-media2.fl.yelpcdn.com/assets/srv0/www_pages/95212dafe621/assets/img/brand_guidelines/yelp-2c.png" />
-                                                                                                                                                                                      <img className="yelpRating" src={ this.state.rating_img_url } />
-                                                                                                                                                                                </span>
+                                                                                                                                                                                                              <img className="yelpLogo" src="http://s3-media2.fl.yelpcdn.com/assets/srv0/www_pages/95212dafe621/assets/img/brand_guidelines/yelp-2c.png" />
+                                                                                                                                                                                                      <img className="yelpRating" src={ this.state.rating_img_url } />
+                                                                                                                                                                                                        </span>
               </div>
               <div className="infoContent">
-                <div>
+                <div className="imageCard">
                   <img className="infoLogo" src={ this.state.logo } />
                   <div className="logoIconsContainer">
                     <div className="mapTruckContainer">
@@ -134,7 +134,7 @@ export default React.createClass({
                       </div>
                     </div>
                     <span className="socialMediaIcons">
-                                                                                  <span><a href={ this.state.facebook } className="fa fa-facebook-square fa-2x"></a></span>
+                                                <span><a href={ this.state.facebook } className="fa fa-facebook-square fa-2x"></a></span>
                     <span><a href={ this.state.twitter } className="fa fa-twitter-square fa-2x"></a></span>
                     <span><a href={ this.state.instagram } className="fa fa-instagram fa-2x"></a></span>
                     </span>

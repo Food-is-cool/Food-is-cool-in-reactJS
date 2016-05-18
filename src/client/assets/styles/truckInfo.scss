@@ -13,7 +13,9 @@
 	max-height: 400px;
 	max-width: 400px;
 	box-shadow: 3px 3px 5px #192B34;
+	background-color: white;
 }
+
 .companyName{
 	font-size: 25px;
 	font-weight: bold;
@@ -35,6 +37,9 @@
 	height: 150px;
 	width: 250px;
 	box-shadow: 3px 3px 5px #192B34;
+}
+.fa-lg {
+	vertical-align: 15% !important;
 }
 .fa-heart-o{
 	margin-left: 15px;
@@ -61,8 +66,7 @@
 	flex-direction: column;
 	justify-content: space-between;
 }
-.socialMediaIcons{
-}
+
 .menuLink{
 	color: #BCB08F;
 }

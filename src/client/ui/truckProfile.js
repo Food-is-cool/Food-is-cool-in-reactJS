@@ -253,10 +253,10 @@ export default React.createClass({
                     <label className="webAddressLabels">Web Address: </label>
                   </div>
                   <div>
-                    <label className="facebookLabels">facebook: </label>
+                    <label className="facebookLabels">Facebook: </label>
                   </div>
                   <div>
-                    <label className="twitterLabels">twitter: </label>
+                    <label className="twitterLabels">Twitter: </label>
                   </div>
                   <div>
                     <label className="instagramLabels">Instagram: </label>
@@ -286,10 +286,10 @@ export default React.createClass({
                     <input ref="url" placeholder="Web Address" className="input" type="url" name="url" value={ this.state.url } onChange={ this.handleChange } />
                   </div>
                   <div className="profileTruckInput">
-                    <input ref="facebook" placeholder="facebook" className="input" type="url" name="facebook" value={ this.state.facebook } onChange={ this.handleChange } />
+                    <input ref="facebook" placeholder="Facebook" className="input" type="url" name="facebook" value={ this.state.facebook } onChange={ this.handleChange } />
                   </div>
                   <div className="profileTruckInput">
-                    <input ref="twitter" placeholder="twitter" className="input" type="url" name="twitter" value={ this.state.twitter } onChange={ this.handleChange } />
+                    <input ref="twitter" placeholder="Twitter" className="input" type="url" name="twitter" value={ this.state.twitter } onChange={ this.handleChange } />
                   </div>
                   <div className="profileTruckInput">
                     <input ref="instagram" placeholder="Instagram" className="input" type="url" name="instagram" value={ this.state.instagram } onChange={ this.handleChange } />
