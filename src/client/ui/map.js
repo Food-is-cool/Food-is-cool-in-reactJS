@@ -111,7 +111,6 @@ export default React.createClass({
         if (!truck.latitude || !truck.longitude) {
             return;
         }
-
         const marker = new google.maps.Marker({
             position: {
                 lat: truck.latitude,

@@ -79,11 +79,11 @@ export default React.createClass({
         getAllTrucks()
             .then(function(trucks) {
                 trucks.forEach(function(truck, index) {
-                    const data = _.find(truckData, "id", truck.id);
+                    const data = _.find(truckData, t => t.id === truck.id);
 
                     const payload = _.omit(data, "id");
                     payload.expiration = new Date();
-                    payload.expiration.setHours(expiration.getHours() + 4);
+                    payload.expiration.setHours(payload.expiration.getHours() + 4);
 
                     saveTruckProfile(truck.id, payload);
                 });
