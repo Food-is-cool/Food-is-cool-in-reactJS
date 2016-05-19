@@ -7,27 +7,27 @@ require("assets/styles/customerProfile.scss");
 const truckData = [
     {
         id: 3,
-        expiration: "2",
-        latitude: 36.159182,
-        longitude: -115.152679
+        expiration: "",
+        latitude: 36.158233,
+        longitude: -115.149290
     },
     {
         id: 4,
-        expiration: "3",
-        latitude: 36.25553,
-        longitude: -115.288492
+        expiration: "",
+        latitude: 36.182796,
+        longitude: -115.131931
     },
     {
         id: 2,
-        expiration: "3",
-        latitude: 36.237384,
-        longitude: -115.291366
+        expiration: "",
+        latitude: 36.159515,
+        longitude: -115.203986
     },
     {
         id: 1,
         expiration: "",
-        latitude: 36.1588375,
-        longitude: -115.1524814
+        latitude: 36.155496,
+        longitude:  -115.149269
     },
     {
         id: 5,
@@ -56,8 +56,8 @@ const truckData = [
     {
         id: 9,
         expiration: "",
-        latitude: 35.9917,
-        longitude: -114.99
+        latitude: 36.144909,
+        longitude: -115.158027
     },
     {
         id: 10,
