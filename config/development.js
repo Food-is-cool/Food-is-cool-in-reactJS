@@ -1,8 +1,7 @@
-import baseConfig from './default';
-import secret from './secret';
+import baseConfig from "./default";
 
 const config = Object.assign({
-  // development config overrides
-}, secret);
+    // development config overrides
+}, {});
 
 export default config;

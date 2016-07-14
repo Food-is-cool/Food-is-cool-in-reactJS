@@ -1,8 +1,7 @@
-import baseConfig from './default';
-import secret from './secret';
+import baseConfig from "./default";
 
 const config = Object.assign({
-  // production config overrides
-}, secret);
+    // production config overrides
+}, {});
 
 export default config;
