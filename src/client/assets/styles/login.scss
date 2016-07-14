@@ -1,6 +1,6 @@
 .loginPageContainer{
-	width: 300px;
-	height: 500px;
+	width: 500px;
+	height: 600px;
 	margin: 0 auto;
 	-moz-perspective: 800px;
 	-webkit-perspective: 800px;
@@ -8,29 +8,19 @@
 	padding: 50px 0;
 }
 
-.flipLinkLoginContainer {
-	margin-top: 20px;
-}
 .flipLinkContainer {
+	width: 100%;
 	margin-top: 20px;
 }
+
 .flipLink {
 	float: right;
-    color: #BCB08F;
-    position: relative;
-    left: -40px;
+	color: #BCB08F;
 }
-.flipLinkLogin {
-	float: right;
-	margin-right: -90px;
-	color:#BCB08F;
-}
-.loginBox, .registerBox {
-	width: 300px;
-	height: 320px;
-	margin: 0 auto;
-	padding: 20px 0;
 
+.loginBox, .registerBox {
+	height: 100%;
+	padding: 20px 0;
 
 	/* Enabling 3d space for the transforms */
 	-moz-transform-style: preserve-3d;
@@ -51,7 +41,7 @@
 .loginBox {
 	z-index: 100;
 	opacity: 1;
-	margin-top: -320px;
+	margin-top: -500px;
 	transform:rotateY(0deg);
 }
 
@@ -78,49 +68,44 @@
 	padding-top:10px;
 }
 
-.login{
+.loginForm {
+	margin: 0 auto;
+	padding: 0 20px;
+}
+
+.login, .password, .confirmPassword{
 	background-color: #eae6e1;
 	border: none;
-	width: 225px;
-    height: 45px;
-    margin-left:20px;
-    padding-left: 30px;
+	width: 100%;
+    height: 60px;
+    padding-left: 45px;
     border: 1px solid rgba(13,32,42,.4);
     outline: none;
-    margin-bottom: 2px;
 	color:#423513;
 	box-shadow: 3px 3px 5px #192B34;
+	font-size: 20px;
 }
-.password{
-	background-color: #eae6e1;
-	border: none;
-	width: 225px;
-    height: 45px;
-    margin-left:19px;
-    padding-left: 30px;
-	border: 1px solid rgba(13,32,42,.4);
-    outline: none;
-    margin-bottom: 2px;
-	color:#423513;
-	box-shadow: 3px 3px 5px #192B34;
-}
-.confirmPassword{
-	background-color: #eae6e1;
-	border: none;
-	width: 225px;
-    height: 45px;
-    margin-left:19px;
-    padding-left: 30px;
-	border: 1px solid rgba(13,32,42,.4);
-    outline: none;
-	color:#423513;
-	box-shadow: 3px 3px 5px #192B34;
+
+.loginButtonContainer {
+	width: 100%;
+	margin: 0 auto;
 }
 
 .loginButton{
-	height: 45px;
-	width: 224px;
-	margin-left: 35px;
+	height: 60px;
+	width: 100%;
+	margin-top: 45px;
+	box-shadow: 3px 3px 5px #192B34;
+	border:none;
+	border-radius: 6px;
+	outline: none;
+	background-color: #C0C0C0;
+	border-bottom:4px solid #5C6E77;
+	font-size: 20px;
+}
+.registerButton{
+	height: 60px;
+	width: 100%;
 	margin-top: 15px;
 	box-shadow: 3px 3px 5px #192B34;
 	border:none;
@@ -128,12 +113,13 @@
 	outline: none;
 	background-color: #C0C0C0;
 	border-bottom:4px solid #5C6E77;
+	font-size: 20px;
 }
 .loginButton:active {
-	height: 40px;
-	width: 224px;
-	margin-left: 35px;
-	margin-top: 20px;
+	position: relative;
+	height: 60px;
+	width: 100%;
+	top: 5px;
 	border-radius: 6px;
 	box-shadow: 10px 10px 5px #192B34;
 	outline: none;
@@ -141,11 +127,13 @@
 }
 .fa-sign-in {
 	position: relative;
-	left: 40px;
+    left: 15px;
+    top: 40px;
 }
 .fa-unlock {
 	position: relative;
-	left: 40px;
+    left: 15px;
+    top: 40px;
 }
 .radioButtons{
 	margin-left: 45px;
@@ -153,22 +141,14 @@
 	box-shadow: 3px 3px 5px #192B34;
 }
 .demo{
-	width: 229px;
+	width: 50%;
 	margin: 0 auto;
-	padding-top: 20px;
+	padding-top: 10px;
 }
-.demoCustomer{
-	width: 224px;
+.demoCustomer, .demoTruck{
+	width: 100%;
 	background-color: #5C6E77;
-	height:35px;
-	border-radius: 6px;
-	box-shadow: 3px 3px 5px #192B34;
-	outline: none;
-}
-.demoTruck{
-	width: 224px;
 	margin-top: 10px;
-	background-color: #5C6E77;
 	height:35px;
 	border-radius: 6px;
 	box-shadow: 3px 3px 5px #192B34;

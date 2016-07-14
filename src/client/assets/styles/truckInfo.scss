@@ -1,13 +1,13 @@
 .truckInfoContainer{
 	height: 400px;
-	width: 750px;
-	margin: 0 auto;
+	width: 850px;
+	margin: 100px auto;
 	display: flex;
 	flex-direction: column;
 }
 .infoContainer{
 	width: 350px;
-	margin-left: 25px;
+	margin-left: 45px;
 }
 .infoLogo{
 	max-height: 400px;
@@ -15,7 +15,9 @@
 	box-shadow: 3px 3px 5px #192B34;
 	background-color: white;
 }
-
+.foodTruckInfo{
+	display: flex;
+}
 .companyName{
 	font-size: 25px;
 	font-weight: bold;
@@ -34,8 +36,8 @@
 
 .mapTruckContainer{
 	border:1px solid black;
-	height: 150px;
-	width: 250px;
+	height: 250px;
+	width: 400px;
 	box-shadow: 3px 3px 5px #192B34;
 }
 .fa-lg {
@@ -48,6 +50,7 @@
 	margin-right:5px;
 	color: #BCB08F;
 	text-decoration: none;
+	margin-top: 20px;
 }
 .fa-twitter-square{
 	margin-right:5px;
@@ -89,6 +92,7 @@
 }
 .yelpContainer{
 	float:right;
+	margin-top: -10px;
 }
 .logoIconsContainer{
 	display: flex;

@@ -65,33 +65,30 @@ export default React.createClass({
     render: function() {
         return (
             <div className="registerBox">
-              <form action="" method="post" onSubmit={ this.handleSubmit } id="loginForm">
+              <form action="" method="post" onSubmit={ this.handleSubmit } id="loginForm" className="loginForm">
                 <i className="fa fa-sign-in"></i>
                 <input ref="username" className="login" value={ this.state.username } onChange={ this.handleChange } type="text" placeholder="Username"></input>
-                <br />
                 <i className="fa fa-unlock"></i>
                 <input ref="password" className="password" value={ this.state.password } onChange={ this.handleChange } type="password" placeholder="Password"></input>
-                <br />
                 <i className="fa fa-unlock"></i>
                 <input ref="confirm" className="confirmPassword" value={ this.state.confirm } onChange={ this.handleChange } type="password" placeholder="Confirm Password"></input>
-                <br />
                 <div className="radioButtonsContainer">
                   <div className="radioButton">
                     <input ref="customer" className="radioButtons" onChange={ this.handleChange } type="radio" name="customerType" value="foodTruckCustomer" checked={ !this.state.isTruck }></input>
                     <span className="radioTitle">Food Truck Customer</span>
-                    <br />
                   </div>
                   <div className="radioButton">
                     <input ref="truck" className="radioButtons" onChange={ this.handleChange } type="radio" name="customerType" value="foodTruckVendor" checked={ this.state.isTruck }></input>
                     <span className="radioTitle">Food Truck Vendor</span>
-                    <br />
                   </div>
                 </div>
-                <button className="loginButton">Register</button>
+                <div className="loginButtonContainer">
+                  <button className="registerButton">Register</button>
+                </div>
+                <div className="flipLinkContainer">
+                  <a className="flipLink" href="#" onClick={ flipLogin }>Click here to login</a>
+                </div>
               </form>
-              <div className="flipLinkContainer">
-                <a className="flipLink" href="#" onClick={ flipLogin }>Click here to login</a>
-              </div>
             </div>
         )
     }

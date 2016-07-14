@@ -15,6 +15,7 @@ export default React.createClass({
             <div>
               <div id="loginPageContainer" className="loginPageContainer">
                 <NewUser />
+                <div></div>
                 <LoginContainer />
               </div>
             </div>
