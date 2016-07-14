@@ -154,7 +154,7 @@ export default React.createClass({
                     <span>${truck.specials}</span>
                 </div>
                 <a href='/truckInfo/${truck.id}' onclick="return goToUrl('/truckInfo/${truck.id}')">Get Details...</a>
-                <a target='_blank' href='http://maps.google.com/?saddr=${this.state.position.coords.latitude},${this.state.position.coords.longitude}&daddr=${truck.latitude},${truck.longitude}'>Get Directions...</a>
+                <a target='_blank' href='https://maps.google.com/?saddr=${this.state.position.coords.latitude},${this.state.position.coords.longitude}&daddr=${truck.latitude},${truck.longitude}'>Get Directions...</a>
             </div>
         `
         });

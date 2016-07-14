@@ -120,7 +120,7 @@ export default React.createClass({
             <div className="truckInfoContainer">
               <div className="infoLogoContainer">
                 <div className="yelpContainer">
-                  <img className="yelpLogo" src="http://s3-media2.fl.yelpcdn.com/assets/srv0/www_pages/95212dafe621/assets/img/brand_guidelines/yelp-2c.png" />
+                  <img className="yelpLogo" src="https://s3-media2.fl.yelpcdn.com/assets/srv0/www_pages/95212dafe621/assets/img/brand_guidelines/yelp-2c.png" />
                   <img className="yelpRating" src={ this.state.rating_img_url } />
                 </div>
               </div>
@@ -154,7 +154,7 @@ export default React.createClass({
                     <span><b>Description: </b><span className="infoText">{ this.state.description }</span></span>
                   </div>
                   <span className="socialMediaIcons">
-                                                                                                          <span><a href={ this.state.facebook } className="fa fa-facebook-square fa-2x"></a></span>
+                                                                                                                      <span><a href={ this.state.facebook } className="fa fa-facebook-square fa-2x"></a></span>
                   <span><a href={ this.state.twitter } className="fa fa-twitter-square fa-2x"></a></span>
                   <span><a href={ this.state.instagram } className="fa fa-instagram fa-2x"></a></span>
                   </span>

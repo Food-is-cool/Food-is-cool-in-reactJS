@@ -5,7 +5,7 @@ import { goToUrl } from "utils/animation";
 let positionResolves = [];
 let position = undefined;
 
-api.new("http://arcane-beach-47500.herokuapp.com/");
+api.new("https://arcane-beach-47500.herokuapp.com/");
 
 navigator.geolocation.getCurrentPosition(function(currentPosition) {
     position = currentPosition;
