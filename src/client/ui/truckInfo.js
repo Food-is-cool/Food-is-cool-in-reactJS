@@ -153,11 +153,11 @@ export default React.createClass({
                   <div className="info">
                     <span><b>Description: </b><span className="infoText">{ this.state.description }</span></span>
                   </div>
-                  <span className="socialMediaIcons">
-                                                                                                                      <span><a href={ this.state.facebook } className="fa fa-facebook-square fa-2x"></a></span>
-                  <span><a href={ this.state.twitter } className="fa fa-twitter-square fa-2x"></a></span>
-                  <span><a href={ this.state.instagram } className="fa fa-instagram fa-2x"></a></span>
-                  </span>
+                  <div className="socialMediaIcons">
+                    <span><a href={ this.state.facebook } className="fa fa-facebook-square fa-2x"></a></span>
+                    <span><a href={ this.state.twitter } className="fa fa-twitter-square fa-2x"></a></span>
+                    <span><a href={ this.state.instagram } className="fa fa-instagram fa-2x"></a></span>
+                  </div>
                   <div className="menuLinkContainer">
                     <a onClick={ this.onMenuClick } href="#" className="menuLink">See our Menu!</a>
                   </div>

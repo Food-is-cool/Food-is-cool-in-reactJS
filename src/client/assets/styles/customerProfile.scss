@@ -1,17 +1,18 @@
 .customerContainer{
-	margin: 100px auto 0;
+	margin: 60px auto 0;
 	height: 500px;
 	width: 500px
 }
 .customerInput{
 	width: 492px;
 	outline: none;
-	height: 30px;
+	height: 40px;
     box-shadow: 3px 3px 5px #192B34;
 	background-color: #eae6e1;
 	border:none;
 	padding-left: 15px;
 	color:#423513;
+	margin-top: 5px;
 }
 .checkboxEmailCustomer{
 	padding-top: 15px;
@@ -103,6 +104,7 @@ input[type='checkbox']:checked:after {
 	border:none;
 	padding-left: 15px;
 	color:#423513;
+	margin-bottom: 10px;
 }
 .cszBox{
     display: flex;
@@ -136,7 +138,7 @@ input[type='checkbox']:checked:after {
 }
 .arrow {
     position: relative;
-    top: -462px;
+    top: -481px;
     left: -80px;
     width: 0;
     height: 0;
@@ -147,7 +149,7 @@ input[type='checkbox']:checked:after {
 
 .rec {
     position: relative;
-    top: -562px;
+    top: -581px;
     left: -307px;
     width: 227px;
     height: 100px;
@@ -158,7 +160,7 @@ input[type='checkbox']:checked:after {
 
 .arrowgray {
     position: relative;
-    top: -254px;
+    top: -276px;
     left: -78px;
     width: 0;
     height: 0;
@@ -169,7 +171,7 @@ input[type='checkbox']:checked:after {
 
 .recgray {
     position: relative;
-	top: -354px;
+	top: -376px;
     left: -305px;
     width: 227px;
     height: 100px;

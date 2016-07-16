@@ -1,13 +1,13 @@
 .truckProfile{
-	margin: 0 auto;
-	height: 500px;
-	width: 1150px;
+	margin: 60px auto 0;
+	height: 100%;
+	width: 1450px;
 }
 
-.input{
-	width: 300px;
+.truckInput{
+	width: 400px;
 	outline: none;
-	height: 30px;
+	height: 40px;
 	box-shadow: 3px 3px 5px #192B34;
 	padding-left: 15px;
 	background-color: #eae6e1;
@@ -18,10 +18,13 @@
 	text-align: center;
 	margin-top:25px;
 }
+.profileTruckInput{
+	margin-bottom: 20px;
+}
 .profileButton{
 	position:relative;
-	height: 35px;
-	width: 180px;
+	height: 40px;
+	width: 200px;
 	margin-top: 2px;
 	box-shadow: 3px 3px 5px #192B34;
 	border:none;
@@ -37,8 +40,8 @@
 	top: 5px;
 }
 .profileText{
-	width:200px;
-	height: 30px;
+	width:300px;
+	height: 40px;
 	box-shadow: 3px 3px 5px #192B34;
 	outline: none;
 	padding-left: 15px;
@@ -49,7 +52,7 @@
 }
 .menuPrice{
 	width:75px;
-	height: 30px;
+	height: 40px;
 	box-shadow: 3px 3px 5px #192B34;
 	outline: none;
 	padding-left: 15px;
@@ -67,8 +70,8 @@
 
 .truckLabels{
 	color: #BCB08F;
-	margin-top:-6px;
-	height:370px;
+	margin-top:-12px;
+	height:600px;
 	width:125px;
 	display:flex;
 	flex-direction: column;
@@ -81,12 +84,14 @@
 }
 .menuItemTitle{
 	color: #BCB08F;
-	margin: 4px 5px 0 20px;
+	margin: 11px 5px 0 20px;
 }
-
+.menuInput{
+	margin-bottom: 20px;
+}
 .menuImage{
-	width:300px;
-	height: 30px;
+	width:400px;
+	height: 40px;
 	box-shadow: 3px 3px 5px #192B34;
 	outline: none;
 	padding-left: 15px;

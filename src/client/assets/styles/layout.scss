@@ -10,7 +10,7 @@ html, body {
 }
 .navs{
     background-color: #5D553E;
-    height: 120px;
+    height: 150px;
 }
 .nav{
     text-decoration: none;
@@ -24,30 +24,30 @@ html, body {
 }
 
 .foodTruckBackground{
-	height: 200px;
-	width: 200px;
+	height: 250px;
+	width: 250px;
 	position: relative;
 }
 
 .foodTruck{
 	position: relative;
-    top: -200px;
+    top: -250px;
     z-index: 5000;
     height: 200px;
 }
 
 .foodTruckImage{
-	height: 200px;
-	width: 200px;
+	height: 250px;
+	width: 250px;
 	position: relative;
 }
 
 .logoContainer{
-    width: 200px;
-    height: 200px;
+    width: 250px;
+    height: 250px;
     margin: 0 auto;
     position: relative;
-    top: -105px;
+    top: -125px;
     margin-bottom: -95px;
 }
 .fakeDiv{
@@ -56,26 +56,26 @@ html, body {
 }
 .fakeTrucks{
     position: relative;
-    top: -123px;
-    left: 48px;
+    top: -150px;
+    left: 66px;
     font-size: 14px;
     color: #BCB08F;
     background-color: white;
     padding-top: 8px;
     display: inline;
     z-index: 100;
-}
-.fakeTrucks{
     text-decoration: none;
+
 }
+
 .profileButtonContainer{
     padding-top: 68px;
     z-index: 10;
 }
 .updateProfilebutton{
     position:relative;
-	height: 35px;
-	width: 180px;
+	height: 40px;
+	width: 200px;
 	margin-top: 2px;
 	box-shadow: 3px 3px 5px #192B34;
 	border:none;
@@ -97,8 +97,8 @@ html, body {
 
 .updateWhereWhen{
     position:relative;
-	height: 35px;
-	width: 180px;
+	height: 40px;
+	width: 200px;
 	margin-top: 2px;
 	box-shadow: 3px 3px 5px #192B34;
 	border:none;
@@ -136,8 +136,8 @@ html, body {
     padding-top: 68px;
 }
 .toMap{
-	height: 35px;
-	width: 180px;
+	height: 40px;
+	width: 200px;
 	margin-top: 2px;
 	box-shadow: 3px 3px 5px #192B34;
 	border:none;
@@ -159,8 +159,8 @@ html, body {
 }
 .toCustomerProfile{
     position:relative;
-	height: 35px;
-	width: 180px;
+	height: 40px;
+	width: 200px;
 	margin-top: 2px;
 	box-shadow: 3px 3px 5px #192B34;
 	border:none;

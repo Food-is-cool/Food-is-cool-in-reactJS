@@ -50,7 +50,7 @@ input[type=range] {
 .selectedTime{
 	background-color: #0D202A;
 	outline: none;
-	color:white;
+	color: white;
 }
 .whereWhenContainer{
 	margin: 0 auto;
@@ -65,7 +65,7 @@ input[type=range] {
 	margin-top: 10px;
 }
 .wwContainer{
-	margin: 0 auto;
+	margin: 60px auto 0;
 	height: 450px;
 	width: 800px;
 }
@@ -92,19 +92,19 @@ input[type=range] {
 	margin-top: 5px;
 }
 .timeTitle{
-	margin-bottom: 5px;
+	margin-bottom: 10px;
 	color: #BCB08F;
 }
 .locationTitle{
-	margin-top:10px;
-	margin-bottom: 5px;
+	margin-top: 40px;
+	margin-bottom: 10px;
 	color: #BCB08F;
 }
 .specialText{
-	margin-top: -10px;
+	margin-top: 10px;
 	margin-right:20px;
 	color: #BCB08F;
-	margin-bottom: 5px;
+	margin-bottom: 10px;
 }
 .specials{
 	width:798px;
@@ -121,5 +121,5 @@ input[type=range] {
 	color: #BCB08F;
 }
 .timeSlider{
-	margin-bottom: 12px;
+	margin-bottom: 30px;
 }

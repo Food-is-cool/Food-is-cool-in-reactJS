@@ -114,28 +114,20 @@ export default React.createClass({
               <form>
                 <div className="CustomerProfileInput">
                   <span className="CustomerLabel">Name:</span>
-                  <br />
                   <input ref="name" className="customerInput" type="text" name="name" value={ this.state.name } onChange={ this.handleChange } />
-                  <br />
                 </div>
                 <div className="CustomerProfileInput">
                   <span className="CustomerLabel">Email:</span>
-                  <br />
                   <input ref="email" className="customerInput" type="email" name="email" value={ this.state.email } onChange={ this.handleChange } />
-                  <br />
                 </div>
                 <div className="CustomerProfileInput">
                   <span className="CustomerLabel">Phone:</span>
-                  <br />
                   <MaskedInput mask="(111) 111-1111" ref="phone" className="customerInput" type="tel" name="phone" value={ this.state.phone } onChange={ this.handleChange } />
-                  <br />
                 </div>
                 <div></div>
                 <div className="CustomerProfileInput">
                   <span className="CustomerLabel">Address:</span>
-                  <br />
                   <input ref="address" className="customerInput" type="text" name="address" value={ this.state.address } onChange={ this.handleChange } />
-                  <br />
                 </div>
                 <div className="cszBox">
                   <div className="CustomerProfileInput">

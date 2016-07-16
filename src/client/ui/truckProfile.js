@@ -270,35 +270,36 @@ export default React.createClass({
                 </div>
                 <div className="truckInformationContainer">
                   <div className="profileTruckInput">
-                    <input ref="companyName" placeholder="Company Name" className="input" type="text" name="companyName" value={ this.state.companyName } onChange={ this.handleChange } />
-                  </div>
-                  <div className="profileTruckInput">
-                    <input ref="cuisine" placeholder="Cuisine" className="input" type="text" name="cuisine" value={ this.state.cuisine } onChange={ this.handleChange } />
-                  </div>
-                  <div className="profileTruckInput">
-                    <input ref="email" placeholder="Email" className="input" type="email" name="email" value={ this.state.email } onChange={ this.handleChange } />
-                  </div>
-                  <div className="profileTruckInput">
-                    <MaskedInput mask="(111) 111-1111" ref="phone" placeholder="Phone" className="input" type="tel" name="phone" value={ this.state.phone } onChange={ this.handleChange }
+                    <input ref="companyName" placeholder="Company Name" className="truckInput" type="text" name="companyName" value={ this.state.companyName } onChange={ this.handleChange }
                     />
                   </div>
                   <div className="profileTruckInput">
-                    <input ref="url" placeholder="Web Address" className="input" type="url" name="url" value={ this.state.url } onChange={ this.handleChange } />
+                    <input ref="cuisine" placeholder="Cuisine" className="truckInput" type="text" name="cuisine" value={ this.state.cuisine } onChange={ this.handleChange } />
                   </div>
                   <div className="profileTruckInput">
-                    <input ref="facebook" placeholder="Facebook" className="input" type="url" name="facebook" value={ this.state.facebook } onChange={ this.handleChange } />
+                    <input ref="email" placeholder="Email" className="truckInput" type="email" name="email" value={ this.state.email } onChange={ this.handleChange } />
                   </div>
                   <div className="profileTruckInput">
-                    <input ref="twitter" placeholder="Twitter" className="input" type="url" name="twitter" value={ this.state.twitter } onChange={ this.handleChange } />
+                    <MaskedInput mask="(111) 111-1111" ref="phone" placeholder="Phone" className="truckInput" type="tel" name="phone" value={ this.state.phone } onChange={ this.handleChange }
+                    />
                   </div>
                   <div className="profileTruckInput">
-                    <input ref="instagram" placeholder="Instagram" className="input" type="url" name="instagram" value={ this.state.instagram } onChange={ this.handleChange } />
+                    <input ref="url" placeholder="Web Address" className="truckInput" type="url" name="url" value={ this.state.url } onChange={ this.handleChange } />
                   </div>
                   <div className="profileTruckInput">
-                    <input ref="logo" placeholder="Logo" className="input" type="text" name="logo" value={ this.state.logo } onChange={ this.handleChange } />
+                    <input ref="facebook" placeholder="Facebook" className="truckInput" type="url" name="facebook" value={ this.state.facebook } onChange={ this.handleChange } />
                   </div>
                   <div className="profileTruckInput">
-                    <input ref="description" placeholder="Description" className="input" value={ this.state.description } onChange={ this.handleChange }></input>
+                    <input ref="twitter" placeholder="Twitter" className="truckInput" type="url" name="twitter" value={ this.state.twitter } onChange={ this.handleChange } />
+                  </div>
+                  <div className="profileTruckInput">
+                    <input ref="instagram" placeholder="Instagram" className="truckInput" type="url" name="instagram" value={ this.state.instagram } onChange={ this.handleChange } />
+                  </div>
+                  <div className="profileTruckInput">
+                    <input ref="logo" placeholder="Logo" className="truckInput" type="text" name="logo" value={ this.state.logo } onChange={ this.handleChange } />
+                  </div>
+                  <div className="profileTruckInput">
+                    <input ref="description" placeholder="Description" className="truckInput" value={ this.state.description } onChange={ this.handleChange }></input>
                   </div>
                 </div>
                 <label className="menuItemTitle">Menu Items:</label>
